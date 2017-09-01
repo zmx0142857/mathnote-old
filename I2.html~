@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>I2: 寻寻觅觅勾股数</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/mathFormat.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<base target="_blank" />
+
+</head>
+
+<body>
+<a href="I1.html" style="float: left">&lt;&lt;&lt;</a>
+<a href="I3.html" style="float: right">&gt;&gt;&gt;</a>
+
+<h1>代数篇2: 寻寻觅觅勾股数</h1>
+
+<p>先以引理的形式, 介绍一些有关整除的结论:</p>
+
+<p><b>引理I2.1 </b>若 a | b, c | d, 则 ac | bd.</p>
+<p><b>证 </b>`a | b iff EE a_1 in ZZ, b = a a_1`, `c | d iff EE c_1 in ZZ, d = c c_1`. 所以 `bd = a a_1 c c_1`, 即 ac | bd.</p>
+
+<p><b>引理I2.2 </b>若 (a, b) = 1, 且 a | bc, 则 a | c.</p>
+<p><b>证 </b>`(a, b) = 1 iff EE s,t in ZZ, sa + tb = 1 => sac + tbc = c`. 但 a 能整除 sac 和 tbc, 所以 a | c.</p>
+
+<p><b>引理I2.3 </b>若 (a, b) = 1, 且 a | c, b | c, 则 ab | c.</p>
+<p><b>证 </b>`a | c => EE a_1 in ZZ, c = aa_1` `=> b | aa_1`. 由引理I2.2, `b | a_1`. 由引理I2.1, `ab | aa_1 = c`.</p>
+
+<p><b>引理I2.4 </b>一个整数 p 是素数的充要条件是对任意整数 a, b, p | ab 蕴含着 p | a 或 p | b.</p>
+<p><b>证 </b>充分性: 设 p | ab 且 p 不整除 a. 但 p 只有 1 和 p 两个因子， 所以 (a, p) = 1. 由引理I2.2知 p | b.</p>
+<p>必要性: 反设 p 不是素数, 则存在 `1 lt d_1, d_2 lt p`, 使 `p = d_1 d_2`. 显然 `p | d_1 d_2` 但 p 不整除 `d_1, d_2` 的任何一个, 矛盾.</p>
+<p><b>推论I2.4 </b>若素数 `p | a^n`, 则 `p | a, AA a in ZZ, AA n in NN`.</p>
+
+<p><b>引理I2.5 </b>设 `a, n in NN^+, n ge 2`. 若 `root(n)(a) in QQ`, 则 `root(n)(a) in NN+`.</p>
+<p><b>证 </b>不妨设 `root(n)(a) = p/q`, 且 (p, q) = 1. 所以 `(p^n, q^n) = 1` (若 `p^n, q^n` 有素数公因子 d, 由推论I2.4得 d | p, d | q, 矛盾). 于是 `a = p^n/q^n`, 但 `a in NN^+`, 所以 `q^n = +-1`, 即 `q = +-1`. 故 `root(n)(a) = p/q in NN^+`.</p>
+<p><b>注I2.5 </b>也可由 `root(n)(a)` 是 `x^n = a` 的有理根知 `root(n)(a) in NN^+`, 且 `root(n)(a)` 为 a 的因子.</p>
+
+<p><b>引理I2.6 </b>设 `a, b, n in NN^+, n ge 2`, 则 `b^n | a^n iff b | a`.</p>
+<p><b>证 </b>`lArr`: 由引理I2.1立得. `rArr`: `b^n | a^n iff EE d in ZZ,  a^n = d b^n`, 所以 `root(n)(d) = a/b`, 由引理I2.5, `root(n)(d) in ZZ`, 故 b | a. </p>
+
+<p><b>引理I2.7 </b>设 `a, m in NN^+`, p 是素数, 若 `p^(2m-1) | a^2`, 则 `p^m | a`.</p>
+<p><b>证 </b>设 `p^(2m-1)d = a^2`, 因为 `p | p^(2m-1)d = a^2`, 所以 p | a. 若 2m-1 &ge; 3, 从上式两端消去 `p^2`, 得</p>
+
+<p class="formula">`p^(2m-3)d = a_1^2, quad (a = a_1 p).`</p>
+
+<p>于是同样有 `p | a_1`. 若 2m-3 &ge; 3, 从上式两端消去 `p^2`, 得</p>
+
+<p class="formula">`p^(2m-5)d = a_2^2, quad (a_1 = a_2 p).`</p>
+
+<p>反复以上步骤, 直到</p>
+
+<p class="formula">`pd = a_(m-1)^2.` `quad (I2-7)`</p>
+
+<p>即 `p | a_(m-1)^2`. 于是 `p | a_(m-1)`. 式 (I2-7) 两端消去 p, 得</p>
+
+<p class="formula">`d = a_m^2 p (a_(m-1) = a_m p).`</p>
+
+<p>所以 p | d. 于是 `p^(2m) | p^(2m-1)d = a^2.` 由引理I2.6, `p^m | a`.</p>
+
+<p><b>定义I2.1 </b>称满足 `a^2 + b^2 = c^2` 的 `a, b, c in NN^+` 为一组<b>勾股数</b>. 方便起见, 下面仅讨论 a &lt; b &lt; c 且 (a, b, c) = 1 的情形.</p>
+
+<p><b>命题I2.1 </b>(1) c 是奇数. (2) a 和 b 一奇一偶.</p>
+<p><b>证 </b>(1)假设 c 是偶数, 则 a, b 不能全为偶数, 否则与 (a, b,
+c) = 1 矛盾. 为使 `a^2 + b^2 = c^2` 成立, a, b 必然全为奇数. 设 `a = 2m-1,` `b = 2n-1,` `m,n in NN^+,` 则 `4 \不整除 a^2 + b^2 = 4(m^2 + n^2) - 4(m+n) + 2.` 但 c 是偶数, 故 `4|c^2,` `a^2 + b^2 != c^2`, 矛盾. 所以 c 是奇数.</p>
+<p>(2)为使 `a^2 + b^2 = c^2` 成立, a, b 必然一奇一偶.</p>
+
+<p><b>命题I2.2 </b>3, 4, 5 是最小的勾股数.</p>
+<p><b>证 </b> 因为 `a^2 + b^2 = c^2`, 所以 `a^2 = (c+b)(c-b)`. 若 `a = 1`, 则 `a^2 = 1`, `c+b = c-b = 1`. 所以 `b = 0`, 矛盾. 若 `a = 2`, 则 `a^2 = 4`, `c+b = 4`, `c-b = 1`, 所以 `b = 3/2`, 矛盾. 由以上知 `a ge 3`. 再由 `a lt b lt c` 知 b, c 的最小值分别为 4, 5.</p>
+
+<p><b>更多讨论 </b>设 c - b = d &gt; 0, 则 `c + b = a^2/d`, `c = (a^2 + d^2)/(2d)`, `b = (a^2 - d^2)/(2d)`.</p>
+
+<p>我们对 `d = 1,2,3,cdot` 有情形进行讨论,找出 a 应满足的条件:</p>
+<ul>
+<li>因为 `b gt a iff a^2 - d^2 gt 2ad` `iff a^2 - 2ad + d^2 gt 2d^2` `iff |a-d| gt sqrt(2) d`, 且 `b gt 0 iff a gt d` (也可说, 三角形两边差小于第三边), 所以 `a gt (1 + sqrt(2))d`.</li>
+<li>`c, b in NN^+ iff 2d | a^2 + d^2`. 由于 `a^2 + d^2 = a^2 - d^2 + 2d^2`, 条件可减少为 `2d | a^2 + d^2`.
+	<ul>
+	<li>当 d 为奇数, 即 b, c 一奇一偶, 由命题I2.1, 这等价于 a 为奇数. 所以 `a^2 + d^2` 是偶数, 即 `2 | a^2 + d^2`. 因为 (2, d) = 1, 所以由引理I2.3, 要使 `c, b in NN^+`, 只需 `d | a^2 + d^2`, 即 `d | a^2`. (注意, `d | a^2 iff 2d | a^2 + d^2`. 其中 `lArr` 已证, `rArr`: d | 2d 所以 `d | a^2 + d^2`, 所以 `d | a^2 + d^2 - d^2 = a^2`)
+	<br />进一步, 当 d 为大于 2 的素数时, `d | a^2 iff d | a`, 因 a 为奇数, 设 a = d(2m+1), m = 1, 2, 3... 于是 `d` | `b = (d^2(2m+1)^2 - d^2)/2d`, `d` | `c = (d^2(2m+1)^2 + d^2)/2d`, 与 (a, b, c) = 1 矛盾. 此时没有合适的勾股数. 因此跳过 d 为大于 2 的素数的情形.
+	</li>
+	</ul>
+</li>
+</ul>
+
+<a href="I1.html" style="float: left">&lt;&lt;&lt;</a>
+<a href="I3.html" style="float: right">&gt;&gt;&gt;</a>
+
+</body>
+
+<script src="js/randomColor.js"></script>
+<script src="js/setBgcolor.js"></script>
+
+</html>

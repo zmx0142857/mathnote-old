@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>G2</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/mathFormat.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<base target="_blank"/>
+
+</head>
+
+<body>
+
+<a href="G1.html" style="float: left">&lt;&lt;&lt;</a>
+<a href="G3.html" style="float: right">&gt;&gt;&gt;</a>
+
+<h1>几何篇2: 三角形</h1>
+
+<h2>2.1 正弦定理、余弦定理</h2>
+<h2>2.2 三角形的面积</h2>
+<h2>2.3 红心大战！——三角形的心</h2>
+
+<h3>2.3.1 重心：三条中线的交点</h3>
+
+<img class="geo" src="img/G2-3-1.png" />
+
+<p>如图, `M, N` 分别是 `AC, AB` 的中点, 设 `BM` 与 `CN` 交于 `G,` `AG` 与 `BC` 交于 `L.` 由 Ceva 定理知, `(AN*BL*CM) / (NB*LC*MA) = 1,` 所以 `BL = LC,` 从而 `G` 就是三角形 `ABC` 的重心.</p>
+
+<p>容易看出, 相交于 `G` 的三条直线将三角形 `ABC` 分成了面积相等的六个小三角形. 注意到 `S_(ABG) = 2S_(LBG),` 因此 `AG = 2GL.` 同理 `BG = 2GM,` `CG = 2GN.` 我们得到:</p>
+<p>三角形的重心分三条中线的长度为 `1:2.`</p>
+
+<p>所以</p>
+<p class="formula">`{:
+	( vec(OG) ,= vec(OA) + vec(AG) = vec(OA) + 2/3 vec(AL) ),
+	( ,= vec(OA) + 2/3 * 1/2 (vec(AB) + vec(AC)) ),
+	( ,= vec(OA) + 1/3 (vec(OB) - vec(OA) + vec(OC) - vec(OA)) ),
+	( ,= 1/3 (vec(OA) + vec(OB) + vec(OC)). )
+:}`</p>
+
+<p>这就是三角形重心的坐标.</p>
+
+<p>在上面的计算过程中, 我们得到了 `vec(AG) = 1/3 (vec(AB) + vec(AC)).`</p>
+
+<p>因此 `vec(AG) + vec(BG) + vec(CG) = 1/3 (vec(AB) + vec(AC) + vec(BA) + vec(BC) + vec(CA) + vec(CB)) = vec 0.`</p>
+
+<h3>2.3.2 内心：三条角平分线的交点</h3>
+
+<img class="geo" src="img/G2-3-2.png" />
+
+<p>如图，设 `BC,` `CA,` `AB` 的长分别是 `a,` `b,` `c.` `CD` 平分 `/_ACB`, 交 `AB` 于 `D.` `AE` 平分 `/_CAB,` 交 `BC` 于 `E,` 交 `CD` 于 `I.` 设 `l` 是过角的顶点的直线, 由于以下三个命题等价:</p>
+
+<ul>
+	<li>`l` 平分角;</li>
+	<li>`l` 上任意一点到角两边的距离相等;</li>
+	<li>`l` 上存在一点到角两边的距离相等.</li>
+</ul>
+
+<p>易知 `BI` 平分 `/_ABC.` 所以 `I` 就是三角形 `ABC` 的内心.</p>
+
+<p>以 `C` 为原点, `vec(CA),` `vec(CB)` 为一组基底, 建立仿射坐标系. 因为角平分线上的点到角两边的距离相等, 所以</p>
+
+<p class="formula">`AD:DB = S_(ACD):S_(BCD) = b:a.`</p>
+
+<p>所以</p>
+<p class="formula">`{:
+	( vec(CD) ,= vec(CA) + b/(a+b) vec(AB) ),
+	( ,= (1,0) + b/(a+b) (-1,1) ),
+	( ,= ( a/(a+b) ,b/(a+b) ). )
+:}`</p>
+
+<p>类似地, `vec(AE) = ( -1, b/(b+c) ).`</p>
+
+<p>又设 `vec(CI) = (lambda, mu),` 则由 `C,` `I,` `D` 共线和 `A,` `I,` `E` 共线知,</p>
+
+<p class="formula">`{:
+	( vec(CI) xx vec(CD) = vec 0; ),
+	( vec(AI) xx vec(AE) = vec 0. )
+:}`</p>
+
+<p>这等价于这两个外积在 `z` 轴的分量为零:</p>
+
+<p class="formula">`{
+	( | (lambda, a), (mu, b) | = 0; ),
+	( | ( lambda-1, -(b+c) ), (mu, b)| = 0. )
+:}`</p>
+
+<p>即</p>
+<p class="formula">`{
+	( b lambda - a mu = 0; ),
+	( b lambda + (b+c) mu = b. )
+:}`</p>
+
+<p>解得 `vec(CI) = (lambda, mu) = 1/(a+b+c) (a,b).`</p>
+
+<p>现建立以 `O` 为原点的直角坐标系, 则</p>
+<p class="formula">`{:
+	( ,vec(OI) = vec(OC) + vec(CI) ),
+	( = ,vec(OC) + 1/(a+b+c) (a vec(CA) + b vec(CB)) ),
+	( = ,vec(OC) + 1/(a+b+c) [a (vec(OA) - vec(OC)) + b (vec(OB) - vec(OC))] ),
+	( = ,1/(a+b+c) (a vec(OA) + b vec(OB) + c vec(OC)). )
+:}`</p>
+
+<p>这就是三角形内心的坐标.</p>
+
+<h2>G2.3.3 外心: 三边中垂线的交点</h2>
+<p>如图, `AB`, `AC` 的垂直平分线相交于点 `O`, 垂足分别为 `D`, `E`. 过 `O` 作 `BC` 的垂线, 垂足为 `F`. 由于对线段 `m` 及其垂线 `l`, 以下三个命题等价:<p>
+
+<ul>
+	<li>`l` 垂直平分 `m`;</li>
+	<li>`l` 上任意一点到 `m` 的两个端点距离相等;</li>
+	<li>`l` 上存在一点到 `m` 的两个端点距离相等.</li>
+</ul>
+
+<p>容易推出 `OF` 是 `BC` 的垂直平分线. 所以 `O` 就是三角形 `ABC` 的外心.</p>
+<p>求点 `O` 的坐标, 即求过 `ABC` 三点的圆的圆心坐标. 因为此圆的方程为</p>
+
+<p class="formula">`|
+	( x^2 + y^2,     x,   y,   1 ),
+	( x_A^2 + y_A^2, x_A, y_A, 1 ),
+	( x_B^2 + y_B^2, x_B, y_B, 1 ),
+	( x_C^2 + y_C^2, x_C, y_C, 1 )
+| = 0,`</p>
+
+<p>(见G4.1), 所以点 `O` 的坐标为</p>
+
+<p class="formula">`(-|
+	( x_A^2 + y_A^2, y_A, 1 ),
+	( x_B^2 + y_B^2, y_B, 1 ),
+	( x_C^2 + y_C^2, y_C, 1 )
+|,
+|
+	( x_A^2 + y_A^2, x_A, 1 ),
+	( x_B^2 + y_B^2, x_B, 1 ),
+	( x_C^2 + y_C^2, x_C, 1 )
+|).`</p>
+
+<a href="G1.html" style="float: left">&lt;&lt;&lt;</a>
+<a href="G3.html" style="float: right">&gt;&gt;&gt;</a>
+
+</body>
+
+<script src="js/randomColor.js"></script>
+<script src="js/setBgcolor.js"></script>
+
+</html>

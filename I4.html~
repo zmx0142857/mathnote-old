@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>I4 线性方程组</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/mathFormat.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script> -->
+<!-- <script src="js/ASCIIMathML.js"></script> -->
+<base target="_blank" />
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="I3.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="content.html">. . .</a>
+	<a href="I5.html" style="float: right">&gt;&gt;&gt;</a>
+</div>
+
+<h1>代数篇4: 线性方程组</h1>
+
+<h2>替换定理</h2>
+
+<p>设向量组 I: `alpha_1, alpha_2, cdots, alpha_r`; II: `beta_1, beta_2, cdots, beta_s` 满足条件 (i) I 线性无关; (ii) I 能被 II 表出. 那么 (iii) r &le; s; (iv) 适当排列 II, 有</p>
+
+<p class="formula">`beta_1, cdots, beta_r, beta_(r+1), cdots, beta_s`</p>
+<p>与</p>
+<p class="formula">`alpha_1, cdots, alpha_r, beta_(r+1), cdots, beta_s` </p>
+</p>等价 (即能相互表出).</p>
+
+<p><b>证 </b>由条件 (ii), 设 `alpha_i = sum_(j=1)^s t_(ij) beta_j`, `i = 1, 2, cdots, r`. 假设有 `k_1, k_2, cdots, k_r` 使得 `sum_(i=1)^r k_i alpha_i = theta`, 即</p>
+<p class="formula">`sum_(i=1)^r k_i sum_(j=1)^s t_(ij) beta_j = sum_(j=1)^s beta_j sum_(i=1)^r t_(ij) k_i = theta.`<span class="right">(＊)</span></p>
+
+<p>则由条件 (i) 知 `k_1 = cdots = k_r = 0.`</p>
+
+<p>考虑线性方程组</p>
+<p class="formula">\[\begin{cases}
+	\sum_{i=1}^r t_{ij} k_i = 0;\\
+	j = 1, 2, \cdots, s.
+\end{cases}\]</p>
+
+<p>显然此方程组的所有解满足式 (＊) ,从而此方程组只有零解. `stackrel(?)(=>)` 故 r &le; s.</p>
+
+<p>对每个正整数 m &le; r, 易知向量组 `alpha_1, cdots, alpha_m, beta_m, cdots, beta_s` 线性相关 (因为该向量组有 s+1 个向量, 且能被 II 表出,若它们线性无关, 则由 (iii), s+1 &le; s), 即存在不全为零的 `l_1, cdots, l_(s+1)` 使 `sum_(i=1)^m l_i alpha_i + sum_(i=m+1)^(s+1) l_i beta_(i-1) = theta`</p>
+
+<p>由 (i), `alpha_1, cdots, alpha_m` 线性无关, 所以 `l_(m+1), cdots, l_(s+1)` 不全为零, 适当排列 II 使 `l_(m+1) != 0`, 则 `beta_m` 能被 `alpha_1, cdots, alpha_m, beta_(m+1), beta_s`表出. 于是 `beta_1, cdots, beta_r` 能被 `alpha_1, cdots, alpha_r, beta_(r+1), cdots, beta_s` 表出.<span class="right">□</span></p>
+
+<p class="nav">
+	<a href="I3.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="content.html">. . .</a>
+	<a href="I5.html" style="float: right">&gt;&gt;&gt;</a>
+</p>
+
+</body>
+
+<script src="js/randomColor.js"></script>
+<script src="js/setBgcolor.js"></script>
+
+</html>

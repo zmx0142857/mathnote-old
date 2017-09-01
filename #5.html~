@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>#5 一些数量级</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/mathFormat.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<base target="_blank" />
+
+</head>
+
+<body>
+
+<p class="nav">
+	<a href="%234.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="content.html">. . .</a>
+	<a href="%236.html" style="float: right">&gt;&gt;&gt;</a>
+</p>
+
+<h1>附录篇5: 一些数量级</h1>
+
+<table>
+<tr>
+	<td>数量级</td>
+	<td>-18</td>
+	<td>-15</td>
+	<td>-12</td>
+	<td>-9</td>
+	<td>-6</td>
+	<td>-3</td>
+	<td>-2</td>
+	<td>-1</td>
+</tr>
+<tr>
+	<td>英</td>
+	<td>atto</td>
+	<td>femto</td>
+	<td>pico</td>
+	<td>nano</td>
+	<td>μicro</td>
+	<td>milli</td>
+	<td>centi</td>
+	<td>deci</td>
+</tr>
+<tr>
+	<td>中</td>
+	<td>阿</td>
+	<td>飞</td>
+	<td>皮</td>
+	<td>纳</td>
+	<td>微</td>
+	<td>毫</td>
+	<td>厘</td>
+	<td>分</td>
+</tr>
+<tr>
+	<td>数量级</td>
+	<td>1</td>
+	<td>2</td>
+	<td>3</td>
+	<td>6</td>
+	<td>9</td>
+	<td>12</td>
+	<td>15</td>
+	<td>18</td>
+</tr>
+<tr>
+	<td>英</td>
+	<td>Deka</td>
+	<td>hecto</td>
+	<td>kilo</td>
+	<td>Mega</td>
+	<td>Giga</td>
+	<td>Tera</td>
+	<td>Peta</td>
+	<td>Exa</td>
+</tr>
+<tr>
+	<td>中</td>
+	<td>十</td>
+	<td>百</td>
+	<td>千</td>
+	<td>兆</td>
+	<td>-</td>
+	<td>-</td>
+	<td>-</td>
+	<td>-</td>
+</tr>
+</table>
+
+<a href="#4.html" style="float: left">&lt;&lt;&lt;</a>
+<a href="#6.html" style="float: right">&gt;&gt;&gt;</a>
+
+</body>
+
+<script src="js/randomColor.js"></script>
+<script src="js/setBgcolor.js"></script>
+
+</html>
