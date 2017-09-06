@@ -14,8 +14,11 @@
 
 <body>
 
-<a href="A1.html" style="float: left">&lt;&lt;&lt;</a>
-<a href="A3.html" style="float: right">&gt;&gt;&gt;</a>
+<div id="nav">
+	<a href="A1.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="content.html">· · ·</a>
+	<a href="A3.html" style="float: right">&gt;&gt;&gt;</a>
+</div>
 
 <h1>分析篇2: 疑难积分</h1>
 
@@ -199,9 +202,6 @@
 <p>`int e^(-x^2) text(d)x`, `int sin x/x text(d)x`, `int e^x/x text(d)x`, `int (text(d)x)/ln x`, `int (text(d)x)/sqrt(1 + x^4)`, `int sqrt(1-a^2 cos^2 theta) text(d) theta`.</p>
 
 <p>虽然原函数不初等, 但可以积出 `int_(-oo)^(+oo) e^(-x^2) text(d)x`. 利用重积分 `int int_D e^(-x^2-y^2) text(d)x text(d)y` (D是圆心在原点, 半径为R的圆域) `= int int_D rho e^(-rho^2) text(d)rho text(d)theta` `= int_0^(2pi)text(d)theta int_0^R rho e^(-rho^2)text(d)rho` `= pi(1 - e^(-R^2))`. 另一方面, `int int_(D_1) e^(-x^2-y^2) text(d)x text(d)y` (`D_1` 是矩形域 `[-R, R]xx[-R, R]`) `= int_(-R)^R e^(-x^2) text(d)x int_(-R)^R e^(-y^2) text(d)y` `= (int_(-R)^R e^(-x^2) text(d)x)^2`. 令 `R->+oo`, 得 `int_(-oo)^(+oo) e^(-x^2) text(d)x = sqrt(pi)`.</p>
-
-<a href="A1.html" style="float: left">&lt;&lt;&lt;</a>
-<a href="A3.html" style="float: right">&gt;&gt;&gt;</a>
 
 </body>
 
