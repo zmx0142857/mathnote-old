@@ -51,7 +51,7 @@ li {
 }
 
 table {
-	margin: 20px;
+	margin: 20px auto;
 	border-top: 2px solid;
 	border-bottom: 2px solid;
 }
