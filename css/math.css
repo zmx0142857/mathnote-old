@@ -30,8 +30,14 @@ h3 {
 }
 
 div.formula, p.formula  {
-	margin: 15px 0px;
+	display: table;
+	width: 100%;
+	margin: 15px 0;
 	text-align: center;
+}
+
+p.prove:first-letter {
+	font-weight: bold;
 }
 
 span.box {
@@ -41,13 +47,43 @@ span.box {
 	border-radius: 5px;
 }
 
+/* use this to number your formula */
+span.num {
+	display: table-cell;
+	width: 100px;
+	text-align: right;
+}
+
 span.right {
 	float: right;
-	line-height: 30px;
+}
+
+/* ol style (1) (2) (3)... */
+ol.tree ol {
+	padding: 0;
+	list-style-type: none;
+}
+
+ol.tree ol > li {
+	counter-increment: customlistcounter;
+}
+
+ol.tree ol > li:before {
+	content: "(" counter(customlistcounter) ") ";
+}
+
+ol.tree ol:first-child {
+	counter-reset: customlistcounter;
 }
 
 li {
 	padding: 5px 0;
+}
+
+/* list in two or more columns */
+ol.block li {
+	width: 250px;
+	display: inline-block;
 }
 
 table {
@@ -90,7 +126,7 @@ td, th {
 @media print {
 	body {
 		font-size: 10pt;
-		font-family: "AR PL UMing CN", times, serif;
+		font-family: STIGeneral, "AR PL UMing CN", times, serif;
 		background: rgb(255,255,255);
 	}
 

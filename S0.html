@@ -6,7 +6,7 @@
 <title>S0 排列组合</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="css/mathFormat.css" />
+<link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script> -->
 <!-- <script src="js/ASCIIMathML.js"></script> -->
@@ -43,6 +43,28 @@
 
 <h3>将 6 本不同的书分给 4 人:</h3>
 <p>先把书分成不加区分的 4 堆, 再分给 4 人. 共 65 * 4! = 1560 种.</p>
+
+<h2>削尖脑袋</h2>
+
+<h3>设圆周上有 n 个两两不同的点, 问: 这些点相连形成的 `((n),(2))` 条线段最多将这个圆形区域分割成几部分?</h3>
+
+<p>设答案是 F(n), 容易验证, F(1) = 1, F(2) = 2, F(3) = 4, F(4) = 8, F(5) = 16, 我们不禁猜想: `F(n) = 2^(n-1)` 吗?</p>
+
+<p>很遗憾, 猜想错误. 下面给出正解.</p>
+
+<p>设 f(n) = F(n+1) - F(n). 即考虑已有 n 个点时, 再加入一个点将增加多少块分割. 事实上, 如果从新加入的点开始, 沿圆周方向依次记已有的 n 个点为 `P_k`, k = 0, 1, 2, ..., n-1, 并将新的点与它们一一连接, 这样产生的线段分别记为 `s_k`, 则 `s_k` 分圆周为两部分, 上面分别有 k 个点 (编号小于 k 的) 和 n - 1 - k 个点 (编号大于 k 的). 要使这些线段将圆形区域分成尽可能多块, 只需左右两组点的所有连线在 `s_k` 上的交点两两不重合, 即 k(n - 1 - k) 个交点. 显然这些交点把 `s_k` 分为 k(n - 1 - k) + 1 段, 从而新产生同样数目的分割. 总之,
+
+<div class='formula'>`{:
+	( f(n) ,= sum_(k=0)^(n-1) [k(n - 1 - k) + 1] ),
+	( ,= 1/6 n^3 - 1/2 n^2 + 4/3 n.)
+:}` <span class='right'>`square`</span></div>
+
+(计算时用到了 Bernoulli 公式), 接着, 由于 F(1) = 1,
+
+<div class='formula'>`{:
+	( F(n) ,= F(1) + sum_(k=1)^(n-1) f(k) ),
+	( ,= 1/24 n^4 - 1/4 n^3 + 23/24 n^2 -3/4 n + 1. )
+:}`</div>
 
 </body>
 
