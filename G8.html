@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>G5 球面几何</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<base target="_blank" />
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="G4.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="content.html">· · ·</a>
+	<a href="G6.html" style="float: right">&gt;&gt;&gt;</a>
+</div>
+
+<h1>几何篇5: 球面几何</h1>
+
+<h2>G5.1 球面三角的余弦与正弦公式</h2>
+
+<img class="geo" src="img/G5-1-1.png" />
+
+<p>图中 `CM`, `CN` 分别是 `CA`, `CB` 的切线. 由平面三角的余弦定理,</p>
+
+<p class="formula">`MN^2 = OM^2 + ON^2 - 2*OM*ON*cos c.`</p>
+<p class="formula">`MN^2 = CM^2 + CN^2 - 2*CM*CN*cos C.`</p>
+
+<p>两式相减,</p>
+<p class="formula">`0 = 2*OC^2 + 2*CM*CN*cos c - 2*OM*ON*cos C,`</p>
+<p class="formula">`cos c = (OC)/(ON) * (OC)/(OM) + (CN)/(ON) * (CM)/(OM) * cos C,`</p>
+
+<p>即"余弦公式":</p>
+<p class="formula"><span class="boxed">`cos c = cos a * cos b + sin a * sin b * cos C.`</span></p>
+
+<img class="geo" src="img/G5-1-2.png" />
+
+<p>图中 `CD_|_Delta AOB`, `DE_|_OA`, `DF_|_OB`. 从而 `OA_|_Delta CED`, `OB_|_Delta CDF`. 于是</p>
+
+<p class="formula">`sin a/sin A = (CF)/(CO)//(CD)/(CE) = (CE*CF)/(CO*CD),`</p>
+<p class="formula">`sin b/sin B = (CE)/(CO)//(CD)/(CF) = (CE*CF)/(CO*CD).`</p>
+
+<p>即"正弦公式":</p>
+<p class="formula"><span class="boxed">`sin a/sin A = sin b/sin B.`</span></p>
+
+</body>
+
+<script src="js/randomColor.js"></script>
+<script src="js/setBgcolor.js"></script>
+
+</html>

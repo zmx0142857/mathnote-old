@@ -1,81 +1,196 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang='zh-cn'>
 
 <head>
 
-<title>A1 极限杂例</title>
-<meta charset="utf-8" />
+<title>A1 不等式</title>
+<meta charset='utf-8' />
 
-<link rel="stylesheet" type="text/css" href="css/math.css" />
-<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
-<base target="_blank" />
+<link rel='stylesheet' type='text/css' href='css/math.css' />
+<script src='http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full'></script>
+<base target='_blank' />
 
 </head>
 
 <body>
 
-<div id="nav">
-	<a href="A0.html" style="float: left">&lt;&lt;&lt;</a>
-	<a href="content.html">· · ·</a>
-	<a href="A2.html" style="float: right">&gt;&gt;&gt;</a>
+<div id='nav'>
+	<a href='content.html'>· · ·</a>
+	<a href='A1.html' id='next'>&gt;&gt;&gt;</a>
 </div>
 
-<h1>分析篇1: 极限杂例</h1>
+<h1>分析篇1: 不等式</h1>
 
-<h2>A1.1 证明: `lim_(n -> oo) root(n)(n) = 1.`</h2>
+<h2>A1.1 基本不等式</h2>
 
-<p><b>证:</b> `n gt 2` 时, 有</p>
-<p class="formula">
-	`1 lt root(n)(n)`
-	`= root(n)(sqrt n * sqrt n * 1)`
-	`lt (2 sqrt n + n - 2)/n`
-	`lt 2/sqrt n + 1.`
-</p>
-<p>由两边夹法则, 命题成立.</p>
+<p>设 `a, b in RR^+`, 则由 `(sqrt a - sqrt b)^2 = a + b - 2 sqrt(ab) ge 0` 得 `sqrt(ab) le (a+b)/2`, 其中等号成立当且仅当 `a = b`.</p>
 
-<h2>A1.2 证明: `lim_(n -> oo) a^n/(n!) = 0`, `AA a in R`.</h2>
-<p><b>证 </b>...</p>
+<p>上式两边同乘 `sqrt(ab)`, 得 `ab le (a+b)/2 sqrt(ab).` 所以 `(2ab)/(a+b) le sqrt(ab)`.</p>
 
-<h2>A1.5 证明: `lim_(n -> oo) (1 + 1/n)^n` 存在.</h2>
+<p>另一方面, 在 `2ab leq a^2+b^2` 的两边同时加上 `a^2+b^2`, 有 `(a+b)^2 le 2(a^2+b^2)`, 即 `(a+b)^2/4 le (a^2+b^2)/2`,  两边同时取算术平方根就有 `(a+b)/2 le sqrt((a^2+b^2)/2)`.</p>
 
-<p><b>证:</b> 先证 `(1 + 1/n)^n` 单调递增. 由均值不等式 (A0.3) 知:</p>
-
-<p class="formula">`root(n+1)((1 + 1/n)^n) lt (n(1 + 1/n) + 1)/(n+1) = 1 + 1/(n+1).`</p>
-
-<p>所以 `(1 + 1/n)^n lt (1 + 1/(n+1))^(n+1).`</p>
-
-<p>再证此数列有上界. `n ge 2` 时:</p>
-
-<p>
-	`(1 + 1/n)^n = 1 + n * 1/n + (n(n-1))/(2!) * 1/n^2 + cdots + 1/n^n`
-	`lt sum_(k=0)^n 1/(k!)`
-	`le 2 + sum_(k=2)^n 1/(k(k-1))`
-	`= 2 + 1 - 1/n lt 3.`
+<p>综合上述三个不等式得到
+	<div class='formula'>`(2ab)/(a+b) le sqrt(ab) le (a+b)/2 le sqrt((a^2+b^2)/2)`.</div>
 </p>
 
-<p>从而由单调有界原理知极限 `lim_(n -> oo) (1 + 1/n)^n` 存在. 它的极限值就是我们熟知的自然对数的底 `e.` </p>
+<p>其中三个等号成立当且仅当 `a=b`.</p>
 
-<p><b>推论A1.5.1</b> 由极限的四则运算得到:</p>
+<p>这四个数分别叫做 `a` 和 `b` 的调和平均数、几何平均数、算术平均数与平方平均数. 将它们分别记作 `s`, `t`, `u`, `v`, 我们有
+<div class='formula, block'>
+	<li>`1/s = 1/2(1/a + 1/b)`,</li>
+	<li>`ln t = 1/2(ln a + ln b)`,</li>
+	<li>`u = 1/2(a+b)`,</li>
+	<li>`v^2 = 1/2(a^2 + b^2)`.</li>
+</div>
+</p>
 
-<p class="formula">`lim_(n -> oo) (1 + 1/n)^(n+1) = lim_(n -> oo) (1 + 1/(n+1))^n = e,`</p>
+<h2>A1.2 柯西不等式</h2>
 
-<p class="formula">`lim_(n -> oo) (1 - 1/n)^n = lim_(n -> oo) (1 - 1/n)^(n+1) = lim_(n -> oo) (1 - 1/(n+1))^n = 1/e.`</p>
+<p>对任意非零实数 `a_1, a_2, cdots, a_n` 与 `b_1, b_2, cdots, b_n`, 下面的不等式成立:
 
-<p><b>推论A1.5.2</b> `(1 + 1/n)^n lt e lt (1 + 1/n)^(n+1), quad` `AA n in NN.`</p>
+	<div class='formula'>`( sum_(k=1)^n a_k b_k )^2 le ( sum_(k=1)^n a_k^2 ) ( sum_(k=1)^n b_k^2 ),`</div>
 
-<p>或等价地, `1/(n+1) lt ln(1 + 1/n) lt 1/n, quad` `AA n in NN.`</p>
+其中等号成立当且仅当存在实数 `lambda`, 使得 `b_k = lambda a_k, quad k=1, 2, cdots, n`.</p>
 
-<p><b>证:</b> 不等式的前半部分由 A1.5 的证明可得. 后半部分由推论 A1.5.2, `lim_(n -> oo) (1 + 1/n)^(n+1) = e,` 因此只需证明 `(1 + 1/n)^(n+1)` 严格单调递减. 由均值不等式有:</p>
+<p class='prove'>证 令 `f(x) = sum_(k=1)^n (a_k x - b_k)^2 = (sum_(k=1)^n a_k^2) x^2 - 2(sum_(k=1)^n a_k b_k) x + sum_(k=1)^n b_k^2 ge 0.`</p>
 
-<p class="formula">`root(n+2)(1/( (1 + 1/n)^(n+1) )) lt 1/(n+2)((n+1)/(1 + 1/n) + 1) = (n+1)/(n+2).`</p>
+<p>这是 `x` 的一元二次函数, 易知其判别式
 
-<p>所以 `(1 + 1/n)^(n+1) gt ((n+2)/(n+1))^(n+2) = (1 + 1/(n+1))^(n+2).` 证毕.</p>
+<div class='formula'>`Delta = 4( sum_(k=1)^n a_k b_k )^2` `- 4( sum_(k=1)^n a_k^2 )( sum_(k=1)^n b_k^2 ) le 0`,</div>
 
-<p><b>注A1.5.2</b> 此不等式也可由微分中值定理得到.</p>
+即要证的不等式. 其中等号成立时, `Delta = 0`, 此时必存在唯一的实数 `lambda` 使得 `f(lambda) = 0`, 即成立 `b_k = lambda a_k`, `k = 1, 2, cdots, n`. 反之若存在实数 `lambda`, 使得 `b_k = lambda a_k`, `k = 1, 2, cdots, n`, 从而 `f(lambda) = 0`, 也能推得 `Delta = 0`.<span class='right'>□</span></p>
+
+<h2>A1.3 均值不等式</h2>
+
+<p>设 `a_1, a_2, cdots, a_n` 是 `n` 个正实数 `(n ge 2),` 记 `S_n = n/( sum_(k=1)^n 1/(a_k) ),` `T_n = ^n sqrt( prod_(k=1)^n a_k ),` `U_n = ( sum_(k=1)^n a_k )/n,` `V_n = sqrt( ( sum_{k=1}^n a_k^2 )/n ),` 则下面的不等式成立：</p>
+
+<p class='formula'>`S_n le T_n le U_n le V_n, quad (A0-3-1)`</p>
+
+<p>三个等号成立当且仅当 `a_1 = a_2 = cdots = a_n.`</p>
+
+<p><b>证: </b>(I) 证明 `T_n le U_n.` `n=2`  时此不等式即基本不等式. 假设 `n=m` 时不等式成立, 则因为</p>
+
+<p class='formula'>`U_(m+1) = ( sum_(k=1)^(m+1) a_k )/(m+1) => (m+1) U_(m+1) = sum_(k=1)^(m+1) a_k,`</p>
+
+<p>所以</p>
+
+<p class='formula'>`{:
+	( U_(m+1) ,= (2mU_(m+1)) / (2m) = ( (m+1) U_(m+1) + (m-1) U_(m+1) ) / (2m) ),
+	( ,= ( sum_(k=1)^(m+1) a_k + (m-1) U_(m+1)) / (2m) ),
+	( ,= 1/2 ( (sum_(k=1)^m a_k)/m + (a_(m+1) + (m-1) U_(m+1))/m  ). )
+:}`</p>
+
+<p>再由归纳假设和基本不等式,</p>
+
+<p class='formula'>`U_(m+1) ge ( root(m)(prod_{k=1}^m a_k) + root(m)(a_(m+1) * U_(m+1)^(m-1)) ) /2` `ge root(2m)(prod _(k=1)^(m+1) a_k * U_(m+1)^(m-1)).`</p>
+
+<p>所以 `U_(m+1)^(2m) ge prod_(k=1)^(m+1) a_k * U_(m+1)^(m-1),` 进而有 `U_(m+1) ge root(m+1)( prod_(k=1)^(m+1) a_k ) = T_(m+1).`</p>
+
+<p>所以 `T_n le U_n,` 由基本不等式的取等条件知, 这里等号成立当且仅当 `a_1 = a_2 = cdots = a_n.`</p>
+
+<p>(II) 证明 `S_n le T_n.` 由 (I) 知 `1/n ( sum_(k=1)^n 1/a_k ) ge root(n)( prod_(k=1)^n 1/a_k ),` 即 `1/S_n ge 1/T_n.` 所以 `S_n le T_n.` 这里等号成立的条件同 (I).</p>
+
+<p>(III) 证明 `U_n le V_n.` 由柯西不等式有</p>
+
+<p class='formula'>`( sum_(k=1)^n 1 * a_k )^2 le ( sum_(k=1)^n 1^2 ) ( sum_(k=1)^n a_k^2 ),`</p>
+
+<p>即 `U_n le V_n,` 这里等号成立当且仅当 `a_1/1 = a_2/1 = cdots = a_n/1.`</p>
+
+<p>联系 (I), (II), (III), 对于任意自然数 `n ge 2,` (A0-3-1) 都成立, 且三个等号成立的充要条件均为 `a_1 = a_2 = cdots = a_n.` 证毕.</p>
+
+<h2>A1.4 绝对值不等式</h2>
+
+<p>关于绝对值, 我们已经知道对任意实数 `a` 和非负实数 `m,` 有</p>
+
+<p class='formula'>`|a| le m <=> -m le a le m.`</p>
+
+<p>又设 `b` 是一个实数, 显然有 `|a| le |a|, |b| le |b|.` 根据上式, 这等价于</p>
+
+<p class='formula'>`-|a| le a le |a|, -|b| le b le |b|.`</p>
+
+<p>两式相加,</p>
+<p class='formula'>`-(|a|+|b|) le a+b le |a|+|b|,`</p>
+
+<p>这等价于</p>
+<p class='formula'>`|a+b| le |a|+|b|. quad (A0-4-1)`</p>
+
+<p>由上式又得</p>
+<p class='formula'>`|a+b|-|b| le |a|,`</p>
+
+<p>取 `c=a+b, d=-b,` 上式即</p>
+<p class='formula'>`|c|-|d| le |c+d|. quad (A0-4-2)`</p>
+
+<p>对称地, 也有</p>
+<p class='formula'>`|d|-|c| le |c+d|. quad (A0-4-3)`</p>
+
+<p>易知 (A0-4-2), (A0-4-3) 中的 `c` 和 `d` 可以取到任意实数. 综合 (A-4-1) 到 (A-4-3) 就得到</p>
+
+<p class='formula'>`|{:|a|-|b|:}| le |a +- b| le |a|+|b|,`</p>
+
+<p>其中第一个不等号中的等号成立当且仅当 `ab le 0;`  第二个不等号中的等号成立当且仅当 `ab ge 0.`</p>
+
+<h2>A1.5 拆项法举例</h2>
+
+<p><b>例1</b></p>
+<p class='formula'>
+	`1/n - 1/(n+1)` `= 1/(n(n+1))`
+	`lt 1/(n^2)`
+	`lt 1/(n(n-1))` `= 1/(n-1) - 1/n.`
+</p>
+
+<p><b>例2</b></p>
+<p class='formula'>
+	`2(sqrt(n+1) - sqrt n)` `= 2/(sqrt(n+1) + sqrt n}`
+	`lt 1/sqrt n`
+	`lt 2/(sqrt n + sqrt(n-1))` `= 2 (sqrt n - sqrt(n-1)).`
+</p>
+
+<h2>A1.6 杂例</h2>
+
+<p><b>例1</b> 证明: `log_(n+1) (n+2) lt log_(n) (n+1), quad` `n = 2, 3, cdots.`</p>
+
+<p><b>证: </b>因为</p>
+
+<p class='formula'>
+	`sqrt(ln n * ln(n+2))`
+	`lt (ln n + ln(n+2))/2`
+	`= ln sqrt(n(n+2))`
+	`= ln sqrt((n+1)^2-1)`
+	`lt ln(n+1)`
+</p>
+
+<p>所以 `(ln(n+2))/(ln(n+1)) lt (ln(n+1))/(ln n),` 即 `log_(n+1) (n+2) lt log_n (n+1),` 证毕.</p>
+
+<p><b>例2</b> 设 `a, b gt 0.` 证明：数列 `x_n = root(n)((a^n+b^n)/2)` 单调递增.</p>
+
+<p><b>证:</b> 只需证对任意正整数 `n`,</p>
+<p class='formula'>`root(n)((a^n+b^n)/2) le root(n+1)(( a^(n+1) + b^(n+1) )/2).`</p>
+
+<p>即证</p>
+<p class='formula'> `(a^n+b^n)^(n+1) le 2( a^(n+1)+b^(n+1) )^n.`</p>
+
+<p>当 `n=1` 时, 上述不等式即 `(a+b)^2 le 2(a^2+b^2),` 显然成立.</p>
+
+<p>假设当 `n=k` 时不等式成立, 即 `(a^k+b^k)^(k+1) / ( a^(k+1)+b^(k+1) )^k le 2.`</p>
+
+<p>则 `n=k+1` 时, 断言</p>
+
+<p class='formula'>`( a^(k+1)+b^(k+1) )^(k+2) / ( a^(k+2)+b^(k+2) )^(k+1) le (a^k+b^k)^(k+1) / ( a^(k+1)+b^(k+1) )^k quad (A0-6-2)`</p>
+
+<p>成立, 这只要证</p>
+<p class='formula'>`( a^(k+1)+b^(k+1) )^(2(k+1)) le [ (a^k+b^k) ( a^(k+2) + b^(k+2) ) ] ^ (k+1),`</p>
+
+<p>即证</p>
+<p class='formula'>`( a^(k+1)+b^(k+1) )^2 le (a^k+b^k)( a^(k+2)+b^(k+2) ),`</p>
+
+<p>即证</p>
+<p class='formula'>`2(ab)^(k+1) le (ab)^k (a^2+b^2).`</p>
+
+<p>即证 `2ab le a^2+b^2.` 这显然成立, 所以 (A0-6-2) 成立, 从而 `n=k+1` 时不等式成立. 再由数学归纳法知原命题成立.</p>
 
 </body>
 
-<script src="js/randomColor.js"></script>
-<script src="js/setBgcolor.js"></script>
+<script src='js/randomColor.js'></script>
+<script src='js/setBgcolor.js'></script>
 
 </html>

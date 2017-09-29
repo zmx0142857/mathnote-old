@@ -29,6 +29,10 @@ h3 {
 	font-size: 1.2em;
 }
 
+math {
+	font-size: 1.2em;
+}
+
 div.formula, p.formula  {
 	display: table;
 	width: 100%;
@@ -36,8 +40,16 @@ div.formula, p.formula  {
 	text-align: center;
 }
 
-p.prove:first-letter {
+.prove:before, .solve:before {
 	font-weight: bold;
+	padding: 0 10px 0 0;
+}
+
+.prove:before {
+	content: "证";
+}
+.solve:before {
+	content: "解";
 }
 
 span.box {
@@ -72,8 +84,12 @@ ol.tree ol > li:before {
 	content: "(" counter(customlistcounter) ") ";
 }
 
-ol.tree ol:first-child {
+ol.tree ol {
 	counter-reset: customlistcounter;
+}
+
+ol {
+	margin: 10px;
 }
 
 li {
@@ -81,7 +97,7 @@ li {
 }
 
 /* list in two or more columns */
-ol.block li {
+.block li {
 	width: 250px;
 	display: inline-block;
 }
@@ -124,6 +140,11 @@ td, th {
 
 /* on printer... */
 @media print {
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+
 	body {
 		font-size: 10pt;
 		font-family: STIGeneral, "AR PL UMing CN", times, serif;
@@ -136,7 +157,7 @@ td, th {
 }
 
 /* on your mobile phone... */
-@media (min-height:800px) {
+@media (min-height:800px min-width: 800px) {
 	#nav {
 		height: 64px;
 	}
