@@ -3,7 +3,7 @@
 
 <head>
 
-<title>A2 疑难积分</title>
+<title>A4 疑难积分</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -16,21 +16,21 @@
 <body>
 
 <div id="nav">
-	<a href="A1.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="A3.html" style="float: left">&lt;&lt;&lt;</a>
 	<a href="content.html">· · ·</a>
-	<a href="A3.html" style="float: right">&gt;&gt;&gt;</a>
+	<a href="A5.html" style="float: right">&gt;&gt;&gt;</a>
 </div>
 
-<h1>分析篇2: 疑难积分</h1>
+<h1>分析篇4: 疑难积分</h1>
 
-<h2>A2.0 关键公式</h2>
+<h2>A4.0 关键公式</h2>
 <ul>
 <li>`int_a^b f(x) text(d)x stackrel(x=a+b-t)(=====) int_a^b f(a+b-t)text(d)t.`</li>
 <li>如果 `f(x)` 有对称轴 `x = u`, 即 `f(x) = f(2u-x)`, 那么 `int_(u-a)^u f(x) text(d)x = int_u^(u+a) f(x) text(d)x.`</li>
 <li>如果 `f(x)` 有对称中心 `(u, v)`, 即 `f(x) = 2v - f(2u-x)`, 那么 `int_(u-a)^u f(x) text(d)x + int_u^(u+a) f(x) text(d)x = 2va.`</li>
 </ul>
 
-<h2>A2.1 `I = int_0^(pi/2) ln sin x text(d)x.`</h2>
+<h2>A4.1 `I = int_0^(pi/2) ln sin x text(d)x.`</h2>
 
 <p>令 `x = pi/2 - t,` 则 `I = int_0^(pi/2) ln cos t text(d)t.` 注意到 `[0, pi]` 是 `sin x` 的对称区间, 所以又有 `int_0^pi ln sin x = 2I.` 于是</p>
 
@@ -43,7 +43,7 @@
 
 <p>故 `I = -(pi ln2)/2.`</p>
 
-<h2>A2.2 `I = int (text(d)x) / sqrt((a+x)(b-x)).`</h2>
+<h2>A4.2 `I = int (text(d)x) / sqrt((a+x)(b-x)).`</h2>
 
 <p>令 `t = sqrt((a+x)/(b-x)),` 则 `x = (bt^2-a) / (1+t^2),` `text(d)x = (2(a+b)t) / (1+t^2)^2 text(d)t.` 于是</p>
 
@@ -53,7 +53,7 @@
 	( ,= 2 text(sgn)(a+b) * arctan sqrt((a+x)/(b-x)) + C . )
 :}`</p>
 
-<h2>A2.3 `I = int_h^(R sin phi) arccos{: (x cot phi) / sqrt(R^2-x^2) :} text(d)x, quad` `0 lt h lt R sin phi, phi in [0, pi/2).`</h2>
+<h2>A4.3 `I = int_h^(R sin phi) arccos{: (x cot phi) / sqrt(R^2-x^2) :} text(d)x, quad` `0 lt h lt R sin phi, phi in [0, pi/2).`</h2>
 
 <p>令 `u = (x cot phi) / sqrt(R^2-x^2),` 则 `x = (Ru) / sqrt(u^2 + cot^2 phi).` 记 `r = sqrt(R^2 - h^2),` 于是</p>
 
@@ -66,7 +66,7 @@
 	( ,= R arccos{: (R cos phi)/r :} - h arccos{: (h cot phi)/r :}. )
 :}`</p>
 
-<h2>A2.4 `I = int sqrt((a^2x-b^2) / (1-x)) (text(d)x)/x.`</h2>
+<h2>A4.4 `I = int sqrt((a^2x-b^2) / (1-x)) (text(d)x)/x.`</h2>
 
 <p>令 `t = sqrt((a^2x-b^2)/(1-x)),` 则 `x = (b^2+t^2)/(a^2+t^2),` `text(d)x = (2t(a^2-b^2)) / (a^2+t^2)^2 text(d)t.` 于是</p>
 
@@ -78,7 +78,7 @@
 
 <p>再将 `t` 代回, 即得最终结果.</p>
 
-<h2>A2.5 `I = int_(h_1)^(r_2) arccos{: (h_2)/sqrt(R^2-x^2) :} text(d)x,`
+<h2>A4.5 `I = int_(h_1)^(r_2) arccos{: (h_2)/sqrt(R^2-x^2) :} text(d)x,`
 其中 `R = sqrt(h_1^2 + r_1^2) = sqrt(h_2^2 + r_2^2).`</h2>
 
 <p>令 `u = h_2/sqrt(R^2-x^2),` 则 `x = sqrt( R^2 - (h_2/u)^2 ).` 于是</p>
@@ -97,7 +97,7 @@
 <p>故</p>
 <p class="formula">`I = R arccos{:(h_1 h_2)/(r_1 r_2):} - h_1 arccos{:h_2/r_1:} - h_2 arccos{:h_1/r_2:}.`</p>
 
-<h2>A2.6 `int sqrt(a^2 - x^2) text(d)x.`</h2>
+<h2>A4.6 `int sqrt(a^2 - x^2) text(d)x.`</h2>
 
 <p>原式 `= 1/2 int sqrt(a^2 - x^2) text(d)x + 1/2 int sqrt(a^2 - x^2) text(d)x.`</p>
 
@@ -113,7 +113,7 @@
 
 <p>类似地可以算出 `int sqrt(a^2+x^2) text(d)x = a^2/2 ln (x + sqrt(a^2+x^2)) + x/2 sqrt(a^2+x^2) + C.`</p>
 
-<h2>A2.7 `I_n = int_0^(pi/2) sin^n x text(d)x = int_0^(pi/2) cos^n x text(d)x.`</h2>
+<h2>A4.7 `I_n = int_0^(pi/2) sin^n x text(d)x = int_0^(pi/2) cos^n x text(d)x.`</h2>
 
 <p>原式等于</p>
 <p class="formula">`{:
@@ -134,7 +134,7 @@
 	( (n-1)/n * (n-3)/(n-2) cdots 1/2 * pi/2, if n in Even. )
 :}`</p>
 
-<h2>A2.8 `I_n = int (text(d)x) / (x^2 + a)^n.`</h2>
+<h2>A4.8 `I_n = int (text(d)x) / (x^2 + a)^n.`</h2>
 
 <p class="formula">`{:
 	( I_(n-1) ,= int (text(d)x) / (x^2 + a)^(n-1) ),
@@ -145,7 +145,7 @@
 
 <p>故 `(2n-2)aI_n = x/(x^2+a)^(n-1) + (2n-3)I_(n-1).`</p>
 
-<h2>A2.9 `int (text(d)x)/(ax^2 + b)^2.`</h2>
+<h2>A4.9 `int (text(d)x)/(ax^2 + b)^2.`</h2>
 
 <p>在上题的结果中取 n = 2 得</p>
 
@@ -154,7 +154,7 @@
 <p>于是</p>
 <p class="formula">`2b int (text(d)x)/(ax^2 + b)^2 = x/(ax^2 + b) + int (text(d)x) / (ax^2 + b).`</p>
 
-<h2>A2.10 `int x^2 sin^3 x text(d)x.`</h2>
+<h2>A4.10 `int x^2 sin^3 x text(d)x.`</h2>
 
 <p>原式等于</p>
 <p class="formula">`{:
@@ -172,7 +172,7 @@
 <p class="formula">
 `- x^2 cos x + 4/3 x sin x + 14/9 cos x + 1/3 x^2 cos^3 x + 2/9 x sin^3 x - 2/27 cos^3 x + C.`</p>
 
-<h2>A2.11 `int sqrt(1+x^4) / (x^3) text(d)x.`</h2>
+<h2>A4.11 `int sqrt(1+x^4) / (x^3) text(d)x.`</h2>
 
 <p>依然是分子有理化. 令 `t = x^2,` 则 `text(d)t = 2x text(d)x.` 原式等于</p>
 
@@ -187,7 +187,7 @@
 <p>所以原式等于</p>
 <p class="formula">`1/2 ln (x^2 + sqrt(1+x^4)) - sqrt(1+x^4) / (2x^2) + C.`</p>
 
-<h2>A2.12 `I = int e^(ax) cos bx text(d)x.`</h2>
+<h2>A4.12 `I = int e^(ax) cos bx text(d)x.`</h2>
 
 <p class="formula">`{:
 	( (a^2+b^2)I ,= a^2 int e^(ax) cos bx text(d)x + b^2 int e^(ax) cos bx text(d)x ),
@@ -199,14 +199,14 @@
 <p>所以</p>
 <p class="formula">`I = e^(ax)/(a^2+b^2) (a cos bx + b sin bx) + C.`</p>
 
-<h2>A2.13 这些不定积分没有初等的表达式:</h2>
+<h2>A4.13 这些不定积分没有初等的表达式:</h2>
 <p>`int e^(-x^2) text(d)x`, `int sin x/x text(d)x`, `int e^x/x text(d)x`, `int (text(d)x)/ln x`, `int (text(d)x)/sqrt(1 + x^4)`, `int sqrt(1-a^2 cos^2 theta) text(d) theta`.</p>
 
 <p>虽然原函数不初等, 但可以积出 `int_(-oo)^(+oo) e^(-x^2) text(d)x`. 利用重积分 `int int_D e^(-x^2-y^2) text(d)x text(d)y` (D是圆心在原点, 半径为R的圆域) `= int int_D rho e^(-rho^2) text(d)rho text(d)theta` `= int_0^(2pi)text(d)theta int_0^R rho e^(-rho^2)text(d)rho` `= pi(1 - e^(-R^2))`. 另一方面, `int int_(D_1) e^(-x^2-y^2) text(d)x text(d)y` (`D_1` 是矩形域 `[-R, R]xx[-R, R]`) `= int_(-R)^R e^(-x^2) text(d)x int_(-R)^R e^(-y^2) text(d)y` `= (int_(-R)^R e^(-x^2) text(d)x)^2`. 令 `R->+oo`, 得 `int_(-oo)^(+oo) e^(-x^2) text(d)x = sqrt(pi)`.</p>
 
 </body>
 
-<script src="js/randomColor.js"></script>
-<script src="js/setBgcolor.js"></script>
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
 
 </html>
