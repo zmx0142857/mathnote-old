@@ -3,11 +3,12 @@
 
 <head>
 
-<title>A3 伯努利数</title>
+<title>A5 伯努利数</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<script src='js/asciimathml.js'></script>
 <base target="_blank" />
 
 </head>
@@ -15,14 +16,14 @@
 <body>
 
 <div id="nav">
-	<a href="A2.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="A4.html" style="float: left">&lt;&lt;&lt;</a>
 	<a href="content.html">· · ·</a>
-	<a href="A4.html" style="float: right">&gt;&gt;&gt;</a>
+	<a href="A6.html" style="float: right">&gt;&gt;&gt;</a>
 </div>
 
-<h1>分析篇3: 关于 `sum_(k=1)^n k^m` 的一些结论</h1>
+<h1>分析篇5: 关于 `sum_(k=1)^n k^m` 的一些结论</h1>
 
-<p><b>注A3.1</b> 本文实际上讨论伯努利数, 文中的所谓 `a_n`, 就是 (第二类) 伯努利数 `B_n^+`. 请参考<a href="https://en.wikipedia.org/wiki/Bernoulli_number">维基百科</a>.</p>
+<p><b>注A5.1</b> 本文实际上讨论伯努利数, 文中的所谓 `a_n`, 就是 (第二类) 伯努利数 `B_n^+`. 请参考<a href="https://en.wikipedia.org/wiki/Bernoulli_number">维基百科</a>.</p>
 
 <p>可以用如下方法求 `sum_(k=1)^n k^2` 的多项式表达:</p>
 
@@ -56,7 +57,7 @@
 <p class="formula">`(m+1)k^m = (k+1)^(m+1) - k^(m+1) - sum_(i=0)^(m-1) ((m+1),(i)) k^i,`</p>
 
 <p>两边求和</p>
-<div class="formula">`(m+1) sum_(k=1)^n k^m = (n+1)^(m+1) - 1 - sum_(i=0)^(m-1) ((m+1),(i)) sum_(k=1)^n k^i.`<span class='right'>`(A3-1)`</span></div>
+<div class="formula">`(m+1) sum_(k=1)^n k^m = (n+1)^(m+1) - 1 - sum_(i=0)^(m-1) ((m+1),(i)) sum_(k=1)^n k^i.`<span class='right'>`(A5-1)`</span></div>
 
 <p>由归纳假设, 上式等号右端的最后一项是 (关于 `n` 的) 常数项为 `0` 的 `m+1` 次多项式; 而 `(n+1)^(m+1) - 1` 显然也是如此. 所以 `S_m(n)` 一定是关于 `n` 的常数项为 `0` 的 `m+1` 次多项式. □</p>
 
@@ -65,10 +66,10 @@
 <p><b>证:</b> 取 n=1 立得. □</p>
 
 <h3><b>性质三</b> 设 `a_m` 是 `S_m(n)` 的一次项系数, 则</h3>
-<p class="formula">`a_m = 1 - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) a_i.` `quad (A3-2)`</p>
+<p class="formula">`a_m = 1 - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) a_i.` `quad (A5-2)`</p>
 
 <p><b>证:</b> 在式 (A3-1) 两端对 `n` 求导, 再同除以 `m+1`, 得</p>
-<p class="formula">`text(d)/(text(d)n) S_m(n) = (n+1)^m - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) text(d)/(text(d)n) S_i.` `quad (A3-3)`</p>
+<p class="formula">`text(d)/(text(d)n) S_m(n) = (n+1)^m - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) text(d)/(text(d)n) S_i.` `quad (A5-3)`</p>
 
 <p>由上式两端的常数项相等, 即知性质三成立. □</p>
 
@@ -76,7 +77,7 @@
 
 <p><b>证:</b> `m=1` 时, `text(d)/(text(d)n) S_1 - a_1 = text(d)/(text(d)n) ( n^2/2 + n/2 ) - 1/2 = n = 1 * S_0`, 性质四成立. 假设性质四对于正整数 `1, 2, cdots, m-1` 已成立, 考察正整数 `m` 的情形:</p>
 
-<p>由 (A3-2) 与 (A3-3) 有</p>
+<p>由 (A5-2) 与 (A5-3) 有</p>
 <p class="formula">`{:
 	( text(d)/(text(d)n) S_m - a_m ,= (n+1)^m - 1 - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) ( text(d)/(text(d)n) S_i - a_i ) ),
 	( ,= (n+1)^m - 1 - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) i S_(i-1) ),
@@ -84,12 +85,12 @@
 	( ,= (n+1)^m - 1 - sum_(i=0)^(m-2) ((m),(i)) S_i. )
 :}`</p>
 
-<p>再由 (A3 - 1),</p>
+<p>再由 (A5 - 1),</p>
 <p class="formula">`m S_(m-1) = (n+1)^m - 1 - sum_(i=0)^(m-2) ((m),(i)) S_i.`</p>
 
 <p>所以 `text(d)/(text(d)n) S_m - a_m = m S_(m-1).` 由第二数学归纳法知, 性质四对于任意正整数成立. □</p>
 
-<p><b>注A3.2</b> 借助性质三、四, 我们将 `S_m` 的系数排列如下:</p>
+<p><b>注A5.2</b> 借助性质三、四, 我们将 `S_m` 的系数排列如下:</p>
 <p class="formula">`{:
 	( m, text(Coefficient),           S_m(n) ),
 	( 0, 1,                           n ),
@@ -133,7 +134,7 @@
 
 </body>
 
-<script src="js/randomColor.js"></script>
-<script src="js/setBgcolor.js"></script>
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
 
 </html>
