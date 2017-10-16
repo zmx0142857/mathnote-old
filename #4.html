@@ -25,8 +25,6 @@
 
 <h2>恒等式</h2>
 
-<!-- <p class="formula"><span class="boxed">`P ^^ Q vv not R -> Q harr hArr => P`</span></p> -->
-
 <table>
 <tr>
 	<td>`P ^^ (Q vv R) iff P ^^ Q vv P ^^ R`</td>
@@ -61,12 +59,13 @@
 	<td>归谬律</td>
 </tr>
 <tr>
-	<td>`{:
-		( (P harr Q) ,iff (P rarr Q) ^^ (Q rarr P) ),
-		( ,iff (not P vv Q) ^^ (not Q vv P) ),
-		( ,iff P ^^ Q vv not P ^^ not Q ),
-		( ,iff not (not P harr Q) )
-	:}`</td>
+	<td>`
+{:(				(P harr Q)
+		,iff	(P rarr Q) ^^ (Q rarr P)
+),(		,iff	(not P vv Q) ^^ (not Q vv P)
+),(		,iff	P ^^ Q vv not P ^^ not Q
+),(		,iff	not (not P harr Q)
+):}`</td>
 	<td>等值表达式</td>
 </tr>
 <tr>
@@ -129,7 +128,9 @@
 	<td>构造性二难推理</td>
 </tr>
 <tr>
-	<td>`(P rarr Q) ^^ (R rarr S) ^^ (not Q vv not S) rArr not P vv not R`</td>
+	<td>`(P rarr Q) ^^ (R rarr S) ^^ (not Q vv not S)
+		rArr not P vv not R`
+	</td>
 	<td>破坏性二难推理</td>
 </tr>
 </table>

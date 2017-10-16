@@ -23,54 +23,100 @@
 
 <h1>分析篇2: 极限杂例</h1>
 
-<h2>A2.1 证明: `lim_(n -> oo) root(n)(n) = 1.`</h2>
+<h2>A2.1 证明: `lim_(n -> oo) root(n)(n) = 1`.</h2>
 
-<p class="prove"><b>证:</b> `n gt 2` 时, 有</p>
-<p class="formula">
-	`1 lt root(n)(n)`
-	`= root(n)(sqrt n * sqrt n * 1)`
-	`lt (2 sqrt n + n - 2)/n`
-	`lt 2/sqrt n + 1.`
+<p class="prove">
+	`n gt 2` 时, 有
+	<div class="formula">
+		`   1 lt root(n)(n)`
+		`=  root(n)(sqrt n * sqrt n * 1)`
+		`lt (2 sqrt n + n - 2)/n`
+		`lt 2/sqrt n + 1`.
+	</div>
+
+	由两边夹法则, 命题成立.
 </p>
-<p>由两边夹法则, 命题成立.</p>
 
 <h2>A2.2 证明: `lim_(n -> oo) a^n/(n!) = 0`, `AA a in R`.</h2>
-<p><b>证 </b>...</p>
+<p class="prove">
+	...
+</p>
 
 <h2>A2.5 证明: `lim_(n -> oo) (1 + 1/n)^n` 存在.</h2>
 
-<p><b>证:</b> 先证 `(1 + 1/n)^n` 单调递增. 由均值不等式 (A0.3) 知:</p>
+<p class="prove">
+	先证 `(1 + 1/n)^n` 单调递增.
+	由均值不等式 (A1.3) 知:
 
-<p class="formula">`root(n+1)((1 + 1/n)^n) lt (n(1 + 1/n) + 1)/(n+1) = 1 + 1/(n+1).`</p>
+	<div class="formula">
+		`  root(n+1)((1 + 1/n)^n)
+		lt (n(1 + 1/n) + 1)/(n+1)
+		=  1 + 1/(n+1)`.
+	</div>
 
-<p>所以 `(1 + 1/n)^n lt (1 + 1/(n+1))^(n+1).`</p>
+	所以
+		`(1 + 1/n)^n lt (1 + 1/(n+1))^(n+1)`.
 
-<p>再证此数列有上界. `n ge 2` 时:</p>
+	再证此数列有上界. `n ge 2` 时:
 
-<p>
-	`(1 + 1/n)^n = 1 + n * 1/n + (n(n-1))/(2!) * 1/n^2 + cdots + 1/n^n`
-	`lt sum_(k=0)^n 1/(k!)`
-	`le 2 + sum_(k=2)^n 1/(k(k-1))`
-	`= 2 + 1 - 1/n lt 3.`
+	<div class="formula">
+		`	(1 + 1/n)^n
+		=	1 + n * 1/n + (n(n-1))/(2!) * 1/n^2 + cdots + 1/n^n`
+		`lt	sum_(k=0)^n 1/(k!)`
+		`le	2 + sum_(k=2)^n 1/(k(k-1))`
+		`=	2 + 1 - 1/n lt 3`.
+	</div>
+
+	从而由单调有界原理知极限
+		`lim_(n -> oo) (1 + 1/n)^n`
+	存在. 它的极限值就是我们熟知的自然对数的底 `e`. 
 </p>
 
-<p>从而由单调有界原理知极限 `lim_(n -> oo) (1 + 1/n)^n` 存在. 它的极限值就是我们熟知的自然对数的底 `e.` </p>
+<p><b>推论A2.5.1</b> 由极限的四则运算得到:
 
-<p><b>推论A2.5.1</b> 由极限的四则运算得到:</p>
+	<div class="formula">
+		` lim_(n -> oo) (1 + 1/n)^(n+1)
+		= lim_(n -> oo) (1 + 1/(n+1))^n = e`,
+	</div>
 
-<p class="formula">`lim_(n -> oo) (1 + 1/n)^(n+1) = lim_(n -> oo) (1 + 1/(n+1))^n = e,`</p>
+	<div class="formula">
+		` lim_(n -> oo) (1 - 1/n)^n
+		= lim_(n -> oo) (1 - 1/n)^(n+1)
+		= lim_(n -> oo) (1 - 1/(n+1))^n = 1/e`.
+	</div>
+</p>
 
-<p class="formula">`lim_(n -> oo) (1 - 1/n)^n = lim_(n -> oo) (1 - 1/n)^(n+1) = lim_(n -> oo) (1 - 1/(n+1))^n = 1/e.`</p>
+<p><b>推论A2.5.2</b>
+	<div class="formula">
+		`(1 + 1/n)^n lt e lt (1 + 1/n)^(n+1)`, `AA n in NN`.
+	</div>
 
-<p><b>推论A2.5.2</b> `(1 + 1/n)^n lt e lt (1 + 1/n)^(n+1), quad` `AA n in NN.`</p>
+	或等价地,
+	<div class="formula">
+		`1/(n+1) lt ln(1 + 1/n) lt 1/n`, `AA n in NN`.
+	</div>
 
-<p>或等价地, `1/(n+1) lt ln(1 + 1/n) lt 1/n, quad` `AA n in NN.`</p>
+<p class="prove">
+	不等式的前半部分由 A2.5 的证明可得.
+	后半部分由推论 A2.5.2,
+		`lim_(n -> oo) (1 + 1/n)^(n+1) = e`,
 
-<p><b>证:</b> 不等式的前半部分由 A1.5 的证明可得. 后半部分由推论 A1.5.2, `lim_(n -> oo) (1 + 1/n)^(n+1) = e,` 因此只需证明 `(1 + 1/n)^(n+1)` 严格单调递减. 由均值不等式有:</p>
+	因此只需证明 `(1 + 1/n)^(n+1)` 严格单调递减.
+	由均值不等式有:
 
-<p class="formula">`root(n+2)(1/( (1 + 1/n)^(n+1) )) lt 1/(n+2)((n+1)/(1 + 1/n) + 1) = (n+1)/(n+2).`</p>
+	<div class="formula">
+		`  root(n+2)(1/( (1 + 1/n)^(n+1) ))
+		lt 1/(n+2)((n+1)/(1 + 1/n) + 1)
+		=  (n+1)/(n+2)`.
+	</div>
 
-<p>所以 `(1 + 1/n)^(n+1) gt ((n+2)/(n+1))^(n+2) = (1 + 1/(n+1))^(n+2).` 证毕.</p>
+	所以
+		`  (1 + 1/n)^(n+1)
+		gt ((n+2)/(n+1))^(n+2)
+		=  (1 + 1/(n+1))^(n+2)`.
+
+	证毕.
+</p>
 
 <p><b>注A2.5.2</b> 此不等式也可由微分中值定理得到.</p>
 

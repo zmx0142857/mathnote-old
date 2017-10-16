@@ -25,21 +25,38 @@
 
 <h2>A4.0 关键公式</h2>
 <ul>
-<li>`int_a^b f(x) text(d)x stackrel(x=a+b-t)(=====) int_a^b f(a+b-t)text(d)t.`</li>
-<li>如果 `f(x)` 有对称轴 `x = u`, 即 `f(x) = f(2u-x)`, 那么 `int_(u-a)^u f(x) text(d)x = int_u^(u+a) f(x) text(d)x.`</li>
-<li>如果 `f(x)` 有对称中心 `(u, v)`, 即 `f(x) = 2v - f(2u-x)`, 那么 `int_(u-a)^u f(x) text(d)x + int_u^(u+a) f(x) text(d)x = 2va.`</li>
+<li>`int_a^b f(x) text(d)x
+	stackrel(x=a+b-t)(=====)
+	int_a^b f(a+b-t)text(d)t`.
+</li>
+<li>如果 `f(x)` 有对称轴 `x = u`,
+	即 `f(x) = f(2u-x)`,
+	那么
+		`int_(u-a)^u f(x) text(d)x = int_u^(u+a) f(x) text(d)x.`
+</li>
+<li>如果 `f(x)` 有对称中心 `(u, v)`,
+	即 `f(x) = 2v - f(2u-x)`,
+	那么
+		`int_(u-a)^u f(x) text(d)x + int_u^(u+a) f(x) text(d)x = 2va`.
+</li>
 </ul>
 
 <h2>A4.1 `I = int_0^(pi/2) ln sin x text(d)x.`</h2>
 
-<p>令 `x = pi/2 - t,` 则 `I = int_0^(pi/2) ln cos t text(d)t.` 注意到 `[0, pi]` 是 `sin x` 的对称区间, 所以又有 `int_0^pi ln sin x = 2I.` 于是</p>
+<p class="solve">
+	令 `x = pi/2 - t`,
+	则 `I = int_0^(pi/2) ln cos t text(d)t`.
+	注意到 `[0, pi]` 是 `sin x` 的对称区间,
+	所以又有 `int_0^pi ln sin x = 2I`.
+	于是
 
-<p class="formula">`{:
-	( 2I ,= int_0^(pi/2) (ln sin x + ln cos x) text(d)x ),
-	( ,= 1/2 int_0^(pi/2) (ln sin 2x - ln 2) text(d)(2x) ),
-	( ,= 1/2 int_0^pi ln sin x text(d)x - (pi ln2)/2 ),
-	( ,= I - (pi ln2)/2. )
-:}`</p>
+	<p class="formula">`
+{:(			2I
+		,=	int_0^(pi/2) (ln sin x + ln cos x) text(d)x
+),(			,= 1/2 int_0^(pi/2) (ln sin 2x - ln 2) text(d)(2x) ),
+		( ,= 1/2 int_0^pi ln sin x text(d)x - (pi ln2)/2 ),
+		( ,= I - (pi ln2)/2. )
+	:}`</p>
 
 <p>故 `I = -(pi ln2)/2.`</p>
 
