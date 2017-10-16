@@ -40,7 +40,7 @@ div.formula, p.formula  {
 	text-align: center;
 }
 
-.prove:before, .solve:before {
+.prove:before, .solve:before, .note:before {
 	font-weight: bold;
 	padding: 0 10px 0 0;
 }
@@ -48,8 +48,13 @@ div.formula, p.formula  {
 .prove:before {
 	content: "证";
 }
+
 .solve:before {
 	content: "解";
+}
+
+.note:before {
+	content: "注"
 }
 
 span.box {
