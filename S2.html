@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>S2: 概率公理化</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script> -->
+<script src="js/asciimathml.js"></script>
+<base target="_blank" />
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="S1.html" id="prev">&lt;&lt;&lt;</a>
+	<a href="content.html" target="_blank">· · ·</a>
+	<a href="S3.html" id="next">&gt;&gt;&gt;</a>
+</div>
+
+<h1>概率统计篇2: 概率公理化</h1>
+
+<h2>杂例</h2>
+<p>	<b>例1 </b>
+	证明: `|P(AB) - P(A)P(B)| le 1/4`, 并讨论等号成立的条件.
+</p>
+
+<p class="prove">
+	先证: 对任意事件 A, B, 有
+	<div class="formula">
+		`min {P(A)P(B), P(bar A)P(bar B)} le 1/4`.
+		<span class="num">(S2-?-1)</span>
+	</div>
+	假设 `P(bar A)P(bar B) ge 1/4`, 有
+	<div class="formula">
+		`1/4 le P(bar A)P(bar B) le 1/4 [P(bar A) + P(bar B)]^2`,
+	</div>
+	即
+		`P(bar A) + P(bar B) ge 1`.
+	则
+	<div class="formula">
+		`	P(A)P(B)
+		le	((P(A) + P(B))/2)^2
+		=	1/4 {2 - [P(bar A) + P(bar B)]}^2
+		le	1/4`.
+	</div>
+	所以 (S2-?-1) 成立.
+	这里取等号的条件是
+		`P(A)P(B) = P(bar A)P(bar B) = 1/4`,
+	解得
+		`P(A) = P(B) = 1/2`.
+</p>
+<p>	再来讨论题目所要证的不等式. 由于
+	<div class="formula">
+		<li>`0 le P(AB) le P(A)`,</li>
+		<li>`0 le P(AB) le P(B)`,</li>
+		<li>`0 le P(A uu B) = P(A) + P(B) - P(AB) le 1`.</li>
+	</div>
+	所以
+	<div class="formula">
+		`max {0, P(A) + P(B) - 1} le P(AB) le min {P(A), P(B)}`.
+		<span class="num">(S2-?-2)</span>
+	</div>
+	不等号两边同减 `P(A)P(B)`, 得
+	<div class="formula">
+		`	max {-P(A)P(B), -P(bar A)P(bar B)}
+		le	P(AB) - P(A)P(B)`
+		`le	min {P(A)P(bar B), P(bar A)P(B)}`.
+	</div>
+	再应用 (S2-?-1) 就得到要证的不等式.
+	因为 (S2-?-2) 取等号的条件是
+	<div class="formula">
+		<li>`P(AB) = P(A)`</li>
+		<li>或 `P(AB) = P(B)`</li>
+		<li>或 `P(AB) = 0`</li>
+		<li>或 `P(AB) = P(A) + P(B) - 1`</li>
+	</div>
+	所以原不等式取等号的条件就是 (S2-?-1), (S2-?-2) 同时取得等号,
+	即
+	<div class="formula">
+		<li>`P(A) = P(B) = P(AB) = 1/2`,</li>	
+		<li>或 `P(A) = P(B) = 1/2, P(AB) = 0`.</li>
+		<span class="num">&square;</span>
+	</div>	
+</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+

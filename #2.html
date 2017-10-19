@@ -8,8 +8,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
-<script src='js/asciimathml.js'></script>
-<base target="_blank" />
+<script src="js/asciimathml.js"></script>
 
 </head>
 
@@ -17,13 +16,13 @@
 
 <div id="nav">
 	<a href="%231.html" style="float: left">&lt;&lt;&lt;</a>
-	<a href="content.html">· · ·</a>
+	<a href="content.html" target="_blank">· · ·</a>
 	<a href="%233.html" style="float: right">&gt;&gt;&gt;</a>
 </div>
 
 <h1>附录篇2: 三角函数与反三角函数</h1>
 
-<h2>#2.1 三角函数</h2>
+<h2>三角函数</h2>
 
 <ul>
 <li>和角`{
@@ -80,7 +79,7 @@
 :}`</li>
 </ul>
 
-<h2>#2.2 反三角函数</h2>
+<h2>反三角函数</h2>
 
 <p>定义域, 值域:</p>
 
@@ -176,7 +175,7 @@
 		( arctan {: (x-y)/(1+xy) + pi * text(sgn)(x-y)	if xy lt -1. :}	)
 	:}`</div>
 
-<p class="note"><b>#2.2</b>
+<p class="note">
 	考虑如下的证明思路 (以 `arcsin x + arccos x = pi/2` 的证明为例):
 </p>
 
@@ -193,7 +192,7 @@
 	即 `x = cos \ arccos x`, 这显然成立.
 </p>
 
-<h2>#2.3 双曲三角函数</h2>
+<h2>双曲三角函数</h2>
 
 <ul>
 <li>和角`{
@@ -216,7 +215,7 @@
 :}`</li>
 </ul>
 
-<h2>#2.4 反双曲三角函数</h2>
+<h2>反双曲三角函数</h2>
 
 <ul>
 <li>`{
@@ -226,7 +225,7 @@
 :}`</li>
 </ul>
 
-<h2>#2.5 De Moivre's Theorem</h2>
+<h2>De Moivre's Theorem</h2>
 
 <p>
 	<div class="formula">
@@ -254,7 +253,7 @@
 	`theta` 是不超过 `n` 的最大奇数.
 </p>
 
-<h2>#2.6 Euler's Formula</h2>
+<h2>Euler's Formula</h2>
 
 <p>
 	<div class="formula">
@@ -273,13 +272,13 @@
 		`arctan x = -i \ ln {:(1 + ix)/sqrt(1+x^2):}`.
 	</div>
 
-<p class="note"><b>#2.6</b>
+<p class="note">
 	比如, 设 `y = arccos x`,
 	则 `e^{iy} = cos y + i \ sin y = x + i sqrt(1-x^2)`,
 	于是 `y = -i ln (x + i sqrt(1-x^2))`.
 </p>
 
-<h2>#2.7 杂例</h2>
+<h2>杂例</h2>
 
 <p><b>#2.7.1</b>
 	计算 `sum_(k=1)^n cos kx` 和 `sum_(k=1)^n sin kx`.
@@ -298,7 +297,7 @@
 	<div class="formula">
 		` sum_(k=1)^n cos kx
 		= ( cos {:((n+1)x)/2:} \ sin {:(nx)/2:} ) / sin{:x/2:}`.
-		<span class="num">`(#2-3-1)`</span>
+		<span class="num">(#2-1)</span>
 	</div>
 
 	`n gt 1` 时, 将 `x = (2 pi)/n` 代入上式
@@ -311,7 +310,7 @@
 	<div class="formula">
 		` sum_(k=1)^n sin kx
 		= (sin {:((n+1)x)/2:} \ sin {:(nx)/2:}) / sin {:x/2:}`,
-		<span class="num">`(#2-3-2)`</span>
+		<span class="num">(#2-2)</span>
 	</div>
 
 	且 `n gt 1` 时, 代入 `x = (2 pi)/n` 得到:
@@ -328,6 +327,7 @@
 	<div class="formula">
 		`sum_(k=0)^n cos kx = n`,
 		`sum_(k=0)^n sin kx = 0`.
+	</div>
 </p>
 
 <p><b>#2.7.2</b>
@@ -372,5 +372,6 @@
 
 <script src="js/random-color.js"></script>
 <script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
 
 </html>

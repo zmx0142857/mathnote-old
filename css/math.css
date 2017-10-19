@@ -30,7 +30,7 @@ h3 {
 }
 
 math {
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 div.formula, p.formula  {
@@ -53,9 +53,15 @@ div.formula, p.formula  {
 	content: "解";
 }
 
-.note:before {
-	content: "注"
+/*
+.note {
+	counter-increment: note_cnt;
 }
+
+.note:before {
+	content: "注 ." counter(note_cnt) " ";
+}
+*/
 
 span.box {
 	display: inline-block;
@@ -67,7 +73,7 @@ span.box {
 /* use this to number your formula */
 span.num {
 	display: table-cell;
-	width: 100px;
+	width: 80px;
 	text-align: right;
 }
 
@@ -82,15 +88,15 @@ ol.tree ol {
 }
 
 ol.tree ol > li {
-	counter-increment: customlistcounter;
+	counter-increment: list_cnt;
 }
 
 ol.tree ol > li:before {
-	content: "(" counter(customlistcounter) ") ";
+	content: "(" counter(list_cnt) ") ";
 }
 
 ol.tree ol {
-	counter-reset: customlistcounter;
+	counter-reset: list_cnt;
 }
 
 ol {
@@ -105,6 +111,11 @@ li {
 .block li {
 	width: 250px;
 	display: inline-block;
+}
+
+/* multi-line centered formula */
+.formula li {
+	list-style: none;
 }
 
 table {
