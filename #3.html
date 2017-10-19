@@ -8,8 +8,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
-<script src='js/asciimathml.js'></script>
-<base target="_blank" />
+<script src="js/asciimathml.js"></script>
 
 </head>
 
@@ -17,60 +16,116 @@
 
 <div id="nav">
 	<a href="%232.html" style="float: left">&lt;&lt;&lt;</a>
-	<a href="content.html">· · ·</a>
+	<a href="content.html" target="_blank">· · ·</a>
 	<a href="%234.html" style="float: right">&gt;&gt;&gt;</a>
 </div>
 
 <h1>附录篇3: 一些恒等式</h1>
 
-<h3>#3.1 `x^(n+1) - y^(n+1) = (x-y)(x^n + x^(n-1)y + cdots + xy^(n-1) + y^n),` `x,y in RR, n = 1,2,cdots.`</h3>
+<h2></h2>
+<p>	` x^(n+1) - y^(n+1)
+	= (x-y)(x^n + x^(n-1)y + cdots + xy^(n-1) + y^n)`,
+	`x, y in RR, n = 1,2,cdots.`
+</p>	
 
-<h3>#3.2 `max{x, y} = (x+y)/2 + |x-y|/2,` `min{x, y} = (x+y)/2 - |x-y|/2,` `x,y in RR`;
-特别地, `max{x, 0} = (x + |x|)/2,` `min{x, 0} = (x - |x|)/2,` `x,y in RR.`</h3>
+<h2></h2>
+<p>	`max{x, y} = (x+y)/2 + |x-y|/2`,
+	`min{x, y} = (x+y)/2 - |x-y|/2`,
+	`x,y in RR`;
+	特别地,
+	`max{x, 0} = (x + |x|)/2`,
+	`min{x, 0} = (x - |x|)/2`,
+	`x, y in RR.`
+</p>
 
-<h3>#3.3 `(vec x * vec y)^2 + |vec x xx vec y|^2 = |vec x|^2|vec y|^2;` `(ac + bd)^2 + (ad-bc)^2 = (a^2 + b^2)(c^2 + d^2), a,b,c,d in RR.`</h3>
-<p>第二个式子可用于证明如下命题: 如果两整数 m, n 都能写成两个整数的平方和, 则 mn 也能.</p>
+<h2></h2>
+<p>	`(vec x * vec y)^2 + |vec x xx vec y|^2 = |vec x|^2|vec y|^2`;
+	`(ac + bd)^2 + (ad-bc)^2 = (a^2 + b^2)(c^2 + d^2), a,b,c,d in RR`.
+</p>
 
-<h3>#3.4 拉格朗日恒等式</h3>
+<p> 第二个式子可用于证明如下命题:
+	如果两整数 m, n 都能写成两个整数的平方和,
+	则 mn 也能.
+</p>
 
-<h3>#3.5 `1/(n(n+m)) = 1/m (1/n - 1/(n+m)).`</h3>
+<h2>拉格朗日恒等式: ...</h2>
 
-<h3>#3.6 `1/(prod_(k=0)^n (x+k)) = 1/(n!) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k);` `AA n in NN;` `AA x in RR;` `x+k ne 0, k = 0, 1, 2, cdots, n.`</h3>
+<h2></h2>
+<p>	`1/(n(n+m)) = 1/m (1/n - 1/(n+m)).`</p>
 
-<p><b>提示: </b>先计算 `1/(n(n+1)(n+2))` 这样的式子找找灵感!</p>
-<p><b>证:</b> 使用归纳法证明. 先看 `n = 0` 的情形, 此时等号两边都等于 `1/x`, 因此等式成立. 假设命题对于自然数 `n` 成立, 考察自然数 `n+1`, 有:</p>
+<h2></h2>
+<p>	` 1/(prod_(k=0)^n (x+k))
+	= 1/(n!) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k)`;
+	`AA n in NN`; `AA x in RR`;
+	`x+k ne 0, k = 0, 1, 2, cdots, n`.
+</p>
 
-<p class="formula">`1/(prod_(k=0)^(n+1) (x+k)) = 1/(x+n+1) * 1/(n!) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k).`</p>
+<p class="note">先计算 `1/(n(n+1)(n+2))` 这样的式子找找灵感!</p>
 
-<p>欲证等式成立, 只需证明上式等于</p>
-<p class="formula">`1/((n+1)!) sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k),`</p>
+<p class="prove">
+	使用归纳法证明.
+	`n = 0` 时, 等号两边都等于 `1/x`, 因此等式成立.
+	假设命题对于自然数 `n` 成立,
+	考察自然数 `n+1`, 有:
+	<div class="formula">
+		` 1/(prod_(k=0)^(n+1) (x+k))
+		= 1/(x+n+1) * 1/(n!) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k)`.
+	</div>
 
-<p>即证</p>
-<p class="formula">`(n+1)/(x+n+1) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k) = sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k).`<span class="right">(#3-6)</span></p>
+	欲证等式成立, 只需证明上式等于
+	<div class="formula">
+		`1/((n+1)!) sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k)`,
+	</div>
 
-<p>由于</p>
-<p class="formula">`1/((x+k)(x+n+1)) = 1/(n+1-k) ( 1/(x+k) - 1/(x+n+1) ),` `k = 0, 1, 2, cdots, n.`</p>
+	即证
+	<div class="formula">
+		` (n+1)/(x+n+1) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k)
+		= sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k)`.
+		<span class="num">(#3-1)</span>
+	</div>
 
-<p>所以 (#3-6) 的左边等于</p>
-<p class="formula">`{:
-(   ,sum_(k=0)^n (-1)^k (n+1)/(n+1-k) ((n), (k)) ( 1/(x+k) - 1/(x+n+1) ) ),
-( = ,sum_(k=0)^n (-1)^k ((n+1), (k)) ( 1/(x+k) - 1/(x+n+1) ) ),
-( = ,sum_(k=0)^n (-1)^k ((n+1), (k)) 1/(x+k) - sum_(k=0)^n (-1)^k ((n+1), (k)) 1/(x+n+1) ),
-(   ,+ (-1)^(n+1) ((n+1), (n+1)) 1/(x+n+1) - (-1)^(n+1) ((n+1), (n+1)) 1/(x+n+1) ),
-( = ,sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k) - sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+n+1) ),
-( = ,sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k) - 1/(x+n+1) (1-1)^(n+1) ),
-( = ,sum_{k=0}^{n+1} (-1)^k ((n+1), (k)) 1/(x+k). )
-:}`</p>
+	由于
+	<div class="formula">
+		`1/((x+k)(x+n+1)) = 1/(n+1-k) ( 1/(x+k) - 1/(x+n+1) )`,
+		`k = 0, 1, 2, cdots, n.`
+	</div>
 
-<p>(#3-6) 成立. 所以原式成立. 证毕.</p>
+	所以 (#3-1) 的左边等于
+	<div class="formula">`
+{:(			,sum_(k=0)^n (-1)^k (n+1)/(n+1-k) ((n), (k))
+			( 1/(x+k) - 1/(x+n+1) )
 
-<h2>#3.7 相当于 `f(x), x in [a,b]` 的两种写法:</h2>
-<p class="formula">`f( (sqrt(2x-2a))^2 + (sqrt(b-x))^2 + 2a-b ),`</p>
-<p class="formula">`f( ((sqrt(x-a))^2 - (sqrt(b-x))^2 + a+b)/2 ).`</p>
+),(		=,	sum_(k=0)^n (-1)^k ((n+1), (k)) ( 1/(x+k) - 1/(x+n+1) )
+
+),(		=,	sum_(k=0)^n (-1)^k ((n+1), (k)) 1/(x+k)
+			- sum_(k=0)^n (-1)^k ((n+1), (k)) 1/(x+n+1)
+),(,		+ (-1)^(n+1) ((n+1), (n+1)) 1/(x+n+1)
+			- (-1)^(n+1) ((n+1), (n+1)) 1/(x+n+1)
+
+),(		=,	sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k)
+			- sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+n+1)
+
+),(		=,	sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k)
+			- 1/(x+n+1) (1-1)^(n+1)
+
+),(		=,	sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k).
+):}`</div>
+
+	(#3-1) 成立. 所以原式成立. 证毕.
+</p>
+
+<h2>相当于 `f(x), x in [a,b]` 的两种写法:</h2>
+<p class="formula">
+	`f( (sqrt(2x-2a))^2 + (sqrt(b-x))^2 + 2a-b )`,
+</p>
+<p class="formula">
+	`f( ((sqrt(x-a))^2 - (sqrt(b-x))^2 + a+b)/2 )`.
+</p>
 
 </body>
 
 <script src="js/random-color.js"></script>
 <script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
 
 </html>

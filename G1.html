@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
-<script src='js/asciimathml.js'></script>
+<script src="js/asciimathml.js"></script>
 <base target="_blank" />
 
 </head>
@@ -16,22 +16,41 @@
 <body>
 
 <div id="nav">
-	<a href="content.html">· · ·</a>
+	<a href="content.html" target="_blank">· · ·</a>
 	<a href="G2.html" style="float: right">&gt;&gt;&gt;</a>
 </div>
 
 <h1>几何篇1: 传统几何(上)</h1>
 
-<h2>G1.1 已知正方形 ABCD 与 AEFG (皆为逆时针)共用顶点 A, M 是 DE 上一点, N 是 BG 上一点, 且 M, A, N 三点共线. 证明: AM 平分 DE 的充要条件是 AN `_|_` BG.</h2>
+<h2>G1.1 已知正方形 ABCD 与 AEFG (皆为逆时针)共用顶点 A, M 是 DE 上一点,
+	N 是 BG 上一点, 且 M, A, N 三点共线.
+	证明: AM 平分 DE 的充要条件是 AN `_|_` BG.
+</h2>
 
-<p><b>证 </b>必要性: 将 `Delta MAE` 绕点 M 旋转 180° 得 `Delta MA'D`. 易知`Delta ADA' ~= Delta BAG(SAS)` (其中 `/_ ADA' = 180^@ - /_EAD = /_ BAG`). 从而 `/_EAM` (记为`/_1`) `= /_A' = /_AGB` (记为`/_2`). 但 `/_1 + /_GAN` (记为/_3) `= 90^@`, 所以 `/_2 + /_ 3 = 90^@`. 故 AN `_|_` BG.</p>
+<p class="prove">
+	必要性: 将 `Delta MAE` 绕点 M 旋转 180° 得 `Delta MA'D`.
+	易知`Delta ADA' ~= Delta BAG(SAS)`
+	(其中 `/_ ADA' = 180^@ - /_EAD = /_ BAG`).
+	从而 `/_EAM` (记为`/_1`) `= /_A' = /_AGB` (记为`/_2`).
+	但 `/_1 + /_GAN` (记为/_3) `= 90^@`,
+	所以 `/_2 + /_ 3 = 90^@`.
+	故 AN `_|_` BG.
+</p>
 
-<p>充分性: 分别作 DL `_|_` MN 于 L, EK `_|_` MN 于 K. 依次证明 `Delta ANB ~= Delta DLA`, `Delta ANG ~= Delta EKA`, `Delta EKM ~= Delta DLM` 即得结论.<span class="right">□</span></p>
-<p><b>注 </b>条件弱化为 DAB, EAG 是相似的直角三角形, 结论仍成立.</p>
+<p>	充分性: 分别作 DL `_|_` MN 于 L, EK `_|_` MN 于 K.
+	依次证明 `Delta ANB ~= Delta DLA`, `Delta ANG ~= Delta EKA`,
+	`Delta EKM ~= Delta DLM` 即得结论.
+	<span class="right">`square`</span>
+</p>
+
+<p class="note">
+	条件弱化为 DAB, EAG 是相似的直角三角形, 结论仍成立.
+</p>
 
 </body>
 
 <script src="js/random-color.js"></script>
 <script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
 
 </html>
