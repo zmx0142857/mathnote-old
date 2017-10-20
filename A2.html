@@ -9,21 +9,20 @@
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
-<base target="_blank" />
 
 </head>
 
 <body>
 
 <div id="nav">
-	<a href="A1.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="A1.html" id="prev">&lt;&lt;&lt;</a>
 	<a href="content.html" target="_blank">· · ·</a>
-	<a href="A3.html" style="float: right">&gt;&gt;&gt;</a>
+	<a href="A3.html" id="next">&gt;&gt;&gt;</a>
 </div>
 
 <h1>分析篇2: 极限杂例</h1>
 
-<h2>A2.1 证明: `lim_(n -> oo) root(n)(n) = 1`.</h2>
+<h2>证明: `lim_(n -> oo) root(n)(n) = 1`.</h2>
 
 <p class="prove">
 	`n gt 2` 时, 有
@@ -37,16 +36,16 @@
 	由两边夹法则, 命题成立.
 </p>
 
-<h2>A2.2 证明: `lim_(n -> oo) a^n/(n!) = 0`, `AA a in R`.</h2>
+<h2>证明: `lim_(n -> oo) a^n/(n!) = 0`, `AA a in R`.</h2>
 <p class="prove">
 	...
 </p>
 
-<h2>A2.5 证明: `lim_(n -> oo) (1 + 1/n)^n` 存在.</h2>
+<h2>证明: `lim_(n -> oo) (1 + 1/n)^n` 存在.</h2>
 
 <p class="prove">
 	先证 `(1 + 1/n)^n` 单调递增.
-	由均值不等式 (A1.3) 知:
+	由均值不等式 (A1.1) 知:
 
 	<div class="formula">
 		`  root(n+1)((1 + 1/n)^n)
@@ -68,25 +67,26 @@
 	</div>
 
 	从而由单调有界原理知极限
-		`lim_(n -> oo) (1 + 1/n)^n`
+		`lim_(n to oo) (1 + 1/n)^n`
 	存在. 它的极限值就是我们熟知的自然对数的底 `e`. 
 </p>
 
-<p><b>推论A2.5.1</b> 由极限的四则运算得到:
+<p class="corollary">
+	由极限的四则运算得到:
 
 	<div class="formula">
-		` lim_(n -> oo) (1 + 1/n)^(n+1)
-		= lim_(n -> oo) (1 + 1/(n+1))^n = e`,
+		` lim_(n to oo) (1 + 1/n)^(n+1)
+		= lim_(n to oo) (1 + 1/(n+1))^n = e`,
 	</div>
 
 	<div class="formula">
-		` lim_(n -> oo) (1 - 1/n)^n
-		= lim_(n -> oo) (1 - 1/n)^(n+1)
-		= lim_(n -> oo) (1 - 1/(n+1))^n = 1/e`.
+		` lim_(n to oo) (1 - 1/n)^n
+		= lim_(n to oo) (1 - 1/n)^(n+1)
+		= lim_(n to oo) (1 - 1/(n+1))^n = 1/e`.
 	</div>
 </p>
 
-<p><b>推论A2.5.2</b>
+<p class="corollary">
 	<div class="formula">
 		`(1 + 1/n)^n lt e lt (1 + 1/n)^(n+1)`, `AA n in NN`.
 	</div>
@@ -98,9 +98,9 @@
 </p>
 
 <p class="prove">
-	不等式的前半部分由 A2.5 的证明可得.
-	后半部分由推论 A2.5.2,
-		`lim_(n -> oo) (1 + 1/n)^(n+1) = e`,
+	不等式的前半部分由 A2.3 的证明可得.
+	后半部分由 推论A2.1,
+		`lim_(n to oo) (1 + 1/n)^(n+1) = e`,
 
 	因此只需证明 `(1 + 1/n)^(n+1)` 严格单调递减.
 	由均值不等式有:
@@ -115,11 +115,10 @@
 		`  (1 + 1/n)^(n+1)
 		gt ((n+2)/(n+1))^(n+2)
 		=  (1 + 1/(n+1))^(n+2)`.
-
-	证毕.
+	<span class="right">&square;</span>
 </p>
 
-<p class="note"><b>A2.5.2</b> 此不等式也可由微分中值定理得到.</p>
+<p class="note">此不等式也可由微分中值定理得到.</p>
 
 </body>
 

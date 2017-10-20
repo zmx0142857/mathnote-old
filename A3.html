@@ -9,23 +9,40 @@
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
-<base target="_blank" />
 
 </head>
 
 <body>
 
 <div id="nav">
-	<a href="A2.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="A2.html" id="prev">&lt;&lt;&lt;</a>
 	<a href="content.html" target="_blank">· · ·</a>
-	<a href="A4.html" style="float: right">&gt;&gt;&gt;</a>
+	<a href="A4.html" id="next">&gt;&gt;&gt;</a>
 </div>
 
 <h1>分析篇3: 实数的完备性</h1>
 
 <h2>应用确界原理证明戴德金原理</h2>
 
-<p><b>证 </b>设 (A, B) 为实数域的一个戴德金分划, 则由 "`A != O/, B != O/`" 和 "对 `AA x in A`, `AA y in B` 都成立 `x lt y`" 知 A 非空有上界 (B 中的任一数都是 A 的上界). 应用确界原理知, `EE c in RR`, 使得 (1) `x le c, AA x in A`; (2) `AA epsilon gt 0`, `EE x_epsilon in A`, `c - epsilon lt x_epsilon`. 由 (2) 又得到 `AA epsilon gt 0`, `AA y in B`, `c-epsilon lt y`. 假设 `EE y_0 in B, c gt y_0`, 则对 `epsilon_0 = c - y_0 gt 0` 有 `c - epsilon_0 = y_0`, 矛盾. 故 `c le y, AA y in B`. 联系 (1) 有 ` x le c le y, AA x in A, AA y in B`. 这就证明了戴德金原理的表述二.<span class="right">`square`</span></p>
+<p class="prove">
+	设 (A, B) 为实数域的一个戴德金分划, 则由
+		`A != O/, B != O/`
+	和
+		"对 `AA x in A`, `AA y in B` 都成立 `x lt y`"
+	知 A 非空有上界 (B 中的任一数都是 A 的上界). 应用确界原理知,
+	`EE c in RR`, 使得
+
+		(1) `x le c, AA x in A`;
+		(2) `AA epsilon gt 0`, `EE x_epsilon in A`,
+			`c - epsilon lt x_epsilon`.
+
+	由 (2) 又得到 `AA epsilon gt 0`, `AA y in B`, `c-epsilon lt y`.
+	假设 `EE y_0 in B, c gt y_0`, 则对 `epsilon_0 = c - y_0 gt 0` 有
+	`c - epsilon_0 = y_0`, 矛盾. 故 `c le y, AA y in B`. 联系 (1) 有
+	` x le c le y, AA x in A, AA y in B`.
+	这就证明了戴德金原理的表述二.
+	<span class="right">&square;</span>
+</p>
 
 </body>
 

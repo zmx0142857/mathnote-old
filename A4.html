@@ -9,15 +9,15 @@
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
-<base target="_blank" />
+
 </head>
 
 <body>
 
 <div id="nav">
-	<a href="A3.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="A3.html" id="prev">&lt;&lt;&lt;</a>
 	<a href="content.html" target="_blank">· · ·</a>
-	<a href="A5.html" style="float: right">&gt;&gt;&gt;</a>
+	<a href="A5.html" id="next">&gt;&gt;&gt;</a>
 </div>
 
 <h1>分析篇4: 疑难积分</h1>
@@ -44,7 +44,7 @@
 </li>
 </ul>
 
-<h2>`I = int_0^(pi/2) ln sin x text(d)x.`</h2>
+<h2>`I = int_0^(pi/2) ln sin x text(d)x`.</h2>
 
 <p class="solve">
 	令 `x = pi/2 - t`,
@@ -73,13 +73,14 @@
 
 	<div class="formula">`
 {:(			I
-,		=	int (2(a+b)t text(d)t) / ( t |b-(bt^2-a)/(1+t^2)| (1+t^2)^2 )
+,		=	int (2(a+b)t text(d)t)/( t|b-(bt^2-a)/(1+t^2)| (1+t^2)^2 )
 ),(,	=	2 text(sgn)(a+b) int (text(d)t) / (1+t^2)
 ),(,	=	2 text(sgn)(a+b) * arctan sqrt((a+x)/(b-x)) + C.
 ):}`</div>
 </p>
 
-<h2>`I = int_h^(R sin phi) arccos{:(x cot phi)/sqrt(R^2-x^2):} text(d)x`,
+<h2>`I = int_h^(R sin phi)
+		arccos{: (x cot phi) / sqrt(R^2-x^2) :} text(d)x`,
 	`0 lt h lt R sin phi`, `phi in [0, pi/2)`.
 </h2>
 
@@ -89,7 +90,7 @@
 	记 `r = sqrt(R^2 - h^2)`, 于是
 
 	<div class="formula">
-		`I = [ (Ru arccos u) / sqrt(u^2+cot^2 phi) ] _((h cot phi)//r) ^1
+		`I = [(Ru arccos u) / sqrt(u^2+cot^2 phi)]_((h cot phi)//r)^1
 		+ R/2 int_((h cot phi)//r)^1 (text(d)(u^2))
 		/ sqrt( (cot^2 phi + u^2)(1-u^2) )`.
 	</div>
@@ -101,7 +102,7 @@
 			+ R[ arctan sqrt((cot^2 phi + u^2) / (1-u^2)) ]
 			_((h cot phi)//r)^1
 ),(,	=	- h arccos{: (h cot phi)/r :}
-			+ R( pi/2 - arctan{:(R cot phi) / sqrt(r^2-h^2 cot^2 phi):} )
+			+ R(pi/2-arctan{:(R cot phi) / sqrt(r^2-h^2 cot^2 phi):})
 ),(,	=	R arccos{: (R cos phi)/r :} - h arccos{: (h cot phi)/r :}.
 ):}`</div>
 </p>
@@ -225,7 +226,7 @@
 {:(			I_(n-1)
 ,		=	int (text(d)x) / (x^2 + a)^(n-1)
 ),(,	=	x/(x^2+a)^(n-1) - int x text(d)(x^2+a)^(1-n)
-),(,	=	x/(x^2+a)^(n-1) + 2(n-1) int (x^2+a-a) / (x^2+a)^n text(d)x
+),(,	=	x/(x^2+a)^(n-1) + 2(n-1) int (x^2+a-a)/(x^2+a)^n text(d)x
 ),(,	=	x/(x^2+a)^(n-1) + (2n-2)( I_(n-1) - aI_n ).
 ):}`</div>
 

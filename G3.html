@@ -3,27 +3,26 @@
 
 <head>
 
-<title>G3: 向量</title>
+<title>G3 向量</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
-<base target="_blank" />
 
 </head>
 
 <body>
 
 <div id="nav">
-	<a href="G2.html" style="float: left">&lt;&lt;&lt;</a>
+	<a href="G2.html" id="prev">&lt;&lt;&lt;</a>
 	<a href="content.html" target="_blank">· · ·</a>
-	<a href="G4.html" style="float: right">&gt;&gt;&gt;</a>
+	<a href="G4.html" id="next">&gt;&gt;&gt;</a>
 </div>
 
 <h1>几何篇3: 向量</h1>
 
-<h2>G3.6 证明: 平行四边形四边长的平方和 = 对角线长的平方和.</h2>
+<h2>证明: 平行四边形四边长的平方和 = 对角线长的平方和.</h2>
 
 <p class="prove">
 	用向量轻松证明:
@@ -33,16 +32,17 @@
 			+ (bb"a" - bb"b") * (bb"a" - bb"b")
 ),(		=	,2|bb"a"|^2 + 2|bb"b"|^2.
 ):}`</div>
+	<span class="right">&square;</span>
 </p>
 
-<p><b>推论G3.6.1 </b>
+<p class="corollary">
 	设三角形三边长为 a, b, c, 则边 a 上的中线 `m_a` 满足:
 	<div class="formula">
 		`4 m_a^2 = 2(b^2 + c^2) - a^2`.
 	</div>
 </p>
 
-<p><b>推论G3.6.2 </b>
+<p class="corollary">
 	任意平面四边形四边长的平方和
 	= 对角线的平方和 + 4 `xx` 对角线中点连线长的平方.
 </p>
