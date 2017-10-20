@@ -40,41 +40,30 @@ div.formula, p.formula  {
 	text-align: center;
 }
 
-.prove:before, .solve:before, .note:before {
+.prove:before, .solve:before {
 	font-weight: bold;
-	padding: 0 10px 0 0;
 }
 
 .prove:before {
-	content: "证";
+	content: "证 ";
 }
 
 .solve:before {
-	content: "解";
+	content: "解 ";
 }
-
-/*
-.note {
-	counter-increment: note_cnt;
-}
-
-.note:before {
-	content: "注 ." counter(note_cnt) " ";
-}
-*/
 
 span.box {
 	display: inline-block;
 	padding: 5px;
-	border: 2px solid black;
 	border-radius: 5px;
+	background: rgba(0,0,0,0.2);
 }
 
 /* use this to number your formula */
 span.num {
 	display: table-cell;
-	width: 80px;
 	text-align: right;
+	width: 20px;
 }
 
 span.right {

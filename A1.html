@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
-<base target="_blank" />
 
 </head>
 
@@ -22,38 +21,39 @@
 
 <h1>分析篇1: 不等式</h1>
 
-<h2>A1.1 基本不等式</h2>
+<h2>基本不等式</h2>
 
-<p>	设 `a, b in RR^+`,
-	则由 `(sqrt a - sqrt b)^2 = a + b - 2 sqrt(ab) ge 0`
-	得 `sqrt(ab) le (a+b)/2`,
+<p>	设 `a, b in RR^+`, 则由
+		`(sqrt a - sqrt b)^2 = a + b - 2 sqrt(ab) ge 0`
+	得
+		`sqrt(ab) le (a+b)/2`,
 	其中等号成立当且仅当 `a = b`.
 </p>
 
-<p>	上式两边同乘 `sqrt(ab)`,
-	得 `ab le (a+b)/2 sqrt(ab)`.
-	所以 `(2ab)/(a+b) le sqrt(ab)`.
+<p>	上式两边同乘 `sqrt(ab)`, 得
+		`ab le (a+b)/2 sqrt(ab)`.
+	所以
+		`(2ab)/(a+b) le sqrt(ab)`.
 </p>
 
-<p>	另一方面, 在 `2ab leq a^2+b^2`
-	的两边同时加上 `a^2+b^2`,
-	有 `(a+b)^2 le 2(a^2+b^2)`,
-	即 `(a+b)^2/4 le (a^2+b^2)/2`,
+<p>	另一方面, 在 `2ab le a^2+b^2` 的两边同时加上 `a^2+b^2`, 有
+		`(a+b)^2 le 2(a^2+b^2)`,
+	即
+		`(a+b)^2/4 le (a^2+b^2)/2`,
 	两边同时取算术平方根就有
-	`(a+b)/2 le sqrt((a^2+b^2)/2)`.
+		`(a+b)/2 le sqrt((a^2+b^2)/2)`.
 </p>
 
-<p>综合上述三个不等式得到
+<p>	综合上述三个不等式得到
 	<div class="formula">
 		`(2ab)/(a+b) le sqrt(ab) le (a+b)/2 le sqrt((a^2+b^2)/2)`.
 	</div>
 </p>
 
-<p>其中三个等号成立当且仅当 `a=b`.</p>
+<p>	其中三个等号成立当且仅当 `a=b`.</p>
 
-<p>	这四个数分别叫做 `a` 和 `b` 的
-	调和平均数, 几何平均数, 算术平均数与平方平均数.
-	将它们分别记作 `s`, `t`, `u`, `v`, 我们有
+<p>	这四个数分别叫做 `a` 和 `b` 的调和平均数, 几何平均数, 算术平均数
+	与平方平均数. 将它们分别记作 `s`, `t`, `u`, `v`, 我们有
 	<div class="formula, block">
 		<li>`1/s = 1/2(1/a + 1/b)`,</li>
 		<li>`ln t = 1/2(ln a + ln b)`,</li>
@@ -62,11 +62,9 @@
 	</div>
 </p>
 
-<h2>A1.2 柯西不等式</h2>
+<h2>柯西不等式</h2>
 
-<p>	对任意非零实数
-	`a_1, a_2, cdots, a_n`
-	与 `b_1, b_2, cdots, b_n`,
+<p>	对任意非零实数 `a_1, a_2, cdots, a_n` 与 `b_1, b_2, cdots, b_n`,
 	下面的不等式成立:
 	<div class="formula">
 		`  ( sum_(k=1)^n a_k b_k )^2
@@ -79,8 +77,8 @@
 
 <p class="prove">
 	令 `f(x) = sum_(k=1)^n (a_k x - b_k)^2
-	= (sum_(k=1)^n a_k^2) x^2 - 2(sum_(k=1)^n a_k b_k) x
-	  + sum_(k=1)^n b_k^2 ge 0`.
+			 = (sum_(k=1)^n a_k^2) x^2 - 2(sum_(k=1)^n a_k b_k) x
+			   + sum_(k=1)^n b_k^2 ge 0`.
 	
 	这是 `x` 的一元二次函数, 易知其判别式
 
@@ -89,19 +87,16 @@
 		`- 4( sum_(k=1)^n a_k^2 )( sum_(k=1)^n b_k^2 ) le 0`,
 	</div>
 
-	即要证的不等式.
-	其中等号成立时, `Delta = 0`,
-	此时必存在唯一的实数 `lambda`
-	使得 `f(lambda) = 0`,
-	即成立 `b_k = lambda a_k`, `k = 1, 2, cdots, n`.
+	即要证的不等式.  其中等号成立时, `Delta = 0`, 此时必存在唯一的实
+	数 `lambda` 使得 `f(lambda) = 0`, 即成立 `b_k = lambda a_k`,
+	`k = 1, 2, cdots, n`.
 	
-	反之若存在实数 `lambda`,
-	使得 `b_k = lambda a_k`, `k = 1, 2, cdots, n`,
-	从而 `f(lambda) = 0`, 也能推得 `Delta = 0`.
-	<span class="right">`square`</span>
+	反之若存在实数 `lambda`, 使得 `b_k = lambda a_k`,
+	`k = 1, 2, cdots, n`, 从而 `f(lambda) = 0`, 也能推得 `Delta = 0`.
+	<span class="right">&square;</span>
 </p>
 
-<h2>A1.3 均值不等式</h2>
+<h2>均值不等式</h2>
 
 <p>	设 `a_1, a_2, cdots, a_n` 是 `n` 个正实数 `(n ge 2),`
 	记 `S_n = n/( sum_(k=1)^n 1/(a_k) )`,
@@ -111,23 +106,20 @@
 	则下面的不等式成立:
 </p>
 
-<p class="formula">
+<div class="formula">
 	`S_n le T_n le U_n le V_n`,
-	<span class="num">`(A1-3-1)`</span>
-</p>
+	<span class="num">(A1-1)</span>
+</div>
 
-<p>	三个等号成立当且仅当
-	`a_1 = a_2 = cdots = a_n.`
-</p>
+<p>	三个等号成立当且仅当 `a_1 = a_2 = cdots = a_n`.</p>
 
 <p class="prove">
-	(I) 证明 `T_n le U_n.`
-	`n=2` 时此不等式即基本不等式.
-	假设 `n=m` 时不等式成立, 则因为
+	(I) 证明 `T_n le U_n`. `n = 2` 时, 此不等式即基本不等式.
+	假设 `n = m` 时不等式成立, 则因为
 
 	<div class="formula">
 			`U_(m+1) = ( sum_(k=1)^(m+1) a_k )/(m+1)
-		=>	(m+1) U_(m+1) = sum_(k=1)^(m+1) a_k`,
+	rArr	(m+1) U_(m+1) = sum_(k=1)^(m+1) a_k`,
 	</div>
 
 	所以
@@ -155,9 +147,10 @@
 	进而有
 		`U_(m+1) ge root(m+1)( prod_(k=1)^(m+1) a_k ) = T_(m+1)`.
 
-	所以 `T_n le U_n`,
-	由基本不等式的取等条件知,
-	这里等号成立当且仅当 `a_1 = a_2 = cdots = a_n.`
+	所以
+		`T_n le U_n`,
+	由基本不等式的取等条件知, 这里等号成立当且仅当
+		`a_1 = a_2 = cdots = a_n.`
 </p>
 
 <p>	(II) 证明 `S_n le T_n`.
@@ -181,12 +174,13 @@
 </p>
 
 <p>	联系 (I), (II), (III),
-	对于任意自然数 `n ge 2`, (A1-3-1) 都成立,
+	对于任意自然数 `n ge 2`, (A1-1) 都成立,
 	且三个等号成立的充要条件均为
-	`a_1 = a_2 = cdots = a_n`. 证毕.
+	`a_1 = a_2 = cdots = a_n`.
+	<span class="right">&square;</span>
 </p>
 
-<h2>A1.4 绝对值不等式</h2>
+<h2>绝对值不等式</h2>
 
 <p>	关于绝对值, 我们已经知道对任意实数 `a` 和非负实数 `m,` 有
 
@@ -194,8 +188,7 @@
 		`|a| le m <=> -m le a le m`.
 	</div>
 
-	又设 `b` 是一个实数,
-	显然有 `|a| le |a|, |b| le |b|`.
+	又设 `b` 是一个实数, 显然有 `|a| le |a|, |b| le |b|`.
 	根据上式, 这等价于
 
 	<div class="formula">
@@ -210,7 +203,7 @@
 	这等价于
 	<div class="formula">
 		`|a+b| le |a|+|b|`.
-		<span class="num">`(A1-4-1)`</span>
+		<span class="num">(A1-2)</span>
 	</div>
 
 	由上式又得
@@ -218,20 +211,20 @@
 		`|a+b|-|b| le |a|`,
 	</div>
 
-	取 `c=a+b, d=-b,` 上式即
+	取 `c = a+b, d = -b`, 上式即
 	<div class="formula">
-		`|c|-|d| le |c+d|.`
-		<span class="num">`(A1-4-2)`</span>
+		`|c|-|d| le |c+d|`.
+		<span class="num">(A1-3)</span>
 	</div>
 
 	对称地, 也有
 	<div class="formula">
 		`|d|-|c| le |c+d|.`
-		<span class="num">`(A1-4-3)`</span>
+		<span class="num">(A1-4)</span>
 	</div>
 
-	易知 (A1-4-2), (A1-4-3) 中的 `c` 和 `d` 可以取到任意实数.
-	综合 (A1-4-1) 到 (A1-4-3) 就得到
+	易知 (A1-3), (A1-4) 中的 `c` 和 `d` 可以取到任意实数.
+	综合 (A1-2) 到 (A1-4) 就得到
 
 	<div class="formula">
 		`| |a|-|b| | le |a +- b| le |a|+|b|`,
@@ -241,7 +234,7 @@
 	第二个等号成立当且仅当 `ab ge 0`.
 </p>
 
-<h2>A1.5 拆项法举例</h2>
+<h2>拆项法举例</h2>
 
 <p><b>例1</b></p>
 <p class="formula">
@@ -261,7 +254,7 @@
 	`=  2 (sqrt n - sqrt(n-1))`.
 </p>
 
-<h2>A1.6 杂例</h2>
+<h2>杂例</h2>
 
 <p><b>例1</b> 证明:
 	`log_(n+1) (n+2) lt log_(n) (n+1)`, `n = 2, 3, cdots`.
@@ -281,7 +274,7 @@
 		`(ln(n+2))/(ln(n+1)) lt (ln(n+1))/(ln n)`,
 	即
 		`log_(n+1) (n+2) lt log_n (n+1)`,
-	证毕.
+	<span class="right">&square;</span>
 </p>
 
 <p><b>例2</b> 设 `a, b gt 0`.
@@ -313,7 +306,7 @@
 	<div class="formula">
 		`	( a^(k+1)+b^(k+1) )^(k+2) / ( a^(k+2)+b^(k+2) )^(k+1)
 		le	(a^k+b^k)^(k+1) / ( a^(k+1)+b^(k+1) )^k`
-		<span class="num">`(A1-6-2)`</span>
+		<span class="num">(A1-5)</span>
 	</div>
 
 	成立, 这只要证
@@ -333,9 +326,9 @@
 		`2(ab)^(k+1) le (ab)^k (a^2+b^2)`.
 	</div>
 
-	即证 `2ab le a^2+b^2`. 这显然成立.
-	所以 (A1-6-2) 成立, 从而 `n=k+1` 时不等式成立.
-	再由数学归纳法知原命题成立.
+	即证 `2ab le a^2+b^2`. 这显然成立. 所以 (A1-5) 成立, 从而
+	`n=k+1` 时不等式成立. 再由数学归纳法知原命题成立.
+	<span class="right">&square;</span>
 </p>
 
 </body>
