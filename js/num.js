@@ -4,11 +4,37 @@ var X = abbr[0];
 var n = parseInt(abbr.substring(1, abbr.length));
 var i;
 
-function decorate(classname, word) {
-	var tag = document.getElementsByClassName(classname);
+function tag_it(str, tagname) {
+	return '<' + tagname + '>' + str + '</' + tagname + '>'; 
+}
+
+function style_num(word, i) {
+	return tag_it(word + abbr + '.' + (i+1), 'b');
+}
+
+function style_void(word) {
+	return tag_it(word, 'b');
+}
+
+function style_formula(word, i) {
+	return '(' + abbr + '-' + (i+1) + ')';
+}
+
+function decorate(name, word, style=style_num, get_by='class') {
+	var texts;
+	if (get_by === 'class') {
+		texts = document.getElementsByClassName(name);
+	} else {
+		texts = document.getElementsByTagName(name);
+	}
+
 	var i;
-	for (i = 0; i < tag.length; i++) {
-		tag[i].innerHTML = '<b>' + word + abbr + '.' + (i+1) + '</b> ' + tag[i].innerHTML;
+	if (style === style_formula) {
+		for (i = 0; i < texts.length; i++)
+			texts[i].innerHTML = style(word, i);
+	} else {
+		for (i = 0; i < texts.length; i++)
+			texts[i].innerHTML = style(word, i) + ' ' + texts[i].innerHTML;
 	}
 }
 
@@ -18,19 +44,12 @@ function decorate(classname, word) {
 //	X = '%23';
 //nav[0].innerHTML = nav[0].innerHTML.replace(/prev/g, X + (n-1)).replace(/next/g, X + (n+1));
 
-var h2 = document.getElementsByTagName('h2');
-for (i = 0; i < h2.length; i++) {
-	h2[i].innerHTML = abbr + '.' + (i+1) + ' ' + h2[i].innerHTML;
-}
-
+decorate('h2', '', style_num, 'tag')
 decorate('theorem', '定理');
 decorate('definition', '定义');
 decorate('lemma', '引理');
 decorate('corollary', '推论');
 decorate('note', '注');
-
-// formula num: overwrite
-var num = document.getElementsByClassName('num');
-for (i = 0; i < num.length; i++) {
-	num[i].innerHTML = '(' + abbr + '-' + (i+1) + ')';
-}
+decorate('prove', '证', style_void);
+decorate('solve', '解', style_void);
+decorate('num', '', style_formula);

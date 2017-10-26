@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>AL1 算术</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script> -->
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="content.html" target="_blank">· · ·</a>
+	<a href="AL2.html" id="next">&gt;&gt;&gt;</a>
+</div>
+
+<h1>算法篇1 算术</h1>
+
+<h2>整数的平方: 以 65536<sup>2</sup> 为例</h2>
+
+<p>	运用恒等式:
+	` (a_1 + a_2 + cdots + a_n)^2
+	= sum_(k=1)^n a_k^2 + 2 sum_(i lt j) a_i a_j`.</p>
+<pre>
+            1 1
+        3 3 1 3,1 3
+          0 0 8 6,5 0
+            2 1 3   1 8
+              5 5 0
+        ---------------
+        3 3 4 8 5 8 1 8
+   *2   6 6 9 7 1 6 3 6
+    + 3 6 2 5 2 5 0 9 3 6
+    ---------------------
+      4 2 9 4 9 6 7 2 9 6
+</pre>
+
+<h2>开平方根: 以 `sqrt 2` 为例</h2>
+
+<p>	运用恒等式:
+	` (10a + b)^2 = 100a + 20ab + b^2`.
+</p>
+
+<pre>
+        1.  4   1   4   2   1
+        ---------------------
+     1 /2.0 0,0 0,0 0,0 0,0 0
+        1
+        -----
+    24 /1 0 0
+          9 6
+            -----
+       281 /4 0 0
+            2 8 1
+            ---------
+      2824 /1 1 9 0 0
+            1 1 2 9 6
+                ---------
+         28282 /6 0 4 0 0
+                5 6 5 6 4
+                  -----------
+          282841 /3 8 3 6 0 0
+                  2 8 2 8 4 1
+</pre>
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+

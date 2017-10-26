@@ -41,6 +41,71 @@
 	...
 </p>
 
+<h2>极限的四则运算</h2>
+<p>	若 `lim_(n to oo) x_n = a`, `lim_(n to oo) y_n = b`, 则
+	<div class="formula">
+		<li>`lim_(n to oo) (x_n +- y_n) = a +- b`;</li>
+		<li>`lim_(n to oo) (x_n y_n) = ab`;</li>
+		<li>`lim_(n to oo) (x_n)/(y_n) = a/b` (当 b &ne; 0).</li>
+	</div>
+</p>
+
+<ol class="prove">
+<li>对任意 `epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 知存在正整数
+	`N_1`, 使对任意 n &gt; `N_1` 有 `|x_n - a| lt epsilon/2`.
+	同样由 `lim_(n to oo) y_n = b` 知存在正整数 `N_2`, 使对任意 n &gt;
+	`N_2` 有 `|y_n - b| lt epsilon/2`. 取 `N = max{N_1, N_2}` 则两式同
+	时成立, 因此
+	<div class="formula">
+		`	|(x_n +- y_n) - (a +- b)|
+		le	|x_n - a| + |y_n - b|
+		lt	epsilon/2 + epsilon/2
+		=	epsilon`.
+	</div>
+</li>
+<li>由 `{y_n}` 有极限知它是有界数列, 即存在 M &gt; 0 使
+	<div class="formula">
+		`y_n lt M`, `AA n in NN`.
+	</div>
+	对任意 `epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
+	`lim_(n to oo) y_n = b` 知存在正整数 N, 使对任意 n &gt; N 同时成立
+	`|x_n - a| lt epsilon/(2M)` 和 `|y_n - b| lt epsilon/(2(|a| + 1))`
+	(这样就避免了对 a = 0 的讨论). 因此
+	<div class="formula">`
+{:(			|x_n y_n - ab|
+,		=	|x_n y_n + a y_n - a y_n - ab|
+		le	|x_n - a| |y_n| + |a| |y_n - b|
+),(,	lt	epsilon/(2M) M + |a| epsilon/(2(|a| + 1))
+		lt	epsilon.
+):}`</div>
+</li>
+<li>由于 `lim_(n to oo) y_n = b != 0`, 所以由数列极限的保号性知存在正
+	整数 `N_1` 使
+	<div class="formula">
+		`|y_n| gt |b/2|, AA n gt N_1`.
+	</div>
+	对任意 `epsilon gt 0`, 由 `lim(n to oo) x_n = a` 知存在 `N_2` 使
+	<div class="formula">
+		`|x_n - a| lt |b| epsilon /4, AA n gt N_2`.
+	</div>
+	又由 `lim_(n to oo) y_n = b` 知存在 `N_3` 使
+	<div class="formula">
+		`|y_n - b| lt |b|^2 epsilon/(4(|a| + 1)), AA n gt N_3`.
+	</div>
+	令 `N = max{N_1, N_2, N_3}`, 当 n &gt; N 时有
+	<div class="formula">`
+{:(			|(x_n)/(y_n) - a/b|
+,		=	|(b x_n - a y_n)/(b y_n)|
+),(,	le	(|b| |x_n - a| + |a| |y_n - b|)/(|b| |y_n|)
+),(,	lt	(|b| |x_n - a| + |a| |y_n - b|)/(1/2 |b|^2)
+),(,	=	2/|b| |x_n - a| + 2 |a|/|b|^2 |y_n - b|
+),(,	lt	2/|b| |b| epsilon/4
+		+ 2|a|/|b|^2 |b|^2 epsilon/(4(|a| + 1))
+		lt epsilon.
+):}`</div>
+</li>
+</ol>
+
 <h2>证明: `lim_(n -> oo) (1 + 1/n)^n` 存在.</h2>
 
 <p class="prove">

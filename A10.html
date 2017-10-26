@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>A10 数项级数</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="A2.html" id="prev">&lt;&lt;&lt;</a>
+	<a href="content.html" target="_blank">· · ·</a>
+	<a href="A4.html" id="next">&gt;&gt;&gt;</a>
+</div>
+
+<h1>分析篇10: 数项级数</h1>
+
+<h2>D'Alembert's Test (达朗贝尔检比法)</h2>
+
+<p>	若正项级数的一般项 `u_n` 满足
+	<div class="formula">
+		`lim_(n to oo) (u_(n+1)) / (u_n) = l`.
+	</div>
+	则
+	<div class="formula">
+		<li>`0 le l lt 1` 时, 级数收敛;</li>
+		<li>`1 lt l le oo` 时, 级数发散.</li>
+	</div>
+</p>
+
+<p class="prove">
+	`0 le l lt 1` 时, 取实数 r 使 `l lt r lt 1`. 则由
+	`lim_(n to oo) (u_(n+1)) / (u_n) = l` 知
+	对 `epsilon = r-l gt 0` 存在正整数 N, 使对所有 n &gt; N 成立
+	`u_(n+1) lt (l+epsilon) u_n = r u_n`.
+</p>
+
+<p>	于是 `u_n lt r u_(n-1) lt cdots lt r^(n-N) u_N`.
+	所以由级数 `sum_(n=N)^(oo) u_N r^(n-N)` 收敛知
+	`sum_(n=N)^(oo) u_n` 也收敛, 从而 `sum_(n=1)^(oo) u_n` 收敛.
+</p>
+
+<p>	`1 lt l le oo` 时, 取实数 r 使 `1 lt r lt l` (`l = oo` 时, 任取
+	r &gt; 1), 则对 `epsilon = l-r gt 0` 存在正整数 N, 使对所有 n &gt;
+	N  成立 `u_(n+1) gt (l-epsilon) u_n = r u_n`.
+</p>
+
+<p>	于是 `u_n gt r u_(n-1) gt cdots gt r^(n-N) u_N`. 但级数
+	`sum_(n=N)^(oo) u_N r^(n-N)` 发散, 所以 `sum_(n=N)^(oo) u_n`,
+	从而 `sum_(n=1)^(oo) u_n` 发散.
+</p>
+
+<p class="note">
+	这一定理可以推广到复数级数甚至矩阵级数. 以后者为例, 可以叙述为:
+	若矩阵级数的一般项 `U_(n+1) = V_n U_n`, 其中
+	<div class="formula">
+		`lim_(n to oo) ||V_n|| = l`.
+	</div>
+	则 `0 le l lt 1` 时, 级数 `sum_(n=1)^(oo) ||U_n||` 收敛, 从而
+	`sum_(n=1)^(oo) U_n` 收敛. 我们可以用下面的不等式证明之:
+	<div class="formula">
+		`||AB|| le ||A|| \ ||B||`.
+	</div>
+</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+

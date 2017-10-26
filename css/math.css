@@ -42,18 +42,6 @@ div.formula, p.formula  {
 	text-align: center;
 }
 
-.prove:before, .solve:before {
-	font-weight: bold;
-}
-
-.prove:before {
-	content: "证 ";
-}
-
-.solve:before {
-	content: "解 ";
-}
-
 span.box {
 	display: inline-block;
 	padding: 5px;
@@ -91,7 +79,7 @@ ol.tree ol {
 }
 
 ol {
-	margin: 10px;
+	margin: 10px 0;
 }
 
 li {
@@ -164,7 +152,7 @@ td, th {
 }
 
 /* on your mobile phone... */
-@media (min-height:800px min-width: 800px) {
+@media screen and min-width: 1000px {
 	#nav {
 		height: 64px;
 	}
