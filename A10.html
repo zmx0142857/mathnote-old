@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
-<!-- <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script> -->
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
 
 </head>
@@ -61,12 +61,12 @@
 	这一定理可以推广到复数级数甚至矩阵级数. 以后者为例, 可以叙述为:
 	若矩阵级数的一般项 `U_(n+1) = V_n U_n`, 其中
 	<div class="formula">
-		`lim_(n to oo) norm(V_n) = l`.
+		`lim_(n to oo) ||V_n|| = l`.
 	</div>
 	则 `0 le l lt 1` 时, 级数 `sum_(n=1)^(oo) norm(U_n)` 收敛, 从而
 	`sum_(n=1)^(oo) U_n` 收敛. 我们可以用下面的不等式证明之:
 	<div class="formula">
-		`norm(AB) le norm(A) norm(B)`.
+		`||AB|| le ||A|| ||B||`.
 	</div>
 </p>
 
