@@ -1,3 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: "Microsoft Yahei", Kaiti, Songti;
 	font-size: 16px;
@@ -13,43 +18,52 @@ a:hover {
 }
 
 img.geo {
+	width: 250px;
+	height: 250px;
 	float: right;
 }
 
 h1 {
 	text-align: center;
 	font-size: 1.8em;
+	margin: 50px 0;
 }
 
 h2 {
 	font-size: 1.5em;
+	margin: 20px 0;
 }
 
 h3 {
 	font-size: 1.2em;
+	margin: 15px 0;
+}
+
+p {
+	margin: 10px 0;
 }
 
 math {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
-div.formula, p.formula  {
+ol {
+	margin: 10px;
+}
+
+li {
+	padding: 5px;
+}
+
+.formula {
 	display: table;
 	width: 100%;
-	margin: 15px 0;
 	text-align: center;
+	margin: 15px;
 }
 
-.prove:before, .solve:before {
-	font-weight: bold;
-}
-
-.prove:before {
-	content: "证 ";
-}
-
-.solve:before {
-	content: "解 ";
+.formula p {
+	margin: 10px 0;
 }
 
 span.box {
@@ -88,23 +102,10 @@ ol.tree ol {
 	counter-reset: list_cnt;
 }
 
-ol {
-	margin: 10px;
-}
-
-li {
-	padding: 5px 0;
-}
-
 /* list in two or more columns */
 .block li {
 	width: 250px;
 	display: inline-block;
-}
-
-/* multi-line centered formula */
-.formula li {
-	list-style: none;
 }
 
 table {
@@ -162,7 +163,7 @@ td, th {
 }
 
 /* on your mobile phone... */
-@media (min-height:800px min-width: 800px) {
+@media screen and min-width: 1000px {
 	#nav {
 		height: 64px;
 	}
