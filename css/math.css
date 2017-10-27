@@ -52,7 +52,8 @@ ol {
 }
 
 li {
-	padding: 5px;
+	margin: 7px;
+	margin-left: 2em;
 }
 
 .formula {
