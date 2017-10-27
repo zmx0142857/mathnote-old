@@ -36,26 +36,61 @@
 	由两边夹法则, 命题成立.
 </p>
 
-<h2>证明: `lim_(n -> oo) a^n/(n!) = 0`, `AA a in R`.</h2>
+<h2>证明: `lim_(n to oo) a^n/(n!) = 0`, `AA a in R`.</h2>
 <p class="prove">
-	...
+	取 `N_1 = [|a| + 1]`, 则 `|a|/n lt 1, AA n gt N_1`. 取实数 `r` 使
+	`|a|/n lt r lt 1`, 有
+	<div class="formula">
+		`  |a^n/(n!)|
+		= |a|^n/(n!)
+		le r^(n-N_1) |a|^(N_1)/(N_1!)
+		lt r^(n-N_1) (|a|+1)^(N_1)/(N_1!)`.
+	</div>
+	记 `b = |a| + 1`,
+	对 `AA epsilon gt 0`, 要使上式右边小于 `epsilon`, 只要
+	<div class="formula">
+		`(n - N_1) ln r lt ln((N_1!)/b^(N_1) epsilon)`,
+	</div>
+	即
+	<div class="formula">
+		`n gt ln((N_1!)/b^(N_1) epsilon) / ln r + N_1`.
+	</div>
+	所以只要取 `N = [ln((N_1!)/b^(N_1) epsilon) / ln r + N_1] + 1`,
+	当 `n gt N` 时, 就有 `| a^n/(n!) | lt epsilon`.
+	<span class="right">&square;</span>
 </p>
+
+<h2>证明下面的数列收敛, 且极限为 `root(m)(A)`.</h2>
+
+<div class="formula">
+	<p>`x_1 = 1`,</p>
+	<p>`x_(n+1) = 1/m [(m-1) x_n + A/x_n^(m-1)]`.</p>
+	<p>(`m in ZZ`, `m != 0`; `A gt 0`)</p>
+</div>
+
+<ol class="prove">
+<li></li>
+<li></li>
+<li></li>
+</ol>
 
 <h2>极限的四则运算</h2>
 <p>	若 `lim_(n to oo) x_n = a`, `lim_(n to oo) y_n = b`, 则
 	<div class="formula">
-		<li>`lim_(n to oo) (x_n +- y_n) = a +- b`;</li>
-		<li>`lim_(n to oo) (x_n y_n) = ab`;</li>
-		<li>`lim_(n to oo) (x_n)/(y_n) = a/b` (当 b &ne; 0).</li>
+		<p>`lim_(n to oo) (x_n +- y_n) = a +- b`;</p>
+		<p>`lim_(n to oo) (x_n y_n) = ab`;</p>
+		<p>`lim_(n to oo) (x_n)/(y_n) = a/b` (当 b &ne; 0).</p>
 	</div>
 </p>
 
 <ol class="prove">
-<li>对任意 `epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 知存在正整数
-	`N_1`, 使对任意 n &gt; `N_1` 有 `|x_n - a| lt epsilon/2`.
-	同样由 `lim_(n to oo) y_n = b` 知存在正整数 `N_2`, 使对任意 n &gt;
-	`N_2` 有 `|y_n - b| lt epsilon/2`. 取 `N = max{N_1, N_2}` 则两式同
-	时成立, 因此
+<li>对 `AA epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
+	`lim_(n to oo) y_n = b` 知 `EE` `N_1`, `N_2`, 使
+	<div class="formula">
+		<p>`|x_n - a| lt epsilon/2, AA n gt N_1`;</p>
+		<p>`|y_n - b| lt epsilon/2, AA n gt N_2`.</p>
+	</div>
+	故 `n gt max{N_1, N_2}` 时,
 	<div class="formula">
 		`	|(x_n +- y_n) - (a +- b)|
 		le	|x_n - a| + |y_n - b|
@@ -63,46 +98,50 @@
 		=	epsilon`.
 	</div>
 </li>
-<li>由 `{y_n}` 有极限知它是有界数列, 即存在 M &gt; 0 使
+
+<li>由收敛数列的有界性知 `EE` M &gt; 0 使
 	<div class="formula">
-		`y_n lt M`, `AA n in NN`.
+		`|y_n| lt M`, `AA n in NN`.
 	</div>
-	对任意 `epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
-	`lim_(n to oo) y_n = b` 知存在正整数 N, 使对任意 n &gt; N 同时成立
-	`|x_n - a| lt epsilon/(2M)` 和 `|y_n - b| lt epsilon/(2(|a| + 1))`
-	(这样就避免了对 a = 0 的讨论). 因此
+	对 `AA epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
+	`lim_(n to oo) y_n = b` 知 `EE N_1, N_2 in NN`, 使
+	<div class="formula">
+		<p>`|x_n - a| lt epsilon/(2M)`;</p>
+		<p>`|y_n - b| lt epsilon/(2(|a| + 1))`.</p>
+	</div>
+	(这样就避免了对 a = 0 的讨论). 因此 `n gt max{N_1, N_2}` 时,
 	<div class="formula">`
 {:(			|x_n y_n - ab|
-,		=	|x_n y_n + a y_n - a y_n - ab|
-		le	|x_n - a| |y_n| + |a| |y_n - b|
+,		=	|x_n y_n - a y_n + a y_n - ab|
+),(,	le	|x_n - a| |y_n| + |a| |y_n - b|
 ),(,	lt	epsilon/(2M) M + |a| epsilon/(2(|a| + 1))
 		lt	epsilon.
 ):}`</div>
 </li>
-<li>由于 `lim_(n to oo) y_n = b != 0`, 所以由数列极限的保号性知存在正
-	整数 `N_1` 使
+
+<li>因为 `lim_(n to oo) y_n = b != 0`, 所以由数列极限的保号性知
+	`EE N_1 in NN` 与 `m gt 0` 使
 	<div class="formula">
-		`|y_n| gt |b/2|, AA n gt N_1`.
+		`|y_n| gt m, AA n gt N_1`.
 	</div>
-	对任意 `epsilon gt 0`, 由 `lim(n to oo) x_n = a` 知存在 `N_2` 使
+	对 `AA epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
+	`lim_(n to oo) y_n  = b` 知存在 `N_2, N_3 in NN` 使
 	<div class="formula">
-		`|x_n - a| lt |b| epsilon /4, AA n gt N_2`.
+		<p>`|x_n - a| lt m epsilon/2, AA n gt N_2`;</p>
+		<p>`|y_n - b| lt (m|b|)/(|a|+1) epsilon/2, AA n gt N_3`.</p>
 	</div>
-	又由 `lim_(n to oo) y_n = b` 知存在 `N_3` 使
-	<div class="formula">
-		`|y_n - b| lt |b|^2 epsilon/(4(|a| + 1)), AA n gt N_3`.
-	</div>
-	令 `N = max{N_1, N_2, N_3}`, 当 n &gt; N 时有
+	当 `n gt max{N_1, N_2, N_3}` 时有
 	<div class="formula">`
 {:(			|(x_n)/(y_n) - a/b|
 ,		=	|(b x_n - a y_n)/(b y_n)|
-),(,	le	(|b| |x_n - a| + |a| |y_n - b|)/(|b| |y_n|)
-),(,	lt	(|b| |x_n - a| + |a| |y_n - b|)/(1/2 |b|^2)
-),(,	=	2/|b| |x_n - a| + 2 |a|/|b|^2 |y_n - b|
-),(,	lt	2/|b| |b| epsilon/4
-		+ 2|a|/|b|^2 |b|^2 epsilon/(4(|a| + 1))
+),(,	=	(|b x_n - ab + ab - a y_n|)/(|b| |y_n|)
+),(,	lt	(|b| |x_n - a| + |a| |y_n - b|)/(m |b|)
+),(,	=	1/m |x_n - a| + |a|/(m|b|) |y_n - b|
+),(,	lt	1/m m epsilon/2 + |a|/(m|b|) (m|b|)/(|a|+1) epsilon/2
 		lt epsilon.
-):}`</div>
+):}`
+	<span class="right">&square;</span>
+	</div>
 </li>
 </ol>
 

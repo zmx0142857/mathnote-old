@@ -5,20 +5,27 @@ This file contains JavaScript functions to convert ASCII math notation
 and (some) LaTeX to Presentation MathML. The conversion is done while the 
 HTML page loads, and should work with Firefox and other browsers that can
 render MathML.
+
 Just add the next line to your HTML page with this file in the same folder:
+
 <script type="text/javascript" src="ASCIIMathML.js"></script>
+
 Version 2.2 Mar 3, 2014.
 Latest version at https://github.com/mathjax/asciimathml
 If you use it on a webpage, please send the URL to jipsen@chapman.edu
+
 Copyright (c) 2014 Peter Jipsen and other ASCIIMathML.js contributors
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,9 +37,9 @@ THE SOFTWARE.
 var asciimath = {};
 
 (function(){
-var mathcolor = "";	           // change it to "" (to inherit) or another color
-var mathfontsize = "1em";    // change to e.g. 1.2em for larger math
-var mathfontfamily = "";       // change to "" to inherit (works in IE) 
+var mathcolor = "";        // change it to "" (to inherit) or another color
+var mathfontsize = "";      // change to e.g. 1.2em for larger math
+var mathfontfamily = "";  // change to "" to inherit (works in IE) 
                                // or another family (e.g. "arial")
 var automathrecognize = false; // writing "amath" on page makes this true
 var checkForMathML = true;     // check if browser can display MathML
@@ -40,12 +47,12 @@ var notifyIfNoMathML = true;   // display note at top if no MathML capability
 var alertIfNoMathML = false;   // show alert box if no MathML capability
 var translateOnLoad = true;    // set to false to do call translators from js 
 var translateASCIIMath = true; // false to preserve `..`
-var displaystyle = true;       // puts limits above and below large operators
+var displaystyle = true;      // puts limits above and below large operators
 var showasciiformulaonhover = true; // helps students learn ASCIIMath
-var decimalsign = ".";         // change to "," if you like, beware of `(1,2)`!
+var decimalsign = ".";        // change to "," if you like, beware of `(1,2)`!
 var AMdelimiter1 = "`", AMescape1 = "\\\\`"; // can use other characters
-var AMdocumentId = "wikitext"  // PmWiki element containing math (default=body)
-var fixphi = true;             // false to return to legacy phi/varphi mapping
+var AMdocumentId = "wikitext" // PmWiki element containing math (default=body)
+var fixphi = true;  		//false to return to legacy phi/varphi mapping
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -81,7 +88,7 @@ function setStylesheet(s) {
 	}
 }
 
-setStylesheet("#AMMLcloseDiv \{font-size:1em; padding-top:1em; color:#014\}\n#AMMLwarningBox \{position:absolute; width:100%; top:0; left:0; z-index:200; text-align:center; font-size:1em; font-weight:bold; padding:0.5em 0 0.5em 0; color:#ffc; background:#c30\}");
+setStylesheet("#AMMLcloseDiv \{font-size:0.8em; padding-top:1em; color:#014\}\n#AMMLwarningBox \{position:absolute; width:100%; top:0; left:0; z-index:200; text-align:center; font-size:1em; font-weight:bold; padding:0.5em 0 0.5em 0; color:#ffc; background:#c30\}");
 
 function init(){
 	var msg, warnings = new Array();
@@ -396,6 +403,7 @@ var AMsymbols = [
 {input:"floor",   tag:"mo", output:"floor",  tex:null, ttype:UNARY, rewriteleftright:["\u230A","\u230B"]},
 {input:"ceil",   tag:"mo", output:"ceil",  tex:null, ttype:UNARY, rewriteleftright:["\u2308","\u2309"]},
 {input:"log",  tag:"mo", output:"log", tex:null, ttype:UNARY, func:true},
+{input:"lg",  tag:"mo", output:"lg", tex:null, ttype:UNARY, func:true}, //------zmxadd
 {input:"ln",   tag:"mo", output:"ln",  tex:null, ttype:UNARY, func:true},
 {input:"det",  tag:"mo", output:"det", tex:null, ttype:UNARY, func:true},
 {input:"dim",  tag:"mo", output:"dim", tex:null, ttype:CONST},
@@ -406,6 +414,8 @@ var AMsymbols = [
 {input:"glb",  tag:"mo", output:"glb", tex:null, ttype:CONST},
 {input:"min",  tag:"mo", output:"min", tex:null, ttype:UNDEROVER},
 {input:"max",  tag:"mo", output:"max", tex:null, ttype:UNDEROVER},
+{input:"inf",  tag:"mo", output:"inf", tex:null, ttype:UNDEROVER}, //------zmxadd
+{input:"Sup",  tag:"mo", output:"sup", tex:null, ttype:UNDEROVER}, //------zmxadd
 
 //arrows
 {input:"uarr", tag:"mo", output:"\u2191", tex:"uparrow", ttype:CONST},

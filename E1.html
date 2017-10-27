@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>E1 三次和四次方程</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script> -->
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="content.html" target="_blank">· · ·</a>
+	<a href="E2.html" id="next">&gt;&gt;&gt;</a>
+</div>
+
+<h1>方程篇1: 三次和四次方程</h1>
+
+<h2>卡丹公式</h2>
+
+<p>	解三次方程
+	<div class="formula">
+		`x^3 + a x^2 + b x + c`; `a, b, c in RR`.
+	</div>
+		令 `x = y - a/3` 消去平方项, 得
+	<div class="formula">
+		`y^3 + py + q = 0`,
+		<span class="num">(E1-1)</span>
+	</div>
+	其中 `p = b - a^2/3`, `q = 2/27 a^3 - (ab)/3 + c`.
+	设 `u + v` 是 (E1-1) 的根, 则
+	<div class="formula">
+		`(u + v)^3 + p(u + v) + q = 0`,
+	</div>
+	即
+	<div class="formula">
+		`(u + v)(3uv + p) + u^3 + v^3 + q = 0`.
+		<span class="num">(E1-2)</span>
+	</div>
+	(E1-2) 成立的充分条件是 `uv = -p/3` 且 `u^3 + v^3 = -q`.
+	记 `alpha = u^3`, `beta = v^3`, 由二次方程的韦达定理知 `alpha`,
+	`beta` 是方程
+	<div class="formula">
+		`z^2 + qz - p^3/27 = 0`
+	</div>
+	的两根. 解得
+	<div class="formula">
+		`alpha, beta = -q/2 +- sqrt((q/2)^2 + (p/3)^3)`.	
+	</div>
+	在复数域内,
+	`u = root(3)(alpha)`
+	或	`omega root(3)(alpha)`
+	或 `omega^2 root(3)(alpha)`,
+	`v = root(3)(beta)`
+	或	`omega root(3)(beta)`
+	或 `omega^2 root(3)(beta)`.
+	其中 `omega = -1/2 + (sqrt 3)/2 i`.
+	因为 `uv = -p/3 in RR`, 所以 (E1-1) 有三个根:
+	<div class="formula">
+		`root(3)(alpha) + root(3)(beta)`,
+		`omega root(3)(alpha) + omega^2 root(3)(beta)`,
+		`omega^2 root(3)(alpha) + omega root(3)(beta)`
+	</div>
+	再由代数基本定理知, 这就是 (E1-1) 全部的根.
+	通过 `x = y - a/3` 代回, 就得到原方程的解.
+	<span class="right">&square;</span>
+</p>
+
+<p class="note">
+	当判别式 `Delta = q^2 + 4/27 p^3 gt 0` 时, 方程有一实根, 一对共轭
+	复根; `Delta lt 0` 时, 方程有三个不同的实根; `Delta = 0` 时,
+	三个实根分别是 `x_1 = -2 root(3)(q/2) - a/3`,
+	`x_2 = x_3 = root(3)(q/2) - a/3`.
+</p>
+
+<p class="note">
+	韦达定理的三次方程形式:
+	<div class="formula">
+		<p>`x_1 + x_2 + x_3 = -b`,</p>
+		<p>`x_1 x_2 + x_2 x_3 + x_3 x_1 = c`,</p>
+		<p>`x_1 x_2 x_3 = -d`.</p>
+	</div>
+</p>
+
+<p class="example">
+	解方程 `27 x^3 + 54 x^2 -369 x -370 = 0`.
+</p>
+
+<p class="solve">
+	最高次项系数化为 1,
+	<div class="formula">
+		`x^3 + 2 x^2 - 41/3 x -370/27 = 0`.
+	</div>
+	令 `x = y - 2/3`,
+	<div class="formula">
+		`y^3 - 15 y - 4 = 0`.
+	</div>
+	故 `q/2 = -2`, `p/3 = -5`, `Delta = q^2 + 4/27 p^3 lt 0`, 有三个不
+	同实根. 解得
+	<div class="formula">
+		`alpha = 2 + 11i = (2+i)^3`,
+		`beta = 2 - 11i = (2-i)^3`.
+	</div>
+	所以三个实根为 `4, -2-sqrt3, -2+sqrt3`.
+	而原方程的根为 `10/3, -8/3-sqrt3, -8/3+sqrt3`.
+</p>
+
+<h2>费拉里公式</h2>
+
+<p>	解四次方程
+	<div class="formula">
+		`x^4 + ax^3 + bx^2 + cx + d = 0`; `a, b, c, d in RR`.
+		<span class="num">(E1-3)</span>
+	</div>
+
+	把
+	<div class="formula">
+		`(2x^2 + ax + 2y)^2 = (Mx + 2N/M)^2`,
+		<span class="num">(E1-4)</span>
+	</div>
+
+	展开得
+	<div class="formula">
+		` 4x^4 + 4ax^3 + (a^2 + 8y)x^2 + 4ayx + 4y^2
+		= M^2 x^2 + 4Nx + 4 N^2/M^2`. 
+	</div>
+
+	代入
+		`M = sqrt(8y + a^2 - 4b)`, `N = ay - c` `(M != 0)`,
+	有
+	<div class="formula">
+		`x^4 + ax^3 + bx^2 + cx + y^2 - (ay-c)^2/(8y+a^2-4b) = 0`.
+	</div>
+
+	故只要 (E1-4) 与
+	<div class="formula">
+		`y^2 - (ay-c)^2/(8y+a^2-4b) = d`
+		<span class="num">(E1-5)</span>
+	</div>
+
+	成立, 就有 (E1-3) 成立.
+	而 (E1-5) 成立只需
+
+	<div class="formula">
+		`8y^3 - 4by^2 + 2(ac-4d)y - d(a^2-4b) - c^2 = 0`,
+		<span class="num">(E1-6)</span>
+	</div>
+
+	(E1-4) 成立只需
+	<div class="formula">
+		`(2x^2 + ax + 2y + Mx + 2N/M)(2x^2 + ax + 2y - Mx - 2N/M)=0`.
+		<span class="num">(E1-7)</span>	
+	</div>
+
+	如此已将一元四次方程的求解化为求解一个一元三次方程 (E1-6) 与两个一
+	元二次方程 (E1-7). 在解 (E1-7) 时, 把 (E1-6) 的任一实根代入 y.
+	<span class="right">&square;</span>
+</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+
