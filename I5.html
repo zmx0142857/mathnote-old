@@ -15,12 +15,6 @@
 
 <body>
 
-<div id="nav">
-	<a href="prev.html" id="prev">&lt;&lt;&lt;</a>
-	<a href="content.html" target="_blank">· · ·</a>
-	<a href="next.html" id="next">&gt;&gt;&gt;</a>
-</div>
-
 <h1>代数篇5: 行列式</h1>
 
 <h2>行列式的导数</h2>
@@ -29,10 +23,10 @@
 	`f_(n1), ..., f_(n n)` 是关于自变元 `x` 的 n `xx` n 个可微函数,
 	记
 	<div class="formula">`Delta = |
-	(	f_(11)(x), f_(12)(x), cdots, f_(1n)(x) ),
-	(	f_(21)(x), f_(22)(x), cdots, f_(2n)(x) ),
-	(	vdots,  vdots, cdots, vdots   ),
-	(	f_(n1)(x), f_(n2)(x), cdots, f_(n n)(x) )
+	(	f_(11)(x),	f_(12)(x),	cdots,	f_(1n)(x)	),
+	(	f_(21)(x),	f_(22)(x),	cdots,	f_(2n)(x)	),
+	(	vdots,		vdots,		,		vdots		),
+	(	f_(n1)(x),	f_(n2)(x),	cdots,	f_(n n)(x)	)
 	|`,
 	</div>
 	`Delta^((i))` 是将 `Delta` 第 i 行的函数换成相应的导函数所得到的
@@ -48,7 +42,7 @@
 		=	f_(11)^' f_(22) + f_(11) f_(22)^'
 			- f_(12)^' f_(21) - f_(12) f_(21)^'
 		=	|(f_(11)^' \ f_(12)^'), (f_(21) \ f_(22))|
-			+ |(f_(11) \ f_(12)), (f_(21)^' \ f_(22)^')|`
+			+ |(f_(11) \ f_(12)), (f_(21)^' \ f_(22)^')|`.
 	</div>
 	命题成立, 现在设命题对 n-1 成立, 则对 n, 若记 `F_(ij)` 为相应的
 	代数余子式, 有
