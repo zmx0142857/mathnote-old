@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>I5 行列式</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<div id="nav">
+	<a href="prev.html" id="prev">&lt;&lt;&lt;</a>
+	<a href="content.html" target="_blank">· · ·</a>
+	<a href="next.html" id="next">&gt;&gt;&gt;</a>
+</div>
+
+<h1>代数篇5: 行列式</h1>
+
+<h2>行列式的导数</h2>
+
+<p>	设 `f_(11), f_(12), cdots, f_(1n), f_(21), cdots, f_(2n), cdots`
+	`f_(n1), ..., f_(n n)` 是关于自变元 `x` 的 n `xx` n 个可微函数,
+	记
+	<div class="formula">`Delta = |
+	(	f_(11)(x), f_(12)(x), cdots, f_(1n)(x) ),
+	(	f_(21)(x), f_(22)(x), cdots, f_(2n)(x) ),
+	(	vdots,  vdots, cdots, vdots   ),
+	(	f_(n1)(x), f_(n2)(x), cdots, f_(n n)(x) )
+	|`,
+	</div>
+	`Delta^((i))` 是将 `Delta` 第 i 行的函数换成相应的导函数所得到的
+	行列式, i = 1, 2, ..., n, 则
+	<div class="formula">
+		`d/dx Delta = sum_(i=1)^n Delta^((i))`.
+	</div>
+</p>
+<p class="prove">
+	n = 2 时,
+	<div class="formula"> 
+		` d/dx |( f_(11) \ f_(12) ), ( f_(21) \ f_(22) )|
+		=	f_(11)^' f_(22) + f_(11) f_(22)^'
+			- f_(12)^' f_(21) - f_(12) f_(21)^'
+		=	|(f_(11)^' \ f_(12)^'), (f_(21) \ f_(22))|
+			+ |(f_(11) \ f_(12)), (f_(21)^' \ f_(22)^')|`
+	</div>
+	命题成立, 现在设命题对 n-1 成立, 则对 n, 若记 `F_(ij)` 为相应的
+	代数余子式, 有
+
+	<div class="formula">`
+{:(,		d/dx Delta
+),(		=,	d/dx sum_(k=1)^n f_(1k) F_(1k)
+),(		=,	sum_(k=1)^n f_(1k)^' F_(1k) + sum_(k=1)^n f_(1k) F_(1k)^'
+),(		=,	Delta^((1)) 
+			+ sum_(k=1)^n f_(1k) sum_(j=1)^(n-1) F_(1k)^((j))
+),(		=,	Delta^((1))
+			+ sum_(j=1)^(n-1) sum_(k=1)^n f_(1k) F_(1k)^((j))
+),(		=, sum_(i=1)^n Delta^((i)).
+):}`</div>
+	<span class="right">&square;</span>
+</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+
