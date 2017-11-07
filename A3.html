@@ -39,6 +39,22 @@
 	<span class="right">&square;</span>
 </p>
 
+<h2>应用致密性原理</h2>
+
+<h3>子数列</h3>
+<p>	从记号上看, "选取子列" 这一操作的结果是增加了下标的重数, 如 `x_n`
+	的子列 `x_(n_k)`. 子数列并不改变各项在原数列中的次序, 因此这里
+	`n_k` 是一个严格单增的正整数列, 即
+	<div class="formula">
+		`1 le n_1 lt n_2 lt ... lt n_k`.
+	</div>
+	应用归纳法可知有
+	<div class="formula">
+		`n_k ge k`.
+	</div>
+	这个不等式在许多与子数列有关的证明中有广泛应用.
+</p>
+
 </body>
 
 <script src="js/random-color.js"></script>

@@ -1,17 +1,20 @@
 'use strict';
 
-var t = document.title;
-var abbr = t.substring(0, t.indexOf(' '));
-var x = abbr.substring(0, abbr.search(/[0-9]/));
-var n = parseInt(abbr.substring(1, abbr.length));
-var i;
+var filename = window.location.href.split('/');
+filename = filename[filename.length-1].split('.')[0];
+var i = filename.search(/[0-9]/);
+if (filename.indexOf('-') > i) {
+	i = filename.indexOf('-') + 1;
+}
+var abbr = filename.substring(0, i);
+var n = parseInt(filename.substring(i));
 
 function tag_it(str, tagname) {
 	return '<' + tagname + '>' + str + '</' + tagname + '>'; 
 }
 
 function style_name_num(word, i) {
-	return tag_it(word + abbr + '.' + (i+1), 'b');
+	return tag_it(word + filename + '.' + (i+1), 'b');
 }
 
 function style_num(word, i) {
@@ -23,7 +26,7 @@ function style_void(word) {
 }
 
 function style_formula(word, i) {
-	return '(' + abbr + '-' + (i+1) + ')';
+	return '(' + filename + '-' + (i+1) + ')';
 }
 
 function decorate(name, word, style=style_name_num, get_by='class') {
@@ -58,7 +61,7 @@ function make_nav() {
 	body[0].insertBefore(nav, h1[0]);
 	if (n > 1) {
 		var prev = document.createElement('a');
-		prev.href = (x === '#' ? '%23' : x) + (n-1) + '.html';
+		prev.href = (abbr === '#' ? '%23' : abbr) + (n-1) + '.html';
 		prev.id = 'prev';
 		prev.innerHTML = '&lt;&lt;&lt;';
 		nav.appendChild(prev);
@@ -70,7 +73,7 @@ function make_nav() {
 	nav.appendChild(content);
 
 	var next = document.createElement('a');
-	next.href = (x === '#' ? '%23' : x) + (n+1) + '.html';
+	next.href = (abbr === '#' ? '%23' : abbr) + (n+1) + '.html';
 	next.id = 'next';
 	next.innerHTML = '&gt;&gt;&gt;';
 	nav.appendChild(next);
