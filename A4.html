@@ -213,6 +213,20 @@
 		( (n-1)/n * (n-3)/(n-2) cdots 2/3 * 1, if n in Odd; ),
 		( (n-1)/n * (n-3)/(n-2) cdots 1/2 * pi/2, if n in Even. )
 	:}`</div>
+</p>
+
+<p class="note">
+	另一种解法利用了 Beta 函数和 Gamma 函数的性质:
+	<div class="formula">`
+{:(,		I_n \ (text(let ) x = arcsin u)
+),(		=,	int_0^1 u^n/sqrt(1 - u^2) text(d)u \ (text(let ) u=sqrt v)
+),(		=,	1/2 int_0^1 v^(n/2 - 1/2) / sqrt(1-v) text(d) v
+),(		=,	1/2 int_0^1 v^((n+1)/2 - 1) (1-v)^(1/2 - 1) text(d) v
+),(		=,	1/2 B((n+1)/2, 1/2)
+),(		=,	( Gamma((n+1)/2) Gamma(1/2) ) / (2 Gamma((n+2)/2))
+),(		=,	(sqrt pi Gamma((n+1)/2) ) / ( 2 Gamma((n+2)/2) ).
+):}`</div>
+</p>
 
 <h2>`I_n = int (text(d)x) / (x^2 + a)^n`.</h2>
 
@@ -329,6 +343,9 @@
 ),(,		=	-1/(x+1) + 1/(2(x+1)^2) + C.
 ):}`</div>
 </p>
+
+<h2>`int x^n e^x dx = e^x sum_(k=0)^n (-1)^k A_n^k x^(n-k) + C`.</h2>
+<p>	用分部积分及归纳法证明之.</p>
 
 <h2>这些不定积分没有初等的表达式:</h2>
 <div class="block">
