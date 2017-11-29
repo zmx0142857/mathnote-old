@@ -2,6 +2,8 @@
 
 var filename = window.location.href.split('/');
 filename = filename[filename.length-1].split('.')[0];
+if (filename.substring(0, 3) === '%23')
+	filename = '#' + filename.substring(3);
 var i = filename.search(/[0-9]/);
 if (filename.indexOf('-') > i) {
 	i = filename.indexOf('-') + 1;
