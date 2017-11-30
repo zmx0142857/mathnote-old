@@ -37,7 +37,7 @@ THE SOFTWARE.
 var asciimath = {};
 
 (function(){
-var mathcolor = "blue";        // change it to "" (to inherit) or another color
+var mathcolor = "";        // change it to "" (to inherit) or another color
 var mathfontsize = "1em";      // change to e.g. 1.2em for larger math
 var mathfontfamily = "serif";  // change to "" to inherit (works in IE) 
                                // or another family (e.g. "arial")
