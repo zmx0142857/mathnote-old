@@ -17,6 +17,27 @@
 
 <h1>分析篇3: 实数的完备性</h1>
 
+<h2>上确界/下确界的性质</h2>
+
+<p>如果实函数 `f(x), g(x)` 在 `S` 上有定义,
+	且 `f(x) le g(x)`, `AA x in S`, 则
+	<div class="formula">
+		`underset(x in S) text(sup)\ f(x) le underset(x in S) text(sup)\ g(x)`,
+		`underset(x in S) text(inf)\ f(x) le underset(x in S) text(inf)\ g(x)`.
+	</div>
+</p>
+
+<p class="prove">
+	只证第一条结论, 第二条同理.
+	易知对 `AA x in S`,
+	`underset(x in S) text(sup)\ g(x) ge g(x) ge f(x)`,
+	所以 `underset(x in S) text(sup)\ g(x)` 是 `f(x)` 的上界.
+	而 `underset(x in S) text(sup)\ f(x)` 是 `f(x)` 的最小上界,
+	所以 `underset(x in S) text(sup)\ f(x) le
+	underset(x in S) text(sup)\ g(x)`.
+	<span class="right">&square;</span>
+</p>
+
 <h2>应用确界原理证明戴德金原理</h2>
 
 <p class="prove">
