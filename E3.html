@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>E3 微分方程初等解法</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h1>方程篇3: 微分方程初等解法</h1>
+
+<h2>杂例</h2>
+
+<p>`dy/dx = (2x^3 + 3xy^2 + x) / (3x^2 y + 2y^3 - y)`.</p>
+
+<p class="solve"> 
+	原方程化为
+	<div class="formula">
+		`(y dy)/(x dx) = (2x^2 + 3y^2 + 1) / (3x^2 + 2y^2 - 1)`.
+	</div>
+
+	令 `X = x^2 - 1`, `Y = y^2 + 1`, 则
+	<div class="formula">
+		`(dY)/(dX) = (2X + 3Y)/(3X + 2Y)`.
+	</div>
+
+	又令 `u = Y/X`, 则 `Y = uX`, `(dY)/(dX) = u + X (du)/(dX)`.
+	方程化为
+	<div class="formula">
+		`(2 + 3u)/(3 + 2u) = u + X(du)/(dX)`.
+	</div>
+	分离变量得
+	<div class="formula">
+		`2 (dX)/X = (3 + 2u)/(1-u^2) du`.
+	</div>
+	两边积分,
+	<div class="formula">
+		`2 ln |X| + c_1 = 3/2 ln |(1+u)/(1-u)| - ln |1-u^2|`.
+	</div>
+	即
+	<div class="formula">
+		`c_2 X^2 = (1+u)^(1/2) (1-u)^(-2/5)`.
+	</div>
+	两边平方并代回原变量,
+	<div class="formula">
+		`c (x^2-1)^4 = (1 + (y^2+1)/(x^2-1))(1-(y^2+1)/(x^2-1))^(-5)`.
+	</div>
+	即
+	<div class="formula">
+		`c(x^2 - y^2 - 2)^5 = (x^2 + y^2)`.
+	</div>
+
+</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+
