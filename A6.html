@@ -17,15 +17,18 @@
 
 <h1>分析篇6: 反例</h1>
 
-<h2>连续而处处不可导 - Weierstrass 函数</h2>
+<h2>一元微分学</h2>
+
+<h3>处处连续但处处不可导 - Weierstrass 函数</h3>
 
 <p>	Weierstrass 函数定义如下:
 	<div class="formula">
 		<p>`f(x) = sum_(n=0)^(oo) a^n cos(b^n pi x)`,</p>
 		<p>`0 lt a lt 1`, `b` 为正奇数, 且 `ab gt 1 + 3/2 pi`.</p>
 	</div>
-	由 `|a^n cos(b^n pi x)| le a^n` 且 `sum_(n=0)^(oo) a^n` 收敛知
-	`f(x)` 收敛. 进一步由 Weierstrass 判别法知 `f(x)` 一致收敛.
+
+	因为 `|a^n cos(b^n pi x)| le a^n` 且 `sum_(n=0)^(oo) a^n` 收敛,
+	由 Weierstrass M 判别法知 `f(x)` 在实轴上一致收敛.
 	因此, 由于每个函数项是 `RR` 上的连续函数, 所以 `f(x)` 也是 `RR`
 	上的连续函数. 但任取 `x in RR`, 我们能找出 `x_n to x`, `y_n to x`,
 	使
@@ -37,7 +40,195 @@
 	这说明 Weierstrass 函数在任意 `x in RR` 处不可导.
 </p>
 
-<h2>在一点 `x_0` 可微, 但在任意 `x in B(x, delta)\{x}` 不可微的例子</h2>
+<h3>在一点 `x_0` 可微, 但在任意 `x in B(x, delta)\\{x}` 不可微</h3>
+
+<h2>多元微分学</h2>
+
+<h3>各个方向极限存在且相等, 但全极限不存在</h3>
+
+<p>	考虑二元函数
+	<div class="formula">`f(x, y) = {
+			(x^2/y,	if y != 0),
+			(0,		if y = 0)
+	:}`</div>
+
+	对平面上的任意单位向量 `vec l = (cos theta, sin theta)`, 当
+	`theta != 0, pi` 时,
+
+	<div class="formula">
+		` lim_(t to 0^+) f(t cos theta, t sin theta)
+		= lim_(t to 0^+) (t^2 cos^2 theta)/(t sin theta)
+		= 0`.
+	</div>
+
+	当 `theta = 0, pi` 时,
+
+	<div class="formula">
+		` lim_(t to 0^+) f(t cos theta, t sin theta) = 0`.
+	</div>
+
+	所以 `f(x, y)` 在原点沿任何方向的方向极限都等于零.
+	但它在原点的全极限不存在, 因为
+
+	<div class="formula">
+		`lim_(((x,y) to (0, 0)), (y = x^2)) f(x, y) = 1 != 0`.
+	</div>
+
+	究其原因, 全极限不存在是因为尽管各个方向极限存在, 
+	但在各个方向上 f 趋于 0 的快慢不同. 
+	可以证明若一个多元函数在一点沿任何方向的方向极限都存在且相等, 
+	且它们趋于极限的快慢一致,
+	则全极限也存在并等于这些方向极限.
+</p>
+
+<h3>累次极限不一定相等</h3>
+
+<p>	如函数 `f(x, y) = (x^2 - y^2)/(x^2 + y^2)`, 易求得
+	<div class="formula">
+		<p>`lim_(x to 0) lim_(y to 0) f(x) = 1`,</p>
+		<p>`lim_(y to 0) lim_(x to 0) f(x) = -1`.</p>
+	</div>
+</p>
+
+<h3>累次极限存在且相等, 但全极限不存在</h3>
+
+<p>	设
+	<div class="formula">
+		`f(x, y) = (xy)/(x^2 + y^2)`,
+	</div>
+
+	因为该函数在原点沿不同方向有不同的方向极限, 所以全极限
+	`lim_((x,y) to (0,0)) f(x, y)` 不存在. 但
+
+	<div class="formula">
+		` lim_(x to 0) lim_(y to 0) f(x, y)
+		= lim_(y to 0) lim_(x to 0) f(x, y) = 0`.
+	</div>
+</p>
+
+<h3>全极限存在但累次极限不存在</h3>
+
+<p>设
+	<div class="formula">`f(x, y) = {
+		((x+y) sin {:1/x:} sin {:1/y:},	if x != 0 and y != 0),
+		(0,								if x = 0 or y = 0)
+	:}`</div>
+
+	易见
+
+	<div class="formula">
+		`lim_((x,y) to (0,0)) f(x,y) = 0`.
+	</div>
+
+	<div class="note">
+		`|f| le sqrt(2(x^2+y^2)) * 1 * 1`.
+	</div>
+
+	但因为当 `y != 0` 且 `y != 1/(k pi)` (k 为非零整数) 时,
+
+	<div class="formula">
+		<p>`lim_(x to 0) x sin {:1/x:} sin {:1/y:} = 0`</p>
+		<p>而 `lim_(x to 0) y sin {:1/x:} sin {:1/y:}` 不存在,</p>
+	</div>
+
+	所以累次极限 `lim_(y to 0) lim_(x to 0) f(x, y)` 不存在.
+	同理累次极限 `lim_(x to 0) lim_(y to 0) f(x, y)` 也不存在.
+</p>
+
+<h3>函数关于各个自变元连续, 但函数不连续</h3>
+
+<p>	函数
+	<div class="formula">`f(x, y) = {
+		(0,							if x = 0 and y = 0),
+		((xy)/(x^2 + y^2),	text(else))
+	:}`</div>
+
+	对固定的 y 关于 x 连续 (试就 y = 0 与否进行讨论),
+	且对固定的 x 关于 y 连续, 但上面已经提到,
+	`lim_((x,y) to (0,0)) f(x, y)` 不存在, 所以它在原点不连续.
+</p>
+
+<h3>偏导存在但不连续</h3>
+
+<p>	考虑二元函数
+	<div class="formula">`f(x, y) = {
+		(0,	if x = 0 or y = 0),
+		(1, text(else))
+	:}`</div>
+
+	显然这个函数在原点不连续. 但易见
+	<div class="formula">
+		<p>`f_x(0,0) = lim_(Delta x to 0) (f(Delta x,0) - f(0,0))
+			/ (Delta x) = 0`,</p>
+		<p>`f_y(0,0) = lim_(Delta y to 0) (f(0,Delta y) - f(0,0)) 
+			/ (Delta y) = 0`.</p>
+	</div>
+</p>
+
+<h3>偏导存在且连续但不可微</h3>
+
+<p>	考虑二元函数 `f(x, y) = sqrt|xy|`. 
+	因为 `sqrt|xy| le sqrt((x^2 + y^2)/2)`, 所以它在原点连续.
+	由
+
+	<div class="formula">
+		`f(x, 0) = 0`, `AA x in RR`, `f(0, y) = 0`, `AA y in RR`.
+	</div>
+
+	可知 `f_x(0,0) = f_y(0,0) = 0`.
+	但 `f(x, y)` 在原点不可微, 因为若否, 则有
+
+	<div class="formula">
+		` f(xi, eta) = f(0,0) + f_x(0,0)xi + f_y(0,0)eta
+		+ o(sqrt(xi^2 + eta^2))`,
+		`(xi, eta) to (0,0)`.
+	</div>
+
+	从而
+	<div class="formula">
+		`sqrt|xi eta| = o(sqrt(xi^2 + eta^2))`,
+		`(xi, eta) to (0,0)`.
+	</div>
+
+	即
+
+	<div class="formula">
+		`lim_((xi, eta) to (0,0)) sqrt|xi eta| / sqrt(xi^2 + eta^2) = 0`.
+	</div>
+
+	上式是不成立的, 这只要在 `xi = eta` 
+	的集合上取极限 `(=1/sqrt 2)` 就可证明.
+	因此 `f(x, y)` 在原点不可微.
+</p>
+
+<h3>可微但偏导不连续</h3>
+
+<p>	考虑函数
+	<div class="formula">`f(x, y) = {
+		(0,									if x = 0 and y = 0),
+		((x^2 + y^2) sin{:1/(x^2 + y^2):},	text(else))
+	:}`</div>
+
+	我们有
+	<div class="formula">
+		` f(Delta x, Delta y) - f(0,0)
+		= (Delta x^2 + Delta y^2) sin {:1/(Delta x^2 + Delta y^2):}`
+		`= o(sqrt(Delta x^2 + Delta y^2))
+		= 0 * Delta x + 0 * Delta y + o(sqrt(Delta x^2 + Delta y^2))`,
+		`(Delta x, Delta y) to (0,0)`.
+	</div>
+
+	所以 `f(x, y)` 在原点可微, 且 `text (d) \ f(0,0) = 0`.
+	再计算偏导数. 当 `(x, y) != (0,0`
+</p>
+
+<h3>偏导存在但不是所有方向导数都存在</h3>
+
+<h3>各个方向导数均存在但不可微, 甚至不连续</h3>
+
+<h3>二阶偏导存在但一阶偏导不连续</h3>
+
+<h3>混合偏导存在但不相等</h3>
 
 </body>
 
