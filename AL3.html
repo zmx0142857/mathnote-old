@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>AL3 插值</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h1>算法篇3 插值</h1>
+
+<h2>Lagrange 插值公式</h2>
+
+<p>	令 `x_1, x_2, cdots, x_n` 是 n 个两两不同的数,
+	<div class="formula">
+		`F(x) = prod_(i=1)^n (x - x_i)`.
+	</div>
+	我们有
+	<div class="formula">
+		` F'(x)
+		= sum_(i=1)^n (F(x))/(x - x_i)
+		= sum_(i=1)^n prod_(1 le j != i le n) (x - x_j)`.
+	</div>
+	又令
+	<div class="formula">
+		` l_i(x)
+		= (F(x))/((x - x_i)F'(x_i))
+		= prod_(1 le j != i le n) (x - x_j)/(x_i - x_j)
+		`.
+	</div>
+	容易验证 `l_i(x_j) = delta_(ij)`, `i, j = 1, 2, cdots, n`.
+	其中
+	<div class="formula">
+		`delta_(ij) = {
+			(1, if i = j;),
+			(0, if i != j.)
+		:}`
+	</div>
+	称为 Kroneker 符号函数.
+	现在, 函数
+	<div class="formula">
+		<span class="box">
+		` L(x) = sum_(i=1)^n l_i(x) y_i`.
+		</span>
+	</div>
+	满足条件 `L(x_i) = y_i`, `i = 1, 2, cdots, n`.
+	这个公式叫做 Lagrange 插值公式. `l_i` 称为插值基函数.
+</p>
+<p class="note">
+	n 个基函数之和为 1. 这是因为
+	<div class="formula">
+		`g(x_j) = sum_(i=1)^n l_i(x_j) = 1`, `j = 1, 2, cdots, n.`
+	</div>
+	且 `g(x)` 的次数不超过 n-1.
+</p>
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/set-bgcolor.js"></script>
+<script src="js/num.js"></script>
+
+</html>
+
+
+
