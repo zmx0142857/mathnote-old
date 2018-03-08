@@ -3,7 +3,7 @@
 
 <head>
 
-<title>A5 伯努利数</title>
+<title>伯努利数</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,8 +15,6 @@
 
 <body>
 
-<h1>分析篇5: 关于 `sum_(k=1)^n k^m` 的一些结论</h1>
-
 <p class="note">
 	本文实际上讨论伯努利数, 文中的所谓 `a_n`, 就是 (第二类) 伯努利数
 	`B_n^+`. 请参考
@@ -26,27 +24,27 @@
 <p>	可以用如下方法求 `sum_(k=1)^n k^2` 的多项式表达:
 
 	因为
-	<div class="formula">
+	<span class="formula">
 		`(k+1)^3 = k^3 + 3k^2 + 3k + 1`,
-	</div>
+	</span>
 
 	移项
-	<div class="formula">
+	<span class="formula">
 		`3k^2 = (k+1)^3 - k^3 - 3k - 1`,
-	</div>
+	</span>
 
 	两边求和
-	<div class="formula">`
+	<span class="formula">`
 {:(			3 sum_(k=1)^n k^2
 		,=	sum_(k=1)^n [(k+1)^3 - k^3] - 3 sum_(k=1)^n k - sum_(k=1)^n 1
 ),(		,=	(n+1)^3 - 1 - (3n(n+1))/2 - n
 ),(		,=	n^3 + 3/2 n^2 + 1/2 n.
-):}`</div>
+):}`</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 		`sum_(k=1)^n k^2 = 1/3 n^3 + 1/2 n^2 + 1/6 n`.
-	</div>
+	</span>
 </p>
 
 <p>	这种方法对于求 `sum_(k=1)^n k^m` (`m` 为自然数) 亦不失一般性.
@@ -73,23 +71,23 @@
 </p>
 
 <p>由二项式定理
-	<div class="formula">
+	<span class="formula">
 		` (k+1)^(m+1)
 		= k^(m+1) + (m+1)k^m + sum_(i=0)^(m-1) ((m+1), (i)) k^i`,
-	</div>
+	</span>
 
 	移项
-	<div class="formula">
+	<span class="formula">
 		` (m+1)k^m
 		= (k+1)^(m+1) - k^(m+1) - sum_(i=0)^(m-1) ((m+1),(i)) k^i`,
-	</div>
+	</span>
 
 	两边求和
-	<div class="formula">
+	<span class="formula">
 		` (m+1) sum_(k=1)^n k^m
 		= (n+1)^(m+1) - 1 - sum_(i=0)^(m-1) ((m+1),(i)) sum_(k=1)^n k^i`.
 		<span class="num">(A5-1)</span>
-	</div>
+	</span>
 
 	由归纳假设, 上式等号右端的最后一项是 (关于 `n` 的)
 	常数项为 `0` 的 `m+1` 次多项式; 而 `(n+1)^(m+1) - 1` 显然也是如此.
@@ -108,20 +106,20 @@
 
 <p><b>性质三</b>
 	设 `a_m` 是 `S_m(n)` 的一次项系数, 则
-	<div class="formula">
+	<span class="formula">
 		`a_m = 1 - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) a_i`.
 		<span class="num">(A5-2)</span>
-	</div>
+	</span>
 </p>
 
 <p class="prove">
 	在式 (A5-1) 两端对 `n` 求导, 再同除以 `m+1`, 得
-	<div class="formula">
+	<span class="formula">
 		` text(d)/(text(d)n) S_m(n)
 		= (n+1)^m - 1/(m+1) sum_(i=0)^(m-1)
 		  ((m+1),(i)) text(d)/(text(d)n) S_i`.
 		<span class="num">(A5-3)</span>
-	</div>
+	</span>
 
 	由上式两端的常数项相等, 即知性质三成立.
 	<span class="right">&square;</span>
@@ -142,19 +140,19 @@
 </p>
 
 <p>	由 (A5-2) 与 (A5-3) 有
-	<div class="formula">`
+	<span class="formula">`
 {:(			text(d)/(text(d)n) S_m - a_m
 		,=	(n+1)^m - 1 - 1/(m+1) sum_(i=0)^(m-1)
 			((m+1),(i)) ( text(d)/(text(d)n) S_i - a_i )
 ),(		,=	(n+1)^m - 1 - 1/(m+1) sum_(i=0)^(m-1) ((m+1),(i)) i S_(i-1)
 ),(		,=	(n+1)^m - 1 - sum_(i=0)^(m-2) (i+1)/(m+1) ((m+1),(i)) S_i
 ),(		,=	(n+1)^m - 1 - sum_(i=0)^(m-2) ((m),(i)) S_i.
-):}`</div>
+):}`</span>
 
 	再由 (A5-1),
-	<div class="formula">
+	<span class="formula">
 		`m S_(m-1) = (n+1)^m - 1 - sum_(i=0)^(m-2) ((m),(i)) S_i`.
-	</div>
+	</span>
 
 	所以 `text(d)/(text(d)n) S_m - a_m = m S_(m-1)`.
 	由第二数学归纳法知, 性质四对于任意正整数成立.
@@ -163,32 +161,32 @@
 
 <p class="note">
 	借助性质三、四, 我们将 `S_m` 的系数排列如下:
-	<div class="formula">`{:
+	<span class="formula">`{:
 		( m, text(Coefficient),           S_m(n) ),
 		( 0, 1,                           n ),
 		( 1, 1/2 \ 1/2,                   1/2 n^2 + 1/2 n ),
 		( 2, 1/3 \ 1/2 \ 1/6,             1/3 n^3 + 1/2 n^2 + 1/6 n ),
 		( 3, 1/4 \ 1/2 \ 1/4 \ 0,         1/4 n^4 + 1/2 n^3 + 1/4 n^2 ),
 		( 4, 1/5 \ 1/2 \ 1/3 \ 0 \ -1/30, 1/5 n^5 + 1/2 n^4 + 1/3 n^3 - 1/30 n )
-	:}`</div>
+	:}`</span>
 
 	在系数三角形中, `m` 行 `k` 列 (`m, k` 从 `0` 开始计数) 的元素可以由
 	`m-1` 行 `k` 列的元素乘以 `m/(m+1-k)` 得到. 于是该元素等于
-	<div class="formula">
+	<span class="formula">
 		`a_k * (m!)/((m+1-k)!k!) = ((m),(k)) a_k/(m+1-k)`.
-	</div>
+	</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 		` S_m(n)
 		= sum_(k=1)^n k^m
 		= sum_(k=0)^m ((m),(k)) a_k/(m+1-k) n^(m+1-k)`.
-	</div>
+	</span>
 
 	或
-	<div class="formula"><span class="box">
+	<span class="formula"><span class="box">
 		`S_m(n) = 1/(m+1) sum_(k=1)^(m+1) ((m+1),(k)) a_(m+1-k) n^k`.
-	</span></div>
+	</span></span>
 
 	( 对比
 	`1/(m+1) (1+n)^(m+1) = 1/(m+1) sum_(k=0)^(m+1) ((m+1),(k)) n^k`
@@ -197,15 +195,15 @@
 
 <p><b>性质五</b>
 	`m ge 1` 时, 函数 `T(n) = S_m(n) - n^m/2` 的奇偶性与 `m` 相反, 即
-	<ul>
-		<li>`m = 1, 3, 5, cdots` 时, `T(n)` 是偶函数;</li>
-		<li>`m = 2, 4, 6, cdots` 时, `T(n)` 是奇函数.</li>
-	</ul>
+	<span class="formula">
+		`m = 1, 3, 5, cdots` 时, `T(n)` 是偶函数;<br />
+		`m = 2, 4, 6, cdots` 时, `T(n)` 是奇函数.
+	</span>
 </p>
 
 <p class="prove">
 	对函数 `T(n)` 求 `m` 阶导数. 由性质四
-	<div class="formula">`
+	<span class="formula">`
 {:(			S_m^'(n)
 		,=	m S_(m-1)(n) + a_m;
 ),(			S_m^('')(n)
@@ -215,7 +213,7 @@
 ),(			S_m^((m)) (n)
 		,=	m! (S_0(n) + a_1)
 		=	m! (n + 1/2).
-):}`</div>
+):}`</span>
 
 	于是 `T^((m))(n) = (S_m(n) - n^m/2)^((m)) = m!n`,
 	这显然是奇函数.
@@ -236,7 +234,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

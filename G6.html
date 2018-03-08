@@ -3,7 +3,7 @@
 
 <head>
 
-<title>G6 从欧拉线到九点圆</title>
+<title>从欧拉线到九点圆</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>几何篇6: 从欧拉线到九点圆</h1>
 
 <h2></h2>
 <p>证明: 三角形 ABC 的外心 O, 重心 G, 垂心 H 满足 `vec(OH) = 3 vec(OG)`.</p>
@@ -33,12 +31,12 @@
 </p>
 
 <p>由于
-	<div class="formula">
+	<span class="formula">
 		` vec(AH') * vec(BC)
 		= (cos theta_3 + cos theta_2, sin theta_3 + sin theta_2)
 		  * (cos theta_3 - cos theta_2, sin theta_3 - sin theta_2)
 		= 0`,
-	</div>
+	</span>
 
 	同样地, 将上式中的下标 (2, 3) 换成 (3, 1),
 	得
@@ -52,8 +50,8 @@
 
 <p class="note">
 	本题亦 (在三角形外心和重心的存在性已证的前提下) 给出了三角形垂心的
-	存在性的证明, 即平面上存在一点 H 使得 `AH_|_BC`, `BH_|_CA`, 且
-	`CH_|_AB`.
+	存在性的证明, 即平面上存在一点 H 使得 AH`_|_`BC, BH`_|_`CA, 且
+	CH`_|_`AB.
 </p>
 
 <p class="note">O, G, H 所在的直线就称为欧拉线.</p>
@@ -67,24 +65,24 @@
 <p class="prove">
 	仍取外心 O 为坐标原点. 由 G5.3.2,
 
-	<div class="formula">
+	<span class="formula">
 		`vec(OI) = 1/(a+b+c)(a vec(OA) + b vec(OB) + c vec(OC))`,
-	</div>
+	</span>
 
 	其中 a, b, c 分别是边 BC, CA, AB 的长.
 	显然,
-	<div class="formula">
+	<span class="formula">
 		`vec(OA^2) = vec(OB^2) = vec(OC^2) = R^2`.
-	</div>
+	</span>
 
 	而
-	<div class="formula">
+	<span class="formula">
 		` 2 vec(OA) * vec(OB)
 		= vec(OA)^2 + vec(OB^2) - vec(AB^2) = 2R^2 - c^2`.
-	</div>
+	</span>
 
 	于是
-	<div class="formula">`
+	<span class="formula">`
 {:(			vec(OI)^2
 ,		=	1/(a+b+c)^2 (a^2 vec(OA^2)+b^2 vec(OB^2)+c^2 vec(OC^2))
 ),(,\		+ 2ab vec(OA) * vec(OB)
@@ -94,7 +92,7 @@
 			+ ab(2R^2 - c^2) + bc(2R^2 - a^2) + ca(2R^2 - b^2)]
 ),(,	=	1/(a+b+c)^2 [R^2(a+b+c)^2 - abc(a+b+c)]
 ),(,	=	R^2 - (abc)/(a+b+c).
-):}`</div>
+):}`</span>
 
 	设三角形 ABC 的面积为 S.
 	由 G5.2, `S = (abc)/(4R) = (a+b+c)/2 * r`,
@@ -109,28 +107,28 @@
 <img class="geo" src="img/G6-1.png" />
 
 <p>	记 d = OI. 设直线 OI 与圆 O 交于点 E, F, 则
-	<div class="formula">
+	<span class="formula">
 		`R^2 - d^2 = (R+d)(R-d) = EI * FI`.
-	</div>
+	</span>
 
 	设直线 AI 与圆 O 的另一交点为 M, 则 EI `*` FI = AI `*` MI.
 	过 I 作 AC 的垂线, 垂足为 D, 再延长 MO 交圆 O 于 L, 连接 LB, MB.
 	现在, 
-		&angle; DAI = &angle; MAB = &angle; L,
-		&angle; ADI = &angle; LBM = &pi;/2,
+		&angle;DAI = &angle;MAB = &angle;L,
+		&angle;ADI = &angle;LBM = &pi;/2,
 	有
 		&Delta; MBL ~ &Delta; IDA.
 	所以
-	<div class="formula">
+	<span class="formula">
 		`ID * LM = AI * MB`.
-	</div>
+	</span>
 	因为 ID = r, LM = 2R,
 	所以上式左边等于 2Rr. 要证明 `d^2 = R^2 - 2Rr`,
 	只需证上式右边等于 `R^2 - d^2`,
 	即 AI `*` MI, 而这只需证 MB = MI.
-	如图所示, &alpha; = &angle; IAB + &angle; ABI,
-	其中 &angle; IAB = &angle; L = &angle; DAI = &gamma;,
-	&angle; ABI = &beta;.
+	如图所示, &alpha; = &angle;IAB + &angle;ABI,
+	其中 &angle;IAB = &angle;L = &angle;DAI = &gamma;,
+	&angle;ABI = &beta;.
 	所以由 "等边对等角" 知 MB = MI.
 	<span class="right">&square;</span>
 </p>
@@ -138,7 +136,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

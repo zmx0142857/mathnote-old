@@ -3,7 +3,7 @@
 
 <head>
 
-<title>I4 线性方程组</title>
+<title>线性方程组</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>代数篇4: 线性方程组</h1>
 
 <h2>替换定理</h2>
 
@@ -29,13 +27,13 @@
 		(iii) r &le; s;
 		(iv) 适当排列 II, 有
 
-	<div class="formula">
+	<span class="formula">
 		`beta_1, cdots, beta_r, beta_(r+1), cdots, beta_s`
-	</div>
+	</span>
 	与
-	<div class="formula">
+	<span class="formula">
 		`alpha_1, cdots, alpha_r, beta_(r+1), cdots, beta_s`
-	</div>
+	</span>
 	等价 (即能相互表出).
 </p>
 
@@ -45,25 +43,24 @@
 	假设有 `k_1, k_2, cdots, k_r` 使得
 		`sum_(i=1)^r k_i alpha_i = theta`, 即
 
-	<div class="formula">
+	<span class="formula">
 		` sum_(i=1)^r k_i sum_(j=1)^s t_(ij) beta_j
 		= sum_(j=1)^s beta_j sum_(i=1)^r t_(ij) k_i
 		= theta`.
 		<span class="num">(I4-1)</span>
-	</div>
+	</span>
 
 	则由条件 (i) 知
 		`k_1 = cdots = k_r = 0.`
 </p>
 
 <p>	考虑线性方程组
-	<div class="formula">\[\begin{cases}
-		\sum_{i=1}^r t_{ij} k_i = 0; \\
-		j = 1, 2, \cdots, s.
-	\end{cases}\]</div>
+	<span class="formula">
+		`sum_(i=1)^r t_(ij) k_i = 0; \ j = 1, 2, cdots, s`.
+	</span>
 
 	显然此方程组的所有解满足 (I4-1), 从而此方程组只有零解.
-	`stackrel(?)(=>)`
+	`stackrel(?)(rArr)`
 	故 r &le; s.
 </p>
 
@@ -91,7 +88,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

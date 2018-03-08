@@ -3,7 +3,7 @@
 
 <head>
 
-<title>I1 瞎逛</title>
+<title>瞎逛</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,85 +15,69 @@
 
 <body>
 
-<h1>代数篇1: 瞎逛</h1>
-
 <h2>交换</h2>
 
 <p>	将数列 `1, 2, 3, cdots, m` 中的元素经过 `k` 次两两交换
 	得到数列 `m, cdots, 3, 2, 1`, 则
 
-	<div class="formula">`{
+	<span class="formula">`{
 		( k in text(Even), if m=4n \ text(or) \ 4n+1 ),
 		( k in text(Odd), if m=4n+2 \ text(or) \ 4n+3 )
 	:}` `n = 1, 2, cdots`.
-	</div>
+	</span>
 
 	将数列 `1, 2, 3, cdots, p, p+1, p+2, cdots, p+q` 中的元素经过
 	`k`  次两两交换得到数列 `p+1, p+2, cdots, p+q, 1, 2, 3, cdots, p`,
 	则
 
-	<div class="formula">
+	<span class="formula">
 		`k` 与 `q(p+q-1)` 的奇偶性相同, 即 `k+pq` 必为偶数.
-	</div>
+	</span>
 </p>
 
 <h2>可逆矩阵的性质</h2>
 
 <p>	设 `A, B` 均为 `bbb"P"` 上的 `n` 阶可逆矩阵, 则</p>
 
-<ul>
-	<li>`(AB)^-1 = B^-1 A^-1`;
-		<span class="num">(I1-1)</span>
-	</li>
-	<li>`(A^T)^-1 = (A^-1)^T`;
-		<span class="num">(I1-2)</span>
-	</li>
-	<li>`(kA)^-1 = k^-1 A^-1`, `k in bbb"P", k != 0`;
-		<span class="num">(I1-3)</span>	
-	</li>
-	<li>`|A^-1| = |A|^{-1}`;
-		<span class="num">(I1-4)</span>	
-	</li>
-	<li>`|A^**| = |A|^(n-1)`;
-		<span class="num">(I1-5)</span>	
-	</li>
-	<li>`(A^-1)^** = (A^**)^-1 = A/|A|`;
-		<span class="num">(I1-6)</span>
-	</li>
+<ol>
+	<li>`(AB)^-1 = B^-1 A^-1`;</li>
+	<li>`(A^T)^-1 = (A^-1)^T`;</li>
+	<li>`(kA)^-1 = k^-1 A^-1`, `k in bbb"P", k != 0`;</li>
+	<li>`|A^-1| = |A|^{-1}`;</li>
+	<li>`|A^**| = |A|^(n-1)`;</li>
+	<li>`(A^-1)^** = (A^**)^-1 = A/|A|`;</li>
 	<li>
-		<p>	`A^(** ** cdots **) = |A|^(x_m) A^((-1)^m)`.
-			<span class="num">(I1-7)</span>
-		</p>
-		<p>	其中 `m` 是 `**` 的个数, `x_m = ((n-1)^m - (-1)^m)/n`.</p>
+		`A^(** ** cdots **) = |A|^(x_m) A^((-1)^m)`.<br />
+		其中 `m` 是 `**` 的个数, `x_m = ((n-1)^m - (-1)^m)/n`.
 	</li>
-</ul>
+</ol>
 
 <p class="prove">
-	(I1-1) ~ (I1-3) 用逆矩阵的定义直接验证.
+	1 ~ 3 用逆矩阵的定义直接验证.
 </p>
 
-<p>	(I1-4): 因为 `A^-1 A = E`, 所以 `|A^-1| * |A| = |E| = 1`.</p>
+<p>	4: 因为 `A^-1 A = E`, 所以 `|A^-1| * |A| = |E| = 1`.</p>
 
-<p>	(I1-5): 由公式 `|kA| = k^n |A|` 和 `A^** = |A| A^-1` 得,
-	<div class="formula">
+<p>	5: 由公式 `|kA| = k^n |A|` 和 `A^** = |A| A^-1` 得,
+	<span class="formula">
 		`|A^**| = ||A| A^-1| = |A|^n |A^-1| = |A|^(n-1)`.
-	</div>
+	</span>
 </p>
 
-<p>	(I1-6): 由 `(A A^**)/|A| = E` 得 `(A^**)^-1 = A/|A|`.
+<p>	6: 由 `(A A^**)/|A| = E` 得 `(A^**)^-1 = A/|A|`.
 	令 `B = A^-1`, 由 `(B B^**)/|B| = E` 得 `(A^-1)^** = A/|A|`.
 </p>
 
-<p>	(I1-7): 用归纳法证明: m = 1 时, `A^** = |A| A^-1` 成立.
+<p>	7: 用归纳法证明: m = 1 时, `A^** = |A| A^-1` 成立.
 	假设 m = k 时该式成立, 则当 m = k + 1 时有:
 
-	<div class="formula">`
+	<span class="formula">`
 {:(			(A^**)^(** ** cdots **)
 ,		=	|A^**|^(x_k) (A^**)^((-1)^k)
 ),(,	=	|A|^(x_k (n-1)) (|A| A^-1)^((-1)^k)
 ),(,	=	|A|^(x_k (n-1) + (-1)^k) A^((-1)^(k+1))
 ),(,	=	|A|^(x_(k+1)) A^((-1)^(k+1))
-):}`</div>
+):}`</span>
 
 <h2>计算多项式函数的值</h2>
 <p class="formula">`{:
@@ -121,39 +105,20 @@
 <p><b>例 </b>
 	求 `f = x^4 + 3 x^3 - x^2 - 4 x - 3`
 	与 `g = 3 x^3 + 10 x^2 + 2 x - 3` 的最大公因式.
-
-<!-- <p class="formula">`{:
-(     1,     3,     -1,    -4,    -3, cdots f ),
-(      ,     3,     10,     2,    -3, cdots g ),
-(   1/3,     1,   10/3,   2/3,    -1, ),
-(  -1/9,  -1/3,  -10/9,  -2/9,   1/3, ),
-( vdots,      ,   -5/9, -25/9, -10/3, cdots r_1 ),
-(   q_1, -27/5,      3,    15,    18, ),
-(      ,     9,     -5,   -25,   -30, ),
-(      , vdots,       ,     9,    27, cdots r_2 ),
-(      ,   q_2,  -5/81,  -5/9,  -5/3, ),
-(      ,      , -10/81, -10/9, -10/3, ),
-(      ,      ,  vdots,      ,     0, cdots r_3 ),
-(      ,      ,    q_3,      ,      ,)
-:}`</p> -->
-
-<div>\[
-\begin{array}{rrrrrr}
-  1    & 3      & -1     & -4    & -3    & \cdots f \\
-       & 3      & 10     &  2    & -3    & \cdots g \\
- 1/3   & 1      & 10/3   & 2/3   & -1      \\
--1/9   & -1/3   & -10/9  & -2/9  & 1/3     \\
-\vdots &        & -5/9   & -25/9 & -10/3 & \cdots r_1 \\
-q_1    & -27/5  & 3      & 15    & 18      \\
-       & 9      & -5     & -25   & -30     \\
-       & \vdots &        & 9     & 27    & \cdots r_2 \\
-       & q_2    & -5/81  & -5/9  & -5/3    \\
-       &        & -10/81 & -10/9 & -10/3   \\
-       &        & \vdots &       & 0     & \cdots r_3\\
-       &        & q_3      \\
-\end{array}
-\]</div>
-
+	<pre>
+	     1     3     -1    -4    -3 ⋯  f
+	           3     10     2    -3 ⋯  g
+	   1/3     1   10/3   2/3    -1
+	  -1/9  -1/3  -10/9  -2/9   1/3
+	     ⋮          -5/9 -25/9 -10/3 ⋯  r_1
+	   q_1 -27/5      3    15    18
+	           9     -5   -25   -30
+	           ⋮             9    27 ⋯  r_2
+	         q_2  -5/81  -5/9  -5/3
+	             -10/81 -10/9 -10/3
+	                 ⋮             0 ⋯  r_3
+	                q_3
+	</pre>
 	所以 `r_2`, 换言之, `x+3` 就是它们的最大公因式.
 </p>
 
@@ -187,12 +152,12 @@ q_1    & -27/5  & 3      & 15    & 18      \\
 </p>
 
 <p>上面的推理过程可以写成：</p>
-	<div class="formula">`{:
-		(      , N, N+3, N+93 ),
-		( mod 3, 0, 0,   0	  ),
-		( mod 5, 2, 0,   0	  ),
-		( mod 7, 5, 1,   0	  )
-	:}`</div>
+<pre>
+	        N   N+3 N+93
+	mod 3   0     0    0
+	mod 5   2     0    0
+	mod 7   5     1    0
+</pre>
 </p>
 
 <h2>常见的推理</h2>
@@ -208,7 +173,6 @@ q_1    & -27/5  & 3      & 15    & 18      \\
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

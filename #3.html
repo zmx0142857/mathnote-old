@@ -3,7 +3,7 @@
 
 <head>
 
-<title>#3 一些恒等式</title>
+<title>一些恒等式</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>附录篇3: 一些恒等式</h1>
 
 <h2></h2>
 <p>	` x^(n+1) - y^(n+1)
@@ -62,31 +60,31 @@
 	`n = 0` 时, 等号两边都等于 `1/x`, 因此等式成立.
 	假设命题对于自然数 `n` 成立,
 	考察自然数 `n+1`, 有:
-	<div class="formula">
+	<span class="formula">
 		` 1/(prod_(k=0)^(n+1) (x+k))
 		= 1/(x+n+1) * 1/(n!) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k)`.
-	</div>
+	</span>
 
 	欲证等式成立, 只需证明上式等于
-	<div class="formula">
+	<span class="formula">
 		`1/((n+1)!) sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k)`,
-	</div>
+	</span>
 
 	即证
-	<div class="formula">
+	<span class="formula">
 		` (n+1)/(x+n+1) sum_(k=0)^n (-1)^k ((n), (k)) 1/(x+k)
 		= sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k)`.
 		<span class="num">(#3-1)</span>
-	</div>
+	</span>
 
 	由于
-	<div class="formula">
+	<span class="formula">
 		`1/((x+k)(x+n+1)) = 1/(n+1-k) ( 1/(x+k) - 1/(x+n+1) )`,
 		`k = 0, 1, 2, cdots, n.`
-	</div>
+	</span>
 
 	所以 (#3-1) 的左边等于
-	<div class="formula">`
+	<span class="formula">`
 {:(			,sum_(k=0)^n (-1)^k (n+1)/(n+1-k) ((n), (k))
 			( 1/(x+k) - 1/(x+n+1) )
 
@@ -104,7 +102,7 @@
 			- 1/(x+n+1) (1-1)^(n+1)
 
 ),(		=,	sum_(k=0)^(n+1) (-1)^k ((n+1), (k)) 1/(x+k).
-):}`</div>
+):}`</span>
 
 	(#3-1) 成立. 所以原式成立. 证毕.
 </p>
@@ -120,7 +118,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

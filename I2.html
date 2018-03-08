@@ -3,7 +3,7 @@
 
 <head>
 
-<title>I2 寻寻觅觅勾股数</title>
+<title>寻寻觅觅勾股数</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>代数篇2: 寻寻觅觅勾股数</h1>
 
 <p>	先以引理的形式, 介绍一些有关整除的结论:</p>
 
@@ -109,30 +107,30 @@
 	因为 `p | p^(2m-1)d = a^2`, 所以 p | a.
 	若 2m-1 &ge; 3, 从上式两端消去 `p^2`, 得
 
-	<div class="formula">
+	<span class="formula">
 		`p^(2m-3)d = a_1^2`, `(a = a_1 p)`.
-	</div>
+	</span>
 
 	于是同样有 `p | a_1`.
 	若 2m-3 &ge; 3, 从上式两端消去 `p^2`, 得
 
-	<div class="formula">
+	<span class="formula">
 		`p^(2m-5)d = a_2^2, quad (a_1 = a_2 p).`
-	</div>
+	</span>
 
 	反复以上步骤, 直到
 
-	<div class="formula">`pd = a_(m-1)^2`.
+	<span class="formula">`pd = a_(m-1)^2`.
 		<span class="num">(I2-1)</span>
-	</div>
+	</span>
 
 	即 `p | a_(m-1)^2`.
 	于是 `p | a_(m-1)`.
 	式 (I2-1) 两端消去 p, 得
 
-	<div class="formula">
+	<span class="formula">
 		`d = a_m^2 p (a_(m-1) = a_m p)`.
-	</div>
+	</span>
 
 	所以 p | d. 于是
 		`p^(2m) | p^(2m-1)d = a^2`.
@@ -182,7 +180,7 @@
 	`b = (a^2 - d^2)/(2d)`.
 </p>
 
-<p>	我们对 `d = 1,2,3,cdot` 的情形进行讨论, 找出 a 应满足的条件:</p>
+<p>	我们对 `d = 1,2,3,cdots` 的情形进行讨论, 找出 a 应满足的条件:</p>
 <ul>
 	<li>因为 `b gt a iff a^2 - d^2 gt 2ad`
 		`iff a^2 - 2ad + d^2 gt 2d^2`
@@ -221,7 +219,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

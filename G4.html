@@ -3,7 +3,7 @@
 
 <head>
 
-<title>G4 直线</title>
+<title>直线</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>几何篇4: 直线</h1>
 
 <h2>直线的方程</h2>
 
@@ -34,21 +32,21 @@
 	交 `l` 于 `P_1(x_1, y_1)`.
 	因为 `P_1` 在直线 `m` 上, 所以
 
-	<div class="formula">
+	<span class="formula">
 		`B(x_0-x_1) = A(y_0-y_1)`.
 		<span class="num">(G4-1)</span>
-	</div>
+	</span>
 
 	因为 `P_1` 也在直线 `l` 上, 所以
-	<div class="formula">
+	<span class="formula">
 		`  Ax_0 + By_0 + C = Ax_0 + By_0 + C - (Ax_1 + By_1 + C)`
 		`= A(x_0-x_1) + B(y_0-y_1)`.
 		<span class="num">(G4-2)</span>
-	</div>
+	</span>
 
 	利用 (G4-1) 和 (G4-2) 就有
 
-	<div class="formula">`
+	<span class="formula">`
 {:(,		(A^2+B^2) |P_0 P_1|^2
 		=	(A^2 + B^2) [ (x_0-x_1)^2 + (y_0-y_1)^2 ]
 ),(		=,	A^2(x_0-x_1)^2 + B^2(y_0-y_1)^2
@@ -56,12 +54,12 @@
 ),(		=,	A^2(x_0-x_1)^2 + B^2(y_0-y_1)^2
 			+ 2AB(x_0-x_1)(y_0-y_1)
 ),(		=,	(Ax_0 + By_0 + C)^2.
-):}`</div>
+):}`</span>
 
 	所以
-	<div class="formula"><span class="box">
+	<span class="formula"><span class="box">
 		`|P_0 P_1| = |Ax_0 + By_0 + C|/sqrt(A^2 + B^2)`.
-	</span></div>
+	</span></span>
 
 <h3>G4.2.3 点关于直线的对称点</h3>
 
@@ -70,32 +68,32 @@
 <p class="solve">
 	由已知, `P_0 P_2 _|_ l`, 即
 
-	<div class="formula">
+	<span class="formula">
 		`B(x_0-x_2) - A(y_0-y_2) = 0`.
 		<span class="num">(G4-3)</span>
-	</div>
+	</span>
 
 	另一方面, `P_0` 和 `P_2` 的中点
 	`P_1 ((x_0 + x_2)/2, (y_0 + y_2)/2)` 在直线 `l` 上. 即
 
-	<div class="formula">
+	<span class="formula">
 		`A(x_0+x_2) + B(x_0+x_2) + 2C = 0`.
 		<span class="num">(G4-4)</span>
-	</div>
+	</span>
 
 	由 (G4-3) 和 (G4-4) 解得
 
-	<div class="formula">`{
+	<span class="formula">`{
 		( x_2 = ((B^2 - A^2)x_0 - 2ABy_0 - 2AC)/(A^2+B^2); ),
 		( y_2 = ((A^2 - B^2)y_0 - 2ABx_0 - 2BC)/(A^2+B^2). )
-	:}`</div>
+	:}`</span>
 
 	整理得
 
-	<div class="formula"><span class="box">
+	<span class="formula"><span class="box">
 			` ((x_2), (y_2)) = ((x_0), (y_0))
 			- (2(Ax_0+By_0+C)) / (A^2 + B^2) ((A), (B))`.
-	</span></div>
+	</span></span>
 
 	上式中, `1/sqrt(A^2 + B^2) ((A), (B))` 相当于直线 `l` 的单位法向量,
 	而 `(Ax_0 + By_0 + C)/sqrt(A^2 + B^2)` 的绝对值等于
@@ -106,19 +104,21 @@
 
 <p>	由中点的坐标关系知, `P_1` 的坐标为:
 
-	<div class="formula"><span class="box">
+	<span class="formula"><span class="box">
 		` ((x_1), (y_1)) = ((x_0), (y_0))
 		- ((Ax_0+By_0+C)) / (A^2 + B^2) ((A), (B))`.
-	</span></div>
+	</span></span>
 </p>
 
 <p class="note">
 	常取 `A^2+B^2 = 1`, 且 `P_0` 为原点.
 	此时上面三个公式有简单的形式:
 
-	<div class="formula">`|P_0 P_1| = |C|`;</div>
-	<div class="formula">`((x_1), (y_1)) = -C((A), (B))`;</div>
-	<div class="formula">`((x_2), (y_2)) = -2C((A), (B))`.</div>
+	<span class="formula">
+		`|P_0 P_1| = |C|`;<br />
+		`((x_1), (y_1)) = -C((A), (B))`;<br />
+		`((x_2), (y_2)) = -2C((A), (B))`.
+	</span>
 
 <h3>G4.2.4 点在三角形内吗?</h3>
 <p>...</p>
@@ -126,7 +126,7 @@
 <h2>直线束</h2>
 <h3>G4.3.1 求直线束中过给定点的一条直线方程.</h3>
 
-<p>	已知 A(2,0), B(0,2), C(1,0), OD `_|_` BC, 交 AB 于 D.
+<p>	已知 A(2,0), B(0,2), C(1,0), OD`_|_`BC, 交 AB 于 D.
 	求 CD 的方程.
 </p>
 
@@ -138,36 +138,35 @@
 
 <p>	再者, CD 属于过 D 的直线束, 因此可以表为 OD, AB 的线性组合.
 	后二者的方程是易得的:
-	<div class="formula">`OD: x-2y = 0`,</div>
+	<span class="formula">`OD: x-2y = 0`,</span>
 	
 	(因为 O 在 OD 上, 而 OD 的法向量是 (1,-2));
-	<div class="formula">`AB: x+y-2 = 0`.</div>
+	<span class="formula">`AB: x+y-2 = 0`.</span>
 
 	将点 C 代入这两个方程:
-	<div class="formula">`x-2y | _[(1,0)] = 1`,</div>
-	<div class="formula">`x+y-2 | _[(1,0)] = -1`.</div>
+	<span class="formula">`x-2y | _[(1,0)] = 1`,</span>
+	<span class="formula">`x+y-2 | _[(1,0)] = -1`.</span>
 
 	所以 CD 的方程是
-	<div class="formula">`(x-2y)/1 = (x+y-2)/-1`.</div>
+	<span class="formula">`(x-2y)/1 = (x+y-2)/-1`.</span>
 </p>
 
 <p class="note">
 	另一种方法较繁, 仅供参考: 因为 C 在 CD 上,
 	CD 的方程具有如下形式:
-	<div class="formula">`lambda (x-1) + mu y = 0`.</div>
+	<span class="formula">`lambda (x-1) + mu y = 0`.</span>
 
 	将 OD 与 AB 的方程改写为
-	<div class="formula">`OD: (x-1)-2y=-1,`</div>
-	<div class="formula">`AB: (x-1)+y=1`.</div>
+	<span class="formula">`OD: (x-1)-2y=-1,`</span>
+	<span class="formula">`AB: (x-1)+y=1`.</span>
 
 	再相加消去常数项:
-	<div class="formula">`CD: 2(x-1)-y=0`.</div>
+	<span class="formula">`CD: 2(x-1)-y=0`.</span>
 <p>
 
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

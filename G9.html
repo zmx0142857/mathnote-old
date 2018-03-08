@@ -3,7 +3,7 @@
 
 <head>
 
-<title>G9 几何与微积分</title>
+<title>几何与微积分</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,22 +15,20 @@
 
 <body>
 
-<h1>几何篇9: 几何与微积分</h1>
-
 <h2>证明: 同一弦长所对的圆弧中, 半径大的弧更短.</h2>
 
 <p class="prove">
 	记弧长为 `l`, 半径为 `R`, 弦长为 `d`, 圆心角为 `theta`. 则
-	<div class="formula">
+	<span class="formula">
 		`l = R theta = R arcsin {: d/R :}`,
-	</div>
-	<div class="formula">`
+	</span>
+	<span class="formula">`
 {:(			(text(d)l)/(text(d)R)
 		,=	arcsin {: d/R :} + R * (-d//R^2)/sqrt(1 - d^2//R^2)
 ),(		,=	arcsin {: d/R :} - d/sqrt(R^2-d^2)
 ),(		,=	theta - tan theta lt 0.
 ):}`
-	</div>
+	</span>
 	这就是说, `R` 越大, `l` 就越小.
 	<span class="right">&square;<span>
 </p>
@@ -38,7 +36,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

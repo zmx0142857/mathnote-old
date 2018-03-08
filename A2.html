@@ -3,7 +3,7 @@
 
 <head>
 
-<title>A2 极限杂例</title>
+<title>极限杂例</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,18 +15,16 @@
 
 <body>
 
-<h1>分析篇2: 极限杂例</h1>
-
 <h2>证明: `lim_(n -> oo) root(n)(n) = 1`.</h2>
 
 <p class="prove">
 	`n gt 2` 时, 有
-	<div class="formula">
+	<span class="formula">
 		`   1 lt root(n)(n)`
 		`=  root(n)(sqrt n * sqrt n * 1)`
 		`lt (2 sqrt n + n - 2)/n`
 		`lt 2/sqrt n + 1`.
-	</div>
+	</span>
 
 	由两边夹法则, 命题成立.
 </p>
@@ -35,21 +33,21 @@
 <p class="prove">
 	取 `N_1 = [|a| + 1]`, 则 `|a|/n lt 1, AA n gt N_1`. 取实数 `r` 使
 	`|a|/n lt r lt 1`, 有
-	<div class="formula">
+	<span class="formula">
 		`  |a^n/(n!)|
 		= |a|^n/(n!)
 		le r^(n-N_1) |a|^(N_1)/(N_1!)
 		lt r^(n-N_1) (|a|+1)^(N_1)/(N_1!)`.
-	</div>
+	</span>
 	记 `b = |a| + 1`,
 	对 `AA epsilon gt 0`, 要使上式右边小于 `epsilon`, 只要
-	<div class="formula">
+	<span class="formula">
 		`(n - N_1) ln r lt ln((N_1!)/b^(N_1) epsilon)`,
-	</div>
+	</span>
 	即
-	<div class="formula">
+	<span class="formula">
 		`n gt ln((N_1!)/b^(N_1) epsilon) / ln r + N_1`.
-	</div>
+	</span>
 	所以只要取 `N = [ln((N_1!)/b^(N_1) epsilon) / ln r + N_1] + 1`,
 	当 `n gt N` 时, 就有 `| a^n/(n!) | lt epsilon`.
 	<span class="right">&square;</span>
@@ -57,11 +55,11 @@
 
 <h2>证明下面的数列收敛, 且极限为 `root(m)(A)`.</h2>
 
-<div class="formula">
+<p class="formula">
 	<p>`x_1 = 1`,</p>
 	<p>`x_(n+1) = 1/m [(m-1) x_n + A/x_n^(m-1)]`.</p>
 	<p>(`m in ZZ`, `m != 0`; `A gt 0`)</p>
-</div>
+</p>
 
 <ol class="prove">
 <li></li>
@@ -71,62 +69,62 @@
 
 <h2>极限的四则运算</h2>
 <p>	若 `lim_(n to oo) x_n = a`, `lim_(n to oo) y_n = b`, 则
-	<div class="formula">
+	<span class="formula">
 		<p>`lim_(n to oo) (x_n +- y_n) = a +- b`;</p>
 		<p>`lim_(n to oo) (x_n y_n) = ab`;</p>
 		<p>`lim_(n to oo) (x_n)/(y_n) = a/b` (当 b &ne; 0).</p>
-	</div>
+	</span>
 </p>
 
 <ol class="prove">
 <li>对 `AA epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
 	`lim_(n to oo) y_n = b` 知 `EE` `N_1`, `N_2`, 使
-	<div class="formula">
+	<span class="formula">
 		<p>`|x_n - a| lt epsilon/2, AA n gt N_1`;</p>
 		<p>`|y_n - b| lt epsilon/2, AA n gt N_2`.</p>
-	</div>
+	</span>
 	故 `n gt max{N_1, N_2}` 时,
-	<div class="formula">
+	<span class="formula">
 		`	|(x_n +- y_n) - (a +- b)|
 		le	|x_n - a| + |y_n - b|
 		lt	epsilon/2 + epsilon/2
 		=	epsilon`.
-	</div>
+	</span>
 </li>
 
 <li>由收敛数列的有界性知 `EE` M &gt; 0 使
-	<div class="formula">
+	<span class="formula">
 		`|y_n| lt M`, `AA n in NN`.
-	</div>
+	</span>
 	对 `AA epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
 	`lim_(n to oo) y_n = b` 知 `EE N_1, N_2 in NN`, 使
-	<div class="formula">
+	<span class="formula">
 		<p>`|x_n - a| lt epsilon/(2M)`;</p>
 		<p>`|y_n - b| lt epsilon/(2(|a| + 1))`.</p>
-	</div>
+	</span>
 	(这样就避免了对 a = 0 的讨论). 因此 `n gt max{N_1, N_2}` 时,
-	<div class="formula">`
+	<span class="formula">`
 {:(			|x_n y_n - ab|
 ,		=	|x_n y_n - a y_n + a y_n - ab|
 ),(,	le	|x_n - a| |y_n| + |a| |y_n - b|
 ),(,	lt	epsilon/(2M) M + |a| epsilon/(2(|a| + 1))
 		lt	epsilon.
-):}`</div>
+):}`</span>
 </li>
 
 <li>因为 `lim_(n to oo) y_n = b != 0`, 所以由数列极限的保号性知
 	`EE N_1 in NN` 与 `m gt 0` 使
-	<div class="formula">
+	<span class="formula">
 		`|y_n| gt m, AA n gt N_1`.
-	</div>
+	</span>
 	对 `AA epsilon gt 0`, 由 `lim_(n to oo) x_n = a` 和
 	`lim_(n to oo) y_n  = b` 知存在 `N_2, N_3 in NN` 使
-	<div class="formula">
+	<span class="formula">
 		<p>`|x_n - a| lt m epsilon/2, AA n gt N_2`;</p>
 		<p>`|y_n - b| lt (m|b|)/(|a|+1) epsilon/2, AA n gt N_3`.</p>
-	</div>
+	</span>
 	当 `n gt max{N_1, N_2, N_3}` 时有
-	<div class="formula">`
+	<span class="formula">`
 {:(			|(x_n)/(y_n) - a/b|
 ,		=	|(b x_n - a y_n)/(b y_n)|
 ),(,	=	(|b x_n - ab + ab - a y_n|)/(|b| |y_n|)
@@ -136,7 +134,7 @@
 		lt epsilon.
 ):}`
 	<span class="right">&square;</span>
-	</div>
+	</span>
 </li>
 </ol>
 
@@ -146,24 +144,24 @@
 	先证 `(1 + 1/n)^n` 单调递增.
 	由均值不等式 (A1.1) 知:
 
-	<div class="formula">
+	<span class="formula">
 		`  root(n+1)((1 + 1/n)^n)
 		lt (n(1 + 1/n) + 1)/(n+1)
 		=  1 + 1/(n+1)`.
-	</div>
+	</span>
 
 	所以
 		`(1 + 1/n)^n lt (1 + 1/(n+1))^(n+1)`.
 
 	再证此数列有上界. `n ge 2` 时:
 
-	<div class="formula">
+	<span class="formula">
 		`	(1 + 1/n)^n
 		=	1 + n * 1/n + (n(n-1))/(2!) * 1/n^2 + cdots + 1/n^n`
 		`lt	sum_(k=0)^n 1/(k!)`
 		`le	2 + sum_(k=2)^n 1/(k(k-1))`
 		`=	2 + 1 - 1/n lt 3`.
-	</div>
+	</span>
 
 	从而由单调有界原理知极限
 		`lim_(n to oo) (1 + 1/n)^n`
@@ -173,27 +171,27 @@
 <p class="corollary">
 	由极限的四则运算得到:
 
-	<div class="formula">
+	<span class="formula">
 		` lim_(n to oo) (1 + 1/n)^(n+1)
 		= lim_(n to oo) (1 + 1/(n+1))^n = e`,
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		` lim_(n to oo) (1 - 1/n)^n
 		= lim_(n to oo) (1 - 1/n)^(n+1)
 		= lim_(n to oo) (1 - 1/(n+1))^n = 1/e`.
-	</div>
+	</span>
 </p>
 
 <p class="corollary">
-	<div class="formula">
+	<span class="formula">
 		`(1 + 1/n)^n lt e lt (1 + 1/n)^(n+1)`, `AA n in NN`.
-	</div>
+	</span>
 
 	或等价地,
-	<div class="formula">
+	<span class="formula">
 		`1/(n+1) lt ln(1 + 1/n) lt 1/n`, `AA n in NN`.
-	</div>
+	</span>
 </p>
 
 <p class="prove">
@@ -204,11 +202,11 @@
 	因此只需证明 `(1 + 1/n)^(n+1)` 严格单调递减.
 	由均值不等式有:
 
-	<div class="formula">
+	<span class="formula">
 		`  root(n+2)(1/( (1 + 1/n)^(n+1) ))
 		lt 1/(n+2)((n+1)/(1 + 1/n) + 1)
 		=  (n+1)/(n+2)`.
-	</div>
+	</span>
 
 	所以
 		`  (1 + 1/n)^(n+1)
@@ -222,7 +220,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

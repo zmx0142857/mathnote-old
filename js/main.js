@@ -1,30 +1,63 @@
 'use strict';
 
+// 'A2.html', '2-1.html'
 var filename = window.location.href.split('/');
 filename = filename[filename.length-1].split('.')[0];
+
+// replace '%23' with '#'
 if (filename.substring(0, 3) === '%23')
 	filename = '#' + filename.substring(3);
+
+// filename[i] is the first digit or the first char after '-'
 var i = filename.search(/[0-9]/);
 if (filename.indexOf('-') > i) {
 	i = filename.indexOf('-') + 1;
 }
-var abbr = filename.substring(0, i);
-var n = parseInt(filename.substring(i));
 
-function tag_it(str, tagname) {
-	return '<' + tagname + '>' + str + '</' + tagname + '>'; 
+// other globals
+var abbr = filename.substring(0, i);		// 'A' or ''
+var n = parseInt(filename.substring(i));	// 2 in 'A2' or 1 in '2-1'
+var zhname = '';
+if (abbr != '') {
+	if (abbr == '#')
+		zhname = '附录篇';
+	else if (abbr == 'A')
+		zhname = '分析篇';
+	else if (abbr == 'AL')
+		zhname = '算法篇';
+	else if (abbr == 'D')
+		zhname = '离散篇';
+	else if (abbr == 'E')
+		zhname = '方程篇';
+	else if (abbr == 'G')
+		zhname = '几何篇';
+	else if (abbr == 'I')
+		zhname = '代数篇';
+	else if (abbr == 'S')
+		zhname = '概率统计篇';
+}
+zhname += n;
+
+function style_name() {
+	return document.createTextNode(filename);
 }
 
 function style_name_num(word, i) {
-	return tag_it(word + filename + '.' + (i+1), 'b');
+	var newItem = document.createElement('b');
+	newItem.innerHTML = word + filename + '.' + (i+1);
+	return newItem;
 }
 
 function style_num(word, i) {
-	return tag_it(word + (i+1), 'b');
+	var newItem = document.createElement('b');
+	newItem.innerHTML = word + (i+1);
+	return newItem;
 }
 
 function style_void(word) {
-	return tag_it(word, 'b');
+	var newItem = document.createElement('b');
+	newItem.innerHTML = word;
+	return newItem;
 }
 
 function style_formula(word, i) {
@@ -32,21 +65,30 @@ function style_formula(word, i) {
 }
 
 function decorate(name, word, style=style_name_num, get_by='class') {
-	var texts;
+	var elem;
 	if (get_by === 'class') {
-		texts = document.getElementsByClassName(name);
+		elem = document.getElementsByClassName(name);
 	} else {
-		texts = document.getElementsByTagName(name);
+		elem = document.getElementsByTagName(name);
 	}
 
 	var i;
 	if (style === style_formula) {
-		for (i = 0; i < texts.length; i++)
-			texts[i].innerHTML = style(word, i);
+		for (i = 0; i < elem.length; i++)
+			elem[i].innerHTML = style(word, i);
 	} else {
-		for (i = 0; i < texts.length; i++)
-			texts[i].innerHTML = style(word, i) + ' ' + texts[i].innerHTML;
+		for (i = 0; i < elem.length; i++) {
+			var space = document.createTextNode(' ');
+			elem[i].insertBefore(space, elem[i].firstChild);
+			elem[i].insertBefore(style(word, i), elem[i].firstChild);
+		}
 	}
+}
+
+function make_h1() {
+	var h1 = document.createElement('h1');
+	h1.innerHTML = zhname + ': ' + document.title;
+	document.body.insertBefore(h1, document.body.firstChild);
 }
 
 /*	<div id="nav">
@@ -56,11 +98,9 @@ function decorate(name, word, style=style_name_num, get_by='class') {
 	</div>
 */
 function make_nav() {
-	var body = document.getElementsByTagName('body');
-	var h1 = document.getElementsByTagName('h1');
 	var nav = document.createElement('div');
 	nav.id = 'nav';
-	body[0].insertBefore(nav, h1[0]);
+	document.body.insertBefore(nav, document.body.firstChild);
 	if (n > 1) {
 		var prev = document.createElement('a');
 		prev.href = (abbr === '#' ? '%23' : abbr) + (n-1) + '.html';
@@ -81,7 +121,9 @@ function make_nav() {
 	nav.appendChild(next);
 }
 
+make_h1();
 make_nav();
+decorate('title', '', style_name, 'tag');
 decorate('h2', '', style_name_num, 'tag');
 decorate('theorem', '定理');
 decorate('definition', '定义');

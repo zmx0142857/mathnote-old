@@ -3,7 +3,7 @@
 
 <head>
 
-<title>I3 矩阵</title>
+<title>矩阵</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,23 +15,20 @@
 
 <body>
 
-<h1>代数篇3: 矩阵</h1>
-
 <h2>设 A 是 m*n 矩阵, B 是 n*m 矩阵, 证明: tr(AB) = tr(BA).</h2>
 
 <p class="prove">
 	设 AB 的 ij 元是 `c_(ij)`, BA 的 ij 元是 `d_(ij)`. 于是
 
-	<div class="formula">
-		<li>` text(tr)(AB)
+	<span class="formula">
+		` text(tr)(AB)
 			= sum_(i=1)^m c_(ii)
 			= sum_(i=1)^m sum_(j=1)^n a_(ij) b_(ji)`,
-		</li>
-		<li>` text(tr)(BA)
+		<br />
+		` text(tr)(BA)
 			= sum_(j=1)^n d_(jj)
 			= sum_(j=1)^n sum_(i=1)^m b_(ji) a_(ij)`.
-		</li>
-	</div>
+	</span>
 
 	所以 tr(AB) = tr(BA).
 	<span class="right">&square;</span>
@@ -44,13 +41,13 @@
 <p class="prove">
 	`lArr`: 显然. `rArr`: 记 AA' 的 ij 元为 `b_(ij)`, 则
 
-	<div class="formula">
+	<span class="formula">
 		`	text(tr)(A A')
 		=	sum_(i=1)^m b_(ii)`
 		`=	sum_(i=1)^m sum_(j=1)^n a_(ij) a_(ji)'`
 		`=	sum_(i=1)^m sum_(j=1)^n a_(ij)^2`
 		`=	0`.
-	</div>
+	</span>
 
 	所以 `a_(ij) = 0`; `i = 1, 2, cdots, m`; `j = 1, 2, cdots, n`.
 	即 A = O.
@@ -60,7 +57,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>数理逻辑初步</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h2>逻辑恒等式</h2>
+
+<table>
+<tr>
+	<td>`P ^^ (Q vv R) iff P ^^ Q vv P ^^ R`</td>
+	<td>`^^` 在 `vv` 上的分配律</td>
+</tr>
+<tr>
+	<td>`P vv Q ^^ R iff (P vv Q) ^^ (P vv R)`</td>
+	<td>`vv` 在 `^^` 上的分配律</td>
+</tr>
+<tr>
+	<td>`not (P vv Q) iff not P ^^ not Q`</td>
+	<td>德·摩根定律</td>
+</tr>
+<tr>
+	<td>`not (P ^^ Q) iff not P vv not Q`</td>
+	<td></td>
+</tr>
+<tr>
+	<td>`(P rarr Q ) iff not P vv Q`</td>
+	<td>蕴含表达式</td>
+</tr>
+<tr>
+	<td>`(P rarr Q) iff (not Q rarr not P)`</td>
+	<td>逆反律</td>
+</tr>
+<tr>
+	<td>`(P ^^ Q rarr R) iff (P rarr (Q rarr R))`</td>
+	<td>输出律(CP规则)</td>
+</tr>
+<tr>
+	<td>`(P rarr Q) ^^ (P rarr not Q) iff not P`</td>
+	<td>归谬律</td>
+</tr>
+<tr>
+	<td>`
+{:(				(P harr Q)
+		,iff	(P rarr Q) ^^ (Q rarr P)
+),(		,iff	(not P vv Q) ^^ (not Q vv P)
+),(		,iff	P ^^ Q vv not P ^^ not Q
+),(		,iff	not (not P harr Q)
+):}`</td>
+	<td>等值表达式</td>
+</tr>
+<tr>
+	<td>`P uarr Q iff not (P ^^ Q)`</td>
+	<td>与非(Sheffer)</td>
+</tr>
+<tr>
+	<td>`not P iff P uarr P`</td>
+</tr>
+<tr>
+	<td>`P vv Q iff (P uarr P) uarr (Q uarr Q)`</td>
+</tr>
+<tr>
+	<td>`P ^^ Q iff (P uarr Q) uarr (P uarr Q)`</td>
+</tr>
+<tr>
+	<td>`P darr Q iff not (P vv Q)`</td>
+	<td>或非(Peirce)</td>
+</tr>
+<tr>
+	<td>`not P iff P darr P`</td>
+</tr>
+<tr>
+	<td>`P vv Q iff (P darr Q) darr (P darr Q)`</td>
+</tr>
+<tr>
+	<td>`P ^^ Q iff (P darr P) darr (Q darr Q)`</td>
+</tr>
+</table>
+
+<h2>永真蕴含式</h2>
+
+<table>
+<tr>
+	<td>`P rArr P vv Q`</td>
+	<td>加法式</td>
+</tr>
+<tr>
+	<td>`P ^^ Q rArr P`</td>
+	<td>简化式</td>
+</tr>
+<tr>
+	<td>`P ^^ (P rarr Q) rArr Q`</td>
+	<td>假言推理</td>
+</tr>
+<tr>
+	<td>`not Q ^^ (P rarr Q) rArr not P`</td>
+	<td>拒取式(由假言推理逆反得到)</td>
+</tr>
+<tr>
+	<td>`not P ^^ (P vv Q) rArr Q`</td>
+	<td>析取三段论</td>
+</tr>
+<tr>
+	<td>`(P rarr Q) ^^ (Q rarr R) rArr P rarr R`</td>
+	<td>前提三段论</td>
+</tr>
+<tr>
+	<td>`(P rarr Q) ^^ (R rarr S) ^^　(P vv R) rArr Q vv S`</td>
+	<td>构造性二难推理</td>
+</tr>
+<tr>
+	<td>`(P rarr Q) ^^ (R rarr S) ^^ (not Q vv not S)
+		rArr not P vv not R`
+	</td>
+	<td>破坏性二难推理</td>
+</tr>
+</table>
+
+<h2>含量词的永真公式</h2>
+
+<table>
+<tr><td>`{
+	( AA x P(x) rArr P(y) ),
+	( P(y) rArr EE x P(x) )
+:}`</td></tr>
+
+<tr><td>`{
+	( AA x not P(x) iff not EE x P(x) ),
+	( EE x not P(x) iff not AA x P(x) )
+:}`</td></tr>
+
+<tr><td>`{
+	( AA x (P(x) ^^ Q(x)) iff AA x P(x) ^^ AA x Q(x) ),
+	( EE x (P(x) vv Q(x)) iff EE x P(x) vv EE x Q(x) ),
+	( EE x (P(x) ^^ Q(x)) rArr EE x P(x) ^^ EE x Q(x) ),
+	( AA x P(x) vv AA x Q(x) rArr AA x (P(x) vv Q(x)))
+:}`</td></tr>
+
+
+<tr><td>`{
+	( EE x (P(x) rarr Q(x)) iff AA x P(x) rarr EE x Q(x) ),
+	( EE x P(x) rarr AA x Q(x) rArr AA x (P(x) rarr Q(x)) )
+:}`</td></tr>
+
+<tr><td>`{
+	( AA x P(x) rarr Q iff EE x (P(x) rarr Q) ),
+	( EE x P(x) rarr Q iff AA x (P(x) rarr Q) ),
+	( P rarr AA x Q(x) iff AA x (P rarr Q(x)) ),
+	( P rarr EE x Q(x) iff EE x (P rarr Q(x)) )
+:}`</td></tr>
+</table>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/main.js"></script>
+
+</html>

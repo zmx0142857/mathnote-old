@@ -3,7 +3,7 @@
 
 <head>
 
-<title>S1 排列组合</title>
+<title>排列组合</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>概率统计篇1: 排列组合</h1>
 
 <h2>常见模型一: 分家产 (投球入盒)</h2>
 
@@ -74,26 +72,25 @@
 	两两不重合, 即有 k(n - 1 - k) 个交点. 显然这些交点把 `s_k` 分为
 	k(n - 1 - k) + 1 段, 从而新产生同样数目的分割. 总之,
 
-	<div class="formula">`
+	<span class="formula">`
 {:(			f(n)
 ,		=	sum_(k=0)^(n-1) [k(n - 1 - k) + 1]
 ),(,	=	1/6 n^3 - 1/2 n^2 + 4/3 n.
-):}`</div>
+):}`</span>
 
 	(计算时用到了 Bernoulli 公式), 接着, 由于 F(1) = 1,
 
-	<div class="formula">`
+	<span class="formula">`
 {:(			F(n)
 ,		=	F(1) + sum_(k=1)^(n-1) f(k)
 ),(,	=	1/24 n^4 - 1/4 n^3 + 23/24 n^2 -3/4 n + 1.
-):}`</div>
+):}`</span>
 	<span class="right">&square;</span>
 </p>
 
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

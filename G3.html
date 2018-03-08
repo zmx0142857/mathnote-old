@@ -3,7 +3,7 @@
 
 <head>
 
-<title>G3 向量</title>
+<title>向量</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,26 +15,24 @@
 
 <body>
 
-<h1>几何篇3: 向量</h1>
-
 <h2>证明: 平行四边形四边长的平方和 = 对角线长的平方和.</h2>
 
 <p class="prove">
 	用向量轻松证明:
-	<div class="formula">`
+	<span class="formula">`
 {:(			,|bb"a" + bb"b"|^2 + |bb"a" - bb"b"|^2
 ),(		=	,(bb"a" + bb"b") * (bb"a" + bb"b")
 			+ (bb"a" - bb"b") * (bb"a" - bb"b")
 ),(		=	,2|bb"a"|^2 + 2|bb"b"|^2.
-):}`</div>
+):}`</span>
 	<span class="right">&square;</span>
 </p>
 
 <p class="corollary">
 	设三角形三边长为 a, b, c, 则边 a 上的中线 `m_a` 满足:
-	<div class="formula">
+	<span class="formula">
 		`4 m_a^2 = 2(b^2 + c^2) - a^2`.
-	</div>
+	</span>
 </p>
 
 <p class="corollary">
@@ -47,20 +45,21 @@
 	对角线 BD 的中点为 N.
 	在 `Delta NAC, Delta ABD, Delta CBD` 中分别使用推论G3.6.1, 有
 
-	<div class="formula">`4 MN^2 = 2 (AN^2 + CN^2) - AC^2`,</div>
-	<div class="formula">`4 AN^2 = 2 (AB^2 + AD^2) - BD^2`,</div>
-	<div class="formula">`4 CN^2 = 2 (CB^2 + CD^2) - BD^2`.</div>
+	<span class="formula">
+		`4 MN^2 = 2 (AN^2 + CN^2) - AC^2`,<br />
+		`4 AN^2 = 2 (AB^2 + AD^2) - BD^2`,<br />
+		`4 CN^2 = 2 (CB^2 + CD^2) - BD^2`.
+	</span>
 
 	将后两个式子代入第一个式子右边, 整理就得到
-	<div class="formula">
+	<span class="formula">
 		`AB^2 + BC^2 + CD^2 + DA^2 = AC^2 + BD^2 + 4MN^2`.
-	</div>
+	</span>
 </p>
 
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

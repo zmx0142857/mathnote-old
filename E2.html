@@ -3,7 +3,7 @@
 
 <head>
 
-<title>E2 差分方程</title>
+<title>差分方程</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,8 +15,6 @@
 
 <body>
 
-<h1>方程篇2: 差分方程</h1>
-
 <h2>二阶线性齐次</h2>
 
 <p>已知 `a x_(n+2) + b x_(n+1) + c x_n = 0`, `n = 0, 1, 2, cdots`,
@@ -27,142 +25,142 @@
 <p class="solve">
 	设方程 `a x^2 + b x + c = 0` 的两根为 `alpha, beta`.
 	则原方程可以写作
-	<div class="formula">
+	<span class="formula">
 		`x_(n+1) = (alpha + beta) x_n - alpha beta x_(n-1)`,
 		`n = 1, 2, cdots`.
-	</div>
+	</span>
 	(i) 若 `alpha != beta`, 由上式得到
-	<div class="formula">
-		<p>`x_(n+1) - beta x_n = alpha (x_n - beta x_(n-1))`,</p>
-		<p>`x_(n+1) - alpha x_n = beta (x_n - alpha x_(n-1))`.</p>
-	</div>
+	<span class="formula">
+		`x_(n+1) - beta x_n = alpha (x_n - beta x_(n-1))`,<br />
+		`x_(n+1) - alpha x_n = beta (x_n - alpha x_(n-1))`.
+	</span>
 	即
-	<div class="formula">
-		<p>`x_(n+1) - beta x_n = alpha^n (x_1 - beta x_0)`,</p>
-		<p>`x_(n+1) - alpha x_n = beta^n (x_1 - alpha x_0)`.</p>
-	</div>
+	<span class="formula">
+		`x_(n+1) - beta x_n = alpha^n (x_1 - beta x_0)`,<br />
+		`x_(n+1) - alpha x_n = beta^n (x_1 - alpha x_0)`.
+	</span>
 	解得
-	<div class="formula">
+	<span class="formula">
 		`x_n = 1/(alpha - beta)[alpha^n(x_1 - beta x_0)
 		- beta^n (x_1 - alpha x_0)]`.
-	</div>
+	</span>
 
 	但如果 `j,k != 0,1`, 上式就不能直接使用. 我们作进一步的处理:
-	<div class="formula">`
+	<span class="formula">`
 {:(			x_k - beta^k x_0
 ,		=	x_k - beta x_(k-1) + beta x_(k-1) - beta^2 x_(k-2) + cdots
 			+ beta^(k-1) x_1 - beta^k x_0
 ),(,	=	sum_(i=1)^k beta^(k-i) (x_i - beta x_(i-1))
 ),(,	=	sum_(i=1)^k beta^(k-i) alpha^(i-1) (x_1 - beta x_0)
 ),(,	=	(x_1 - beta x_0) (alpha^k - beta^k)/(alpha - beta).
-):}`</div>
+):}`</span>
 	从而得到
-	<div class="formula">
+	<span class="formula">
 		`x_1 - beta x_0 = (alpha - beta)/(alpha^k - beta^k) 
 		(x_k - beta^k x_0)`, `k ge 1`.
-	</div>
+	</span>
 
 	上式对 k = n 也成立, 所以
-	<div class="formula">
+	<span class="formula">
 		`(x_n - beta^n x_0)/(alpha^n - beta^n) 
 		= (x_k - beta^k x_0)/(alpha^k - beta^k)`.
-	</div>
+	</span>
 	即
-	<div class="formula">
+	<span class="formula">
 		`x_n = (alpha^n - beta^n)/(alpha^k - beta^k) 
 		(x_k - beta^k x_0) + beta^n x_0
 		= (alpha^n - beta^n)/(alpha^k - beta^k) x_k
 		+ (alpha^k beta^n - alpha^n beta^k)/(alpha^k - beta^k) x_0`.
-	</div>
+	</span>
 
 	所以对任意正整数 0 &lt; j &lt; k &le; n, 有
-	<div class="formula">`
+	<span class="formula">`
 {:(			x_n	
 		,=	(alpha^n - beta^n)/(alpha^k - beta^k) x_k
 			+ (alpha^k beta^n - alpha^n beta^k)/(alpha^k - beta^k) x_0
 ),(		,=	(alpha^n - beta^n)/(alpha^j - beta^j) x_j
 			+ (alpha^j beta^n - alpha^n beta^j)/(alpha^j - beta^j) x_0.
-):}`</div>
+):}`</span>
 
 	消去 `x_0`, 得
-	<div class="formula">
+	<span class="formula">
 		` [(alpha^k - beta^k) x_n - (alpha^n - beta^n) x_k]
 		/ (alpha^k beta^n - alpha^n beta^k)
 		= [(alpha^j - beta^j) x_n - (alpha^n - beta^n) x_j]
 		/ (alpha^j beta^n - alpha^n beta^j)`.
-	</div>
+	</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 	<span class="box">
 		`x_n = (alpha^j beta^n - alpha^n beta^j)
 		/ (alpha^j beta^k - alpha^k beta^j) x_k
 		- (alpha^k beta^n - alpha^n beta^k)
 		/ (alpha^j beta^k - alpha^k beta^j) x_j`.
 	</span>
-	</div>
+	</span>
 	易知上式对 j = 0 也成立.
 </p>
 
 <p>	(ii) 若 `alpha = beta`, 我们只得到
-	<div class="formula">
+	<span class="formula">
 		`(x_(n+1) - alpha x_n) = alpha^n (x_1 - alpha x_0)`,
 		`n = 0, 1, 2, cdots`.
-	</div>
+	</span>
 	记 `c = x_1 - alpha x_0`, 上式即
-	<div class="formula">
+	<span class="formula">
 		`x_(n+1) - alpha x_n  = c alpha^n`.
-	</div>
+	</span>
 	`alpha = 0` 时, 原方程有平凡解 `x_n = 0, n ge 2`. 若 `alpha != 0`,
 	由上式得
-	<div class="formula">
+	<span class="formula">
 		`x_(n+1)/alpha^n = c + x_n/alpha^(n-1) = nc + x_1`.
-	</div>
+	</span>
 	于是
-	<div class="formula">
+	<span class="formula">
 		` x_n = alpha^(n-1) [x_1 + (n-1)c]
 		= alpha^(n-1) (alpha x_0 +nc)`.
-	</div>
+	</span>
 
 	类似上面的处理, 有
-	<div class="formula">`
+	<span class="formula">`
 {:(			,x_k - alpha^k x_0
 ),(		=	,sum_(i=1)^k alpha^(k-i) (x_i - alpha x_(i-1))
 ),(		=	,sum_(i=1)^k alpha^(k-i) alpha^(i-1) (x_1 - alpha x_0)
 ),(		=	,k alpha^(k-1) (x_1 - alpha x_0).
-):}`</div>
+):}`</span>
 
 	于是
-	<div class="formula">
+	<span class="formula">
 		`c = x_1 - alpha x_0 = (x_k - alpha^k x_0)/(k alpha^(k-1))`.
-	</div>
+	</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 		`x_n = alpha^(n-1) [alpha x_0 + n/k
 		(x_k - alpha^k x_0) / alpha^(k-1)]
 		= n/k alpha^(n-k) x_k - (n-k)/k alpha^n x_0`.
-	</div>
+	</span>
 
 	所以对任意正整数 0 &lt; j &lt; k &le; n, 有
-	<div class="formula">
+	<span class="formula">
 		`x_n = n/k alpha^(n-k) x_k - (n-k)/k alpha^n x_0
 		 = n/j alpha^(n-j) x_j - (n-j)/j alpha^n x_0`.
-	</div>
+	</span>
 
 	消去 `alpha^n x_0`, 得
-	<div class="formula">
+	<span class="formula">
 		` (n alpha^(n-k) x_k - k x_n) / (n-k)
 		= (n alpha^(n-j) x_j - j x_n) / (n-j)`.
-	</div>
+	</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 	<span class="box">
 		` x_n = (n-j)/(j+k) alpha^(n-k) x_k 
 		- (n-k)/(j+k) alpha^(n-j) x_j`.
 	</span>
-	</div>
+	</span>
 	易知上式对 `j = 0` 也成立.
 
 	<span class="right">&square;</span>
@@ -171,8 +169,6 @@
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>
-

@@ -3,7 +3,7 @@
 
 <head>
 
-<title>G7 二次曲线</title>
+<title>二次曲线</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<h1>几何篇7: 二次曲线</h1>
 
 <h2>定义</h2>
 
@@ -33,65 +31,65 @@
 
 <p class="solve">
 	由已知有
-	<div class="formula">
+	<span class="formula">
 		`r_1 = sqrt ((x+c)^2 + y^2)`;
 		<span class="num">(G7-1)</span>
-	</div>
-	<div class="formula">
+	</span>
+	<span class="formula">
 		`r_2 = sqrt ((x-c)^2 + y^2)`;
 		<span class="num">(G7-2)</span>
-	</div>
-	<div class="formula">
+	</span>
+	<span class="formula">
 		`r_1 + r_2 = 2a`.
 		<span class="num">(G7-3)</span>
-	</div>
+	</span>
 
 	由 (G7-1), (G7-2) 知
-	<div class="formula">
+	<span class="formula">
 		`r_1^2 - r_2^2 = 4cx`.
-	</div>
+	</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 		`r_1 - r_2 = (r_1^2 - r_2^2)/(r_1 + r_2) = 2ex`.
 		<span class="num">(G7-4)</span>
-	</div>
+	</span>
 	其中 `e = c/a`.
 </p>
 
 <p>	由 (G7-1), (G7-2),
-	<div class="formula">
+	<span class="formula">
 		`r_1^2 + r_2^2 = 2(x^2 + y^2 + c^2)`,
 		<span class="num">(G7-5)</span>
-	</div>
+	</span>
 
 	而同时,
-	<div class="formula">`
+	<span class="formula">`
 {:(			r_1^2 + r_2^2
 ,		=	1/2 [(r_1 - r_2)^2 + (r_1 + r_2)^2]
 ),(,	=	1/2 (4 e^2 x^2 + 4 a^2)
 ),(,	=	2(e^2 x^2 + a^2)
-):}`</div>
+):}`</span>
 
 	所以
-	<div class="formula">
+	<span class="formula">
 		`x^2 + y^2 + c^2 = e^2 x^2 + a^2`,
-	</div>
+	</span>
 
 	即
-	<div class="formula">
+	<span class="formula">
 		`x^2 / a^2 + y^2 / b^2 = 1`.
-	</div>
+	</span>
 	
 	其中 `b = sqrt (a^2 - c^2)`.
 </p>
 
 <p class="note">
 	由 (G7-3), (G7-4) 可得
-	<div class="formula">
-		<p>`r_1 = a + ex`;</p>
-		<p>`r_2 = a - ex`.</p>
-	</div>
+	<span class="formula">
+		`r_1 = a + ex`;<br />
+		`r_2 = a - ex`.
+	</span>
 </p>
 
 <p class="note">
@@ -117,32 +115,32 @@
 
 <p>	椭圆 `x^2/a^2 + y^2/b^2 = 1` (a, b &gt; 0) 过点 `(x_0, y_0)` 的切
 	线方程为
-	<div class="formula">
+	<span class="formula">
 		`(x_0 x)/a^2 + (y_0 y)/b^2 = 1`.
-	</div>
+	</span>
 </p>
 
 <p class="prove">
 	在椭圆方程的两端对 x 求导,
-	<div class="formula">
+	<span class="formula">
 		`(2x)/a^2 + (2y)/b^2 y^' = 0`.
-	</div>
+	</span>
 
 	上式在 `(x_0, y_0)` 也成立, 因此切线的方程为
-	<div class="formula">
-		<p>`y - y_0 = y^'|_((x_0, y_0)) (x - x_0)`,</p>
-		<p>`y - y_0 = -(x_0 b^2)/(y_0 a^2) (x - x_0)`,</p>
-		<p>`x_0 b^2 (x - x_0) + y_0 a^2 (y - y_0) = 0`,</p>
-		<p>`b^2 x_0 x + a^2 y_0 y = b^2 x_0^2 + a^2 y_0^2`,</p>
-	</div>
+	<span class="formula">
+		`y - y_0 = y^'|_((x_0, y_0)) (x - x_0)`,<br />
+		`y - y_0 = -(x_0 b^2)/(y_0 a^2) (x - x_0)`,<br />
+		`x_0 b^2 (x - x_0) + y_0 a^2 (y - y_0) = 0`,<br />
+		`b^2 x_0 x + a^2 y_0 y = b^2 x_0^2 + a^2 y_0^2`,
+	</span>
 	因为
-	<div class="formula">
+	<span class="formula">
 		`b^2 x_0^2 + a^2 y_0^2 = a^2 b^2`,
-	</div>
+	</span>
 	所以切线方程为
-	<div class="formula">
+	<span class="formula">
 		`(x_0 x)/a^2 + (y_0 y)/b^2 = 1`.
-	</div>
+	</span>
 	易知斜率不存在时, `y_0 = 0`, 上式也是椭圆的切线方程.
 	<span class="right">&square;</span>
 </p>
@@ -150,26 +148,26 @@
 <p class="note">
 	如利用 &Delta; = 0, 则计算繁琐:
 	联立
-	<div class="formula">`
+	<span class="formula">`
 {(		A(x - x_0) + B(y - y_0) = 0;
 ),(		x^2/a^2 + y^2/b^2 = 1.
-):}`</div>
+):}`</span>
 	令 &Delta; = 0, 得
-	<div class="formula">
+	<span class="formula">
 		`A^2 a^2 + B^2 b^2 = (A x_0 + B y_0)^2`.
-	</div>
+	</span>
 	B &ne; 0 时, 记 `m = A/B`, 解上述二次方程 (因为
-	<div class="formula">
+	<span class="formula">
 		`b^2 x_0^2 + a^2 y_0^2 = a^2 b^2`,
-	</div>
+	</span>
 	这个方程有两个相等实根), 得
-	<div class="formula">`
+	<span class="formula">`
 {:(			m	
 ,		=	(x_0 y_0)/(a^2 - x_0^2)
 		=	x_0/(a^2 y_0) (a^2 y_0^2)/(a^2 - x_0^2)
 ),(,	=	x_0/(a^2 y_0) (a^2 b^2 - b^2 x_0^2)/(a^2 - x_0^2)
 		=	(x_0 b^2)/(y_0 a^2).
-):}`</div> 
+):}`</span> 
 	再作类似处理可以得到切线方程.
 	<span class="right">&square;</span>
 </p>
@@ -197,37 +195,37 @@
 
 <p>	计算知
 
-	<div class="formula">
+	<span class="formula">
 		`a_(11)^' = a_(11) cos^2 theta + a_(22)  sin^2 theta
 					+ 2a_(12) sin theta \ cos theta`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		`a_(22)^' = a_(11) sin^2 theta + a_(22) cos^2 theta
 					- 2a_(12) sin theta \ cos theta`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		`a_(12)^' = a_(12) (cos^2 theta - sin^2 theta)
 					- (a_(11) - a_(22)) sin theta \ cos theta`.
-	</div>
+	</span>
 
 	所以
 
-	<div class="formula">
+	<span class="formula">
 		`a_(11)^' + a_(22)^' = a_(11) + a_(22)`;
-	</div>
-	<div class="formula">`
+	</span>
+	<span class="formula">`
 {:(,		a_(11)^' - a_(22)^'
 		=	(a_(11) - a_(22)) (cos^2 theta - sin^2 theta)
 			+ 4 a_(12) sin theta \ cos theta
 ),(		=,	(a_(11) - a_(22)) cos 2theta + 2 a_(12) sin 2 theta.
-):}`</div>
+):}`</span>
 
 	由 `a_(12)^' = 0` 有
 		`cot 2 theta = (a_(11)-a_(22)) / (2a_(12))`,
 	故
-	<div class="formula">`
+	<span class="formula">`
 {:(			a_(11)^'
 ,		=	(a_(11) + a_(22))/2 + (a_(11) - a_(22))/2 cos 2 theta
 			+ a_(12) sin 2 theta
@@ -241,18 +239,17 @@
 			- cos 2 theta (1- cos 2 theta)) / (sin 2 theta)
 ),(,	=	a_(11) + a_(12) (1-cos 2 theta) / (sin 2 theta)
 ),(,	=	a_(11) + a_(12) tan theta.
-):}`</div>
+):}`</span>
 
-	<div class="formula">
+	<span class="formula">
 		` a_(22)^' = a_(11) + a_(22) - a_(11)^'
 		= a_(22) - a_(12) tan theta`.
-	</div>
+	</span>
 </p>
 
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

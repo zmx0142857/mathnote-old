@@ -3,7 +3,7 @@
 
 <head>
 
-<title>#2 三角函数与反三角函数</title>
+<title>三角函数与反三角函数</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,174 +15,170 @@
 
 <body>
 
-<h1>附录篇2: 三角函数与反三角函数</h1>
-
 <h2>三角函数</h2>
 
-<ul>
-<li>和角`{
+<p>和角`{
 	( sin (x +- y) = sin x \ cos y +- cos x \ sin y					), 
 	( cos (x +- y) = cos x \ cos y &#x2213; sin x \ sin y			), 
 	( tan (x +- y) = (tan x +- tan y) / (1 &#x2213; tan x \ tan y)	)
-:}`</li>
+:}`</p>
 
-<li>倍角`{
+<p>倍角`{
 	( cos 2x ,= cos^2 x - sin^2 x	),
 	( 		 ,= 1 - 2 sin^2 x		),
 	( 		 ,= 2 cos^2 x -1		),
 	( sin 2x ,= 2 sin x \ cos x		),
 	( cos 3x ,= 4 cos^3 x - 3 cos x	),
 	( sin 3x ,= 3 sin x - 4 sin^3 x	)
-:}`</li>
+:}`</p>
 
-<li>半角`{
+<p>半角`{
 	( cos^2 x = (1 + cos 2x)//2								),
 	( sin^2 x = (1 - cos 2x)//2								),
 	( tan^2 x = (1 - cos 2x)/(1 + cos 2x)					),
 	( tan x = (sin 2x)/(1 + cos 2x) = (1 - cos 2x)/(sin 2x)	),
 	( 1 +- sin 2x = (sin x +- cos x)^2						)
-:}`</li>
+:}`</p>
 
-<li>勾股`{
+<p>勾股`{
 	( sin^2 x + cos^2 x = 1			),
 	( tan^2 x + 1 = 1 // cos^2 x	),
 	( 1 + cot^2 x = 1 // sin^2 x	)
-:}`</li>
+:}`</p>
 
-<li>辅助角`{
+<p>辅助角`{
 	( A sin x + B cos x = sqrt(A^2 + B^2) sin ( x + phi), tan phi = B/A ),
 	( (1 + C tan x)/(C - tan x) = tan ( x + phi), cot phi = C			)
-:}`</li>
+:}`</p>
 
-<li>万能`{
+<p>万能`{
 	( tan x = (2t)/(1-t^2), t = tan x/2	),
 	( sin x = (2t)/(1+t^2),				),
 	( cos x = (1-t^2)/(1+t^2),			)
-:}`</li>
+:}`</p>
 
-<li>和差化积`{
+<p>和差化积`{
 	( sin x +- sin y = 2 sin {: (x+-y)/2 :} cos {: ( x&#x2213;y)/2 :}	),
 	( cos x + cos y = 2 cos {: (x+y)/2 :} cos {: (x-y)/2 :}				),
 	( cos x - cos y = 2 sin {: (x+y)/2 :} sin {: (x-y)/2 :}				) 
-:}`</li>
+:}`</p>
 
-<li>积化和差`{
+<p>积化和差`{
 	( 2 sin x \ cos y ,= sin (x+y) + sin (x-y)		),
 	( 					   ,= sin (y+x) - sin (y-x)	),
 	( 2 cos x \ cos y ,= cos (x-y) + cos (x+y)		),
 	( 2 sin x \ sin y ,= cos (x-y) - cos (x+y)		)
-:}`</li>
-</ul>
+:}`</p>
 
 <h2>反三角函数</h2>
 
-<p>定义域, 值域:</p>
-
-<p class="formula">`y = {
-	( arcsin x, if x in [-1,1], y in [-pi/2, pi/2]		),
-	( arccos x, if x in [-1,1], y in [0, pi]			),
-	( arctan x, if x in (-oo, +oo), y in (-pi/2, pi/2)	),
-	( text{arccot} x, if x in (-oo, +oo), y in (0, pi)	)
-:}`</p>
+<p>	定义域, 值域:
+	<span class="formula">`y = {
+		( arcsin x, if x in [-1,1], y in [-pi/2, pi/2]		),
+		( arccos x, if x in [-1,1], y in [0, pi]			),
+		( arctan x, if x in (-oo, +oo), y in (-pi/2, pi/2)	),
+		( text{arccot} x, if x in (-oo, +oo), y in (0, pi)	)
+	:}`</span>
+</p>
 
 <p>	因为 `arcsin x`, `arccos x`, `arctan x` 都在各自的定义域上单调,
 	所以对所有定义域中的 `x`,
 
-	<div class="formula">`{
+	<span class="formula">`{
 		( sin \ arcsin x = x; ),
 		( cos \ arccos x = x; ),
 		( tan \ arctan x = x. )
-	:}`</div>
+	:}`</span>
 
 	反之, 则不那么优雅:
 
-	<div class="formula">`{
+	<span class="formula">`{
 		( arcsin \ sin x = (-1)^n (x - n pi), if |x - n pi| le pi/2;	),
 		( arccos \ cos x = {
 			( x - n pi, if n in text{Even};		),
 			( (n+1) pi - x, if n in text{Odd};	)
 		:}, if |x - (n + 1/2)pi| le pi/2;								),
 		( arctan \ tan x = x - n pi, if |x - n pi| lt pi/2.				)
-	:}`</div>
+	:}`</span>
 </p>
 
 <p>	相应于一些三角函数公式, 对于反三角函数有如下等式
 	(对所有定义域中的 x):
 
-	<div class="formula">
+	<span class="formula">
 		`arcsin x + arccos x = pi/2`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		`arctan x + text(arccot) x = pi/2`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		`2 arctan e^x - arctan \ text(sh) \ x = pi/2`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		` arcsin x = text(sgn) x * arccos sqrt (1 - x^2)
 		= arctan {: x/sqrt (1 - x^2) :}`;
-	</div>
+	</span>
 
-	<div class="formula">`arccos x = {
+	<span class="formula">`arccos x = {
 		( arcsin sqrt (1 - x^2), if x ge 0;				),
 		( pi - arcsin sqrt (1 - x^2), if x lt 0.		)
 	:} = {
 		( arctan {: sqrt(1 - x^2)/x :}, if x ge 0;		),
 		( pi + arctan {: sqrt(1 - x^2)/x :}, if x lt 0.	)
-	:}`</div>
+	:}`</span>
 
-	<div class="formula">
+	<span class="formula">
 		` arctan x = text(sgn) \ x * arccos {: 1/sqrt (1 + x^2) :}
 		= arcsin {: x/sqrt (1 + x^2) :}`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		` 2 arctan sqrt ((a-b)/(a+b))
 		= arccos {: b/a :}`, `|a| ge |b|`;
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		` arccos x
 		= 2 arccos sqrt((1+x)/2)
 		= 2 arcsin sqrt((1-x)/2)`.
-	</div>
+	</span>
 </p>
 
 <p>	下面三个式子常用于数学分析:
 
-	<div class="formula">`arcsin x - arcsin y = {
+	<span class="formula">`arcsin x - arcsin y = {
 (		arcsin(x sqrt(1-y^2) - y sqrt(1-x^2))
 				if xy ge 0 or x^2 + y^2 le 1;
 ),(		pi*text(sgn)(x-y) - arcsin(x sqrt(1-y^2) - y sqrt(1-x^2))
 				if else.
-):}`</div>
+):}`</span>
 
-	<div class="formula">
+	<span class="formula">
 		` arccos x - arccos y
 		= arccos(xy + sqrt((1-x^2)(1-y^2)) ) * text(sgn)(y-x)`.
-	</div>
+	</span>
 
-	<div class="formula">`arctan x - arctan y = {
+	<span class="formula">`arctan x - arctan y = {
 		( arctan {: (x-y)/(1+xy) :}						if xy ge -1;	),
 		( arctan {: (x-y)/(1+xy) + pi * text(sgn)(x-y)	if xy lt -1. :}	)
-	:}`</div>
+	:}`</span>
 
 <p class="note">
 	考虑如下的证明思路 (以 `arcsin x + arccos x = pi/2` 的证明为例):
 </p>
 
 <p>	原式成立当且仅当
-	<div class="formula">
+	<span class="formula">
 		`arcsin x = pi/2 - arccos x`,
-	</div>
+	</span>
 
 	注意到上式两边之差的绝对值不超过 `2 pi`, 所以上式成立当且仅当
-	<div class="formula">
+	<span class="formula">
 		`sin \ arcsin x = sin (pi/2 - arccos x)`,
-	</div>
+	</span>
 
 	即 `x = cos \ arccos x`, 这显然成立.
 </p>
@@ -223,26 +219,26 @@
 <h2>De Moivre's Theorem</h2>
 
 <p>
-	<div class="formula">
+	<span class="formula">
 		`(cos x + i \ sin x)^n = cos nx + i \ sin nx`, `AA n in NN`.
-	</div>
+	</span>
 
 	对 n 作归纳即可证明. 上式左边展开, 分别取实部和虚部就得到:
 	对任意正整数 n,
 
-	<div class="formula">
+	<span class="formula">
 		`cos nx = ((n), (0)) cos^n x
 				- ((n), (2)) cos^(n-2) x \ sin^2 x + cdots`
 				`+ (-1)^(epsilon/2) ((n),(epsilon))
 				cos^(n-epsilon) x \ sin^epsilon x`,
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		`sin nx = ((n), (1)) cos^(n-1)x \ sin x
 				- ((n), (3)) cos^(n-3)x \ sin^3 x + cdots`
 				`+ (-1)^((theta-1)/20) ((n), (theta))
 				cos^(n-theta)x \ sin^theta x`.
-	</div>
+	</span>
 
 	其中 `epsilon` 是不超过 `n` 的最大偶数,
 	`theta` 是不超过 `n` 的最大奇数.
@@ -251,21 +247,21 @@
 <h2>Euler's Formula</h2>
 
 <p>
-	<div class="formula">
+	<span class="formula">
 		`e^(ix) = cos x + i \ sin x`, `AA x in CC`.
-	</div>
+	</span>
 
 	从而
-	<div class="formula">
+	<span class="formula">
 		`cos x = (e^(ix) + e^(-ix))/2`,
 		`sin x = (e^(ix) - e^(-ix))/{2i}`.
-	</div>
+	</span>
 
-	<div class="formula">
+	<span class="formula">
 		`arccos x = -i \ ln (x + i sqrt(1-x^2))`,
 		`arcsin x = -i \ ln (sqrt(1-x^2) + ix)`,
 		`arctan x = -i \ ln {:(1 + ix)/sqrt(1+x^2):}`.
-	</div>
+	</span>
 
 <p class="note">
 	比如, 设 `y = arccos x`,
@@ -275,72 +271,72 @@
 
 <h2>杂例</h2>
 
-<p><b>#2.7.1</b>
+<p class="example">
 	计算 `sum_(k=1)^n cos kx` 和 `sum_(k=1)^n sin kx`.
 </p>
 
 <p>利用积化和差与和差化积:
 
-	<div class="formula">`
+	<span class="formula">`
 {:(			2 sin{:x/2:} sum_(k=1)^n cos kx
 		,=	sum_(k=1)^n [sin(k+1/2)x - sin(k-1/2)x]
 ),(		,= sin(n+1/2)x - sin{:x/2:}.
 ),(		,= 2cos {:((n+1)x)/2:} \ sin {:(nx)/2:}
-):}`</div>
+):}`</span>
 
 	故
-	<div class="formula">
+	<span class="formula">
 		` sum_(k=1)^n cos kx
 		= ( cos {:((n+1)x)/2:} \ sin {:(nx)/2:} ) / sin{:x/2:}`.
 		<span class="num">(#2-1)</span>
-	</div>
+	</span>
 
 	`n gt 1` 时, 将 `x = (2 pi)/n` 代入上式
-	<div class="formula">
+	<span class="formula">
 		` sum_(k=1)^n cos {:(2k pi)/n:}
 		= (cos{:((n+1)pi)/n:} \ sin pi) / sin {:pi/n:} = 0`.
-	</div>
+	</span>
 
 	类似地,
-	<div class="formula">
+	<span class="formula">
 		` sum_(k=1)^n sin kx
 		= (sin {:((n+1)x)/2:} \ sin {:(nx)/2:}) / sin {:x/2:}`,
 		<span class="num">(#2-2)</span>
-	</div>
+	</span>
 
 	且 `n gt 1` 时, 代入 `x = (2 pi)/n` 得到:
-	<div class="formula">
+	<span class="formula">
 		` sum_(k=0)^n sin {:(2k pi)/n:}
 		= (sin {:((n+1)pi)/n:} \ sin pi) / sin {:pi/n:} = 0`.
-	</div>
+	</span>
 
 	这两个结果的几何意义是,
 	向量组 `vec e_k = ( cos {:(2k pi)/n:}, sin {:(2k pi)/n:} )`,
 	`k = 1, 2, cdots, n`, 中所有向量之和为零.
 
 	最后, 显然 `x` 是 `2 pi` 的整数倍时, 有:
-	<div class="formula">
+	<span class="formula">
 		`sum_(k=0)^n cos kx = n`,
 		`sum_(k=0)^n sin kx = 0`.
-	</div>
+	</span>
 </p>
 
-<p><b>#2.7.2</b>
+<p class="example">
 	计算 `sin 20^@ * sin40^@ * sin80^@`.
 </p>
 
 <p class="solve">
 	记 `x = 10^@`, 注意到 `sin 8x = cos x`, 利用积化和差, 上式即
-	<div class="formula">`{:
+	<span class="formula">`{:
 		(   ,1/2 [cos(4-2)x - cos(4+2)x] cos x			),
 		( = ,1/2 (cos 2x - 1/2) cos x					),
 		( = ,1/2 cos 2x \ cos x - 1/4 cos x				),
 		( = ,1/4 [cos(2+1)x + cos(2-1)x] - 1/4 cos x	),
 		( = ,(sqrt 3)/8.								)
-	:}`</div>
+	:}`</span>
 </p>
 
-<p><b>#2.7.3</b>
+<p class="example">
 	计算 `1/(2sin 10^@) ( 3/(sin^2 40^@) - 1/(cos^2 40^@) )`.
 </p>
 
@@ -356,17 +352,16 @@
 </p>
 
 <p>	于是原式等于
-	<div class="formula">`{:
+	<span class="formula">`{:
 		(   ,1/(2 sin x) ( 6/(1 - cos 8x) - 2/(1 + cos 8x) )		),
 		( = ,1/sin x ( (3(1+sin x) - (1-sin x)) / ( 1-sin^2 x) )	),
 		( = ,(2(2sin x + 1)) / (sin x \ cos^2 x)					),
 		( = ,16.													)
-	:}`</p>
+	:}`</span>
 
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>

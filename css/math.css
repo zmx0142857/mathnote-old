@@ -51,19 +51,20 @@ ol {
 	margin: 10px;
 }
 
-li {
+ol li {
 	margin: 7px;
+}
+
+ul li {
+	margin: 7px 20px;
 }
 
 .formula {
 	display: table;
 	width: 100%;
 	text-align: center;
+	line-height: 2em;
 	margin: 15px;
-}
-
-.formula p {
-	margin: 10px 0;
 }
 
 .note {
@@ -110,12 +111,12 @@ ol.tree ol {
 
 /* list in two or more columns */
 .block li {
-	width: 250px;
+	width: 45%;
 	display: inline-block;
 }
 
 table {
-	margin: 20px auto;
+	margin: 20px;
 	border-top: 2px solid;
 	border-bottom: 2px solid;
 }

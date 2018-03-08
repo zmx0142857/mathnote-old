@@ -3,7 +3,7 @@
 
 <head>
 
-<title>#4 数理逻辑初步</title>
+<title>数学家</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,156 +15,44 @@
 
 <body>
 
-<h1>附录篇4: 数理逻辑初步</h1>
-
-<h2>恒等式</h2>
-
-<table>
-<tr>
-	<td>`P ^^ (Q vv R) iff P ^^ Q vv P ^^ R`</td>
-	<td>`^^` 在 `vv` 上的分配律</td>
-</tr>
-<tr>
-	<td>`P vv Q ^^ R iff (P vv Q) ^^ (P vv R)`</td>
-	<td>`vv` 在 `^^` 上的分配律</td>
-</tr>
-<tr>
-	<td>`not (P vv Q) iff not P ^^ not Q`</td>
-	<td>德·摩根定律</td>
-</tr>
-<tr>
-	<td>`not (P ^^ Q) iff not P vv not Q`</td>
-	<td></td>
-</tr>
-<tr>
-	<td>`(P rarr Q ) iff not P vv Q`</td>
-	<td>蕴含表达式</td>
-</tr>
-<tr>
-	<td>`(P rarr Q) iff (not Q rarr not P)`</td>
-	<td>逆反律</td>
-</tr>
-<tr>
-	<td>`(P ^^ Q rarr R) iff (P rarr (Q rarr R))`</td>
-	<td>输出律(CP规则)</td>
-</tr>
-<tr>
-	<td>`(P rarr Q) ^^ (P rarr not Q) iff not P`</td>
-	<td>归谬律</td>
-</tr>
-<tr>
-	<td>`
-{:(				(P harr Q)
-		,iff	(P rarr Q) ^^ (Q rarr P)
-),(		,iff	(not P vv Q) ^^ (not Q vv P)
-),(		,iff	P ^^ Q vv not P ^^ not Q
-),(		,iff	not (not P harr Q)
-):}`</td>
-	<td>等值表达式</td>
-</tr>
-<tr>
-	<td>`P uarr Q iff not (P ^^ Q)`</td>
-	<td>与非(Sheffer)</td>
-</tr>
-<tr>
-	<td>`not P iff P uarr P`</td>
-</tr>
-<tr>
-	<td>`P vv Q iff (P uarr P) uarr (Q uarr Q)`</td>
-</tr>
-<tr>
-	<td>`P ^^ Q iff (P uarr Q) uarr (P uarr Q)`</td>
-</tr>
-<tr>
-	<td>`P darr Q iff not (P vv Q)`</td>
-	<td>或非(Peirce)</td>
-</tr>
-<tr>
-	<td>`not P iff P darr P`</td>
-</tr>
-<tr>
-	<td>`P vv Q iff (P darr Q) darr (P darr Q)`</td>
-</tr>
-<tr>
-	<td>`P ^^ Q iff (P darr P) darr (Q darr Q)`</td>
-</tr>
-</table>
-
-<h2>永真蕴含式</h2>
-
-<table>
-<tr>
-	<td>`P rArr P vv Q`</td>
-	<td>加法式</td>
-</tr>
-<tr>
-	<td>`P ^^ Q rArr P`</td>
-	<td>简化式</td>
-</tr>
-<tr>
-	<td>`P ^^ (P rarr Q) rArr Q`</td>
-	<td>假言推理</td>
-</tr>
-<tr>
-	<td>`not Q ^^ (P rarr Q) rArr not P`</td>
-	<td>拒取式(由假言推理逆反得到)</td>
-</tr>
-<tr>
-	<td>`not P ^^ (P vv Q) rArr Q`</td>
-	<td>析取三段论</td>
-</tr>
-<tr>
-	<td>`(P rarr Q) ^^ (Q rarr R) rArr P rarr R`</td>
-	<td>前提三段论</td>
-</tr>
-<tr>
-	<td>`(P rarr Q) ^^ (R rarr S) ^^　(P vv R) rArr Q vv S`</td>
-	<td>构造性二难推理</td>
-</tr>
-<tr>
-	<td>`(P rarr Q) ^^ (R rarr S) ^^ (not Q vv not S)
-		rArr not P vv not R`
-	</td>
-	<td>破坏性二难推理</td>
-</tr>
-</table>
-
-<h2>含量词的永真公式</h2>
-
-<p>`{
-	( AA x P(x) rArr P(y) ),
-	( P(y) rArr EE x P(x) )
-:}`</p>
-
-<p>`{
-	( AA x not P(x) iff not EE x P(x) ),
-	( EE x not P(x) iff not AA x P(x) )
-:}`</p>
-
-<p>`{
-	( AA x (P(x) ^^ Q(x)) iff AA x P(x) ^^ AA x Q(x) ),
-	( EE x (P(x) vv Q(x)) iff EE x P(x) vv EE x Q(x) ),
-	( EE x (P(x) ^^ Q(x)) rArr EE x P(x) ^^ EE x Q(x) ),
-	( AA x P(x) vv AA x Q(x) rArr AA x (P(x) vv Q(x)))
-:}`</p>
-
-
-<p>`{
-	( EE x (P(x) rarr Q(x)) iff AA x P(x) rarr EE x Q(x) ),
-	( EE x P(x) rarr AA x Q(x) rArr AA x (P(x) rarr Q(x)) )
-:}`</p>
-
-<p>`{
-	( AA x P(x) rarr Q iff EE x (P(x) rarr Q) ),
-	( EE x P(x) rarr Q iff AA x (P(x) rarr Q) ),
-	( P rarr AA x Q(x) iff AA x (P rarr Q(x)) ),
-	( P rarr EE x Q(x) iff EE x (P rarr Q(x)) )
-:}`</p>
-
+<pre>
+1501-1576	Gerolamo Cardano
+1601-1665	Pierre de Fermat
+1642-1727	Issac Newton
+1646-1716	Gottfried Wilhelm Leibniz
+1685-1731	Brook Taylor
+1698-1746	Colin Maclaurin
+1707-1783	Leonhard Euler
+?	Bernoulli
+1752-1833	Adrien-Marie Legendre
+1777-1855	Carl Friedrich Gauss
+1781-1848	Bernhard Bolzano
+1789-1857	Augustin-Louis Cauchy
+1802-1829	Niels Henirk Abel
+1809-1882	Joseph Liouville
+1811-1832	Evariste Galois
+1815-1897	Karl Weierstrass
+1821-1881	Eduard Heine
+1821-1894	Pafnuti L. Cheyshev
+?	Riccati
+1831-1916	Richard Dedekind
+1838-1922	Camille Jordan
+1845-1918	Georg Cantor
+1858-1932	Giiuseppe Peano
+1865-1963	Jacques Hadamard
+1866-1962	de la Vallée Poussin
+1871-1956	Emile Borel
+?	Bessel
+?	Poincaré
+?	Hilbert
+?	Birkhoff
+?	Arnold
+?	Smale
+</pre>
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>
+

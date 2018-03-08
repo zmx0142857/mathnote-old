@@ -3,7 +3,7 @@
 
 <head>
 
-<title>A3 实数的完备性</title>
+<title>实数的完备性</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
@@ -15,16 +15,14 @@
 
 <body>
 
-<h1>分析篇3: 实数的完备性</h1>
-
 <h2>上确界/下确界的性质</h2>
 
 <p>如果实函数 `f(x), g(x)` 在 `S` 上有定义,
 	且 `f(x) le g(x)`, `AA x in S`, 则
-	<div class="formula">
+	<span class="formula">
 		`underset(x in S) text(sup)\ f(x) le underset(x in S) text(sup)\ g(x)`,
 		`underset(x in S) text(inf)\ f(x) le underset(x in S) text(inf)\ g(x)`.
-	</div>
+	</span>
 </p>
 
 <p class="prove">
@@ -66,20 +64,19 @@
 <p>	从记号上看, "选取子列" 这一操作的结果是增加了下标的重数, 如 `x_n`
 	的子列 `x_(n_k)`. 子数列并不改变各项在原数列中的次序, 因此这里
 	`n_k` 是一个严格单增的正整数列, 即
-	<div class="formula">
+	<span class="formula">
 		`1 le n_1 lt n_2 lt ... lt n_k`.
-	</div>
+	</span>
 	应用归纳法可知有
-	<div class="formula">
+	<span class="formula">
 		`n_k ge k`.
-	</div>
+	</span>
 	这个不等式在许多与子数列有关的证明中有广泛应用.
 </p>
 
 </body>
 
 <script src="js/random-color.js"></script>
-<script src="js/set-bgcolor.js"></script>
-<script src="js/num.js"></script>
+<script src="js/main.js"></script>
 
 </html>
