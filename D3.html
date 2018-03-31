@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>从递推到通项</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h2>杂例</h2>
+
+<ol>
+	<li>`x_n = {(1, if n = 1), (1/n (x_(n-1) + 1/(n!)), if n gt 1):}`;
+		设 `x_n = 1/(n!) y_n`, 则 `y_1 = 1`, 且
+		<span class="formula">`{:
+		(,		1/(n!) y_n
+		),(	=,	1/n (1/((n-1)!) y_(n-1) + 1/(n!))
+		),(	=,	1/(n!) (y_(n-1) + 1/n).
+		):}`</span>
+		从而 n &gt; 1 时, `y_n = y_(n-1) + 1/n`.
+		所以 `y_n = sum_(k=1)^n 1/k`,
+		`x_n = 1/(n!) sum_(k=1)^n 1/k`.
+	</li>
+</ol>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/main.js"></script>
+
+</html>
+
+

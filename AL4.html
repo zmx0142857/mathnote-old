@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>线性规划</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h2>标准化</h2>
+
+<p>	通过以下步骤将线性规划问题的一般形式
+	<span class="formula">
+		`"max"("min") \ z = bb"c"^T bb"x"`<br />
+		`"subject to" {
+			( bb"Ax" le (=; ge) bb"b" ),
+			( bb"x" ge bb"0" )
+		:}`
+	</span>
+
+	化为标准形式
+	<span class="formula">
+		`max z = bb"c"^T bb"x"`
+		<span class="num">(AL4-1)</span>
+	</span>
+	<span class="formula">
+		`"subject to" {
+			( bb"Ax" = bb"b" ),
+			( bb"x" ge bb"0" )
+		:}`
+		<span class="num">(AL4-2)</span>
+	</span>
+</p>
+<p> 其中 
+	<span class="formula">
+		`bb"c" = [(c_1),(c_2), (vdots), (c_n)]`,
+		`bb"x" = [(x_1),(x_2), (vdots), (x_n)]`,
+		`bb"b" = [(b_1),(b_2), (vdots), (b_n)]`,
+		`bb"0" = [(0), (0), (vdots), (0)]`,
+		`bb"A" = [
+			(a_(11), a_(12), cdots, a_(1n)),
+			(vdots,  vdots,  ,      vdots),
+			(a_(m1), a_(m2), cdots, a_(mn))
+		]` (m &lt; n).
+	</span>
+
+	一个向量小于等于另一向量当且仅当其每一分量小于等于另一向量的对应分量.
+</p>
+
+<ol>
+	<li>若存在取值无非负约束的变量 `x_i`, 可令 `x_i = x_i' - x_i`,
+		其中 `x_i'`, `x_i'' ge 0`.
+	</li>
+	<li>若目标函数要求最小化, 可令 `z' = -z`, 转化为 `max z' = -bb"c"^T
+		bb"x"`.
+	</li>
+	<li>约束方程为 "`le`" 不等式时, 向不等式左端加入一个非负松弛变量; 为
+		"`ge`" 不等式时, 则在不等式左端减去一个非负剩余变量.
+		现在约束不等式可以换为等式.
+	</li>
+	<li>若 `bb"b"` 中有一分量 `b_i` 小于 0, 则在等式两端乘以 -1.
+		若有一分量 `b_i` 等于 0, 表示出现退化.
+	</li>
+</ol>
+
+<h2>线性规划的解及相关概念</h2>
+
+<ul>
+<li>可行解: 满足约束条件 (AL4-2) 的 `bb"x"`.</li>
+<li>可行域: 所有可行解的集合.</li>
+<li>最优解: 使目标函数 `z` 达到最大值的可行解.</li>
+<li>基 (矩阵): 矩阵 `bb"A"` 的非奇异 m &times; m 子矩阵. 最多有 `((n),(m))` 个基.</li>
+<li>基向量: 基矩阵的每一列 `bb"p"_i` 都是一个基向量.</li>
+<li>基变量: 与基向量 `bb"p"_i` 对应的 `x_i`. 其他的 `x_j` 称为非基变量.</li>
+<li>基解: 若 `bb"A"` 的秩为 m, 因为 m &lt; n, 故方程
+
+	<span class="formula">
+		`bb"Ax" = bb"b"`
+	</span>
+	有无穷多解. 不妨设 `bb"A"` 的前 m 列线性无关, 于是这 m
+	列组成线性规划问题的一个基. 设 `bb"p"_i` 是 `bb"A"` 的第 i 列,
+	方程化为
+
+	<span class="formula">
+		` bb"p"_1 x_1 + bb"p"_2 x_2 + cdots + bb"p"_m x_m
+		= bb"b" - bb"p"_(m+1) x_(m+1) - cdots - bb"p"_n x_n`.
+	</span>
+	特别地, 令非基变量 `x_(m+1) = x_(m+2) = cdots = x_n = 0`,
+	得到方程的一个特解:
+
+	<span class="formula">
+		`bb"x" = (x_1, x_2, cdots, x_m, 0, cdots, 0)^T`.
+	</span>
+	该解的非零分量个数不大于方程的个数 m, 称为基解. 可见给定一个基,
+	就有与之对应一个基解, 反之亦然. 当基解中非零分量的个数小于 m 时,
+	出现退化.
+</li>
+<li>基可行解: 满足 (AL4-2) 的第二式, 即满足非负条件的基解.</li>
+<li>可行基: 对应于基可行解的基.</li>
+</ul>
+
+<h2>线性规划的解的性态</h2>
+
+<p>下面几个定理刻画了线性规划的解的性态.</p>
+
+<p class="theorem">
+	如果线性规划问题的可行域
+	<span class="formula">
+		`D = {bb"x": sum_(i=1)^n bb"p"_i bb"x"_i = bb"b", bb"x" ge 0}`
+	</span>
+	非空, 则它是凸集, 即若 `bb"x", bb"y" in D`,
+	则它们连线上的任一点 `theta bb"x"+ (1-theta) bb"y" in D`
+	(`0 le theta le 1`).
+</p>
+
+<p class="prove"></p>
+
+<p class="lemma">
+	线性规划问题的可行解 `bb"x"` 为基可行解的充要条件是 `bb"x"`
+	的正分量对应的系数列向量线性无关.
+</p>
+
+<p class="prove"></p>
+
+<p class="theorem">
+	线性规划问题的基可行解 `bb"x"` 是可行域的顶点, 即不存在 `bb"x"^((1)),
+	bb"x"^((2)) in D`, 使
+	<span class="formula">
+		`bb"x" = theta bb"x"^((1)) + (1-theta) bb"x"^((2))`, `0 lt theta
+		lt 1`;
+	</span>
+	反之, 可行域的顶点必是线性规划问题的基可行解.
+</p>
+<p class="prove"></p>
+
+<p class="lemma">
+	若 n 维 Euclid 空间中的子集 K 是有界凸集, 则任意一点 `bb"x" in K`
+	可表示为 K 的顶点 `bb"x"^((1))`, `bb"x"^((2))`, `cdots`,
+	`bb"x"^((k))`的凸组合, 即存在实数 `0 le mu_1, mu_2, cdots, mu_k le 1`
+	满足 `sum_(i=1)^k mu_i = 1`, 使
+	<span class="formula">
+		`bb"x" = sum_(i=1)^k mu_i bb"x"^((i))`.
+	</span>
+	(当 `0 lt mu_i lt 1` 时, 称为严格凸组合)
+</p>
+
+<p class="prove">略</p>
+
+<p class="theorem">
+	若可行域有界, 线性规划问题的目标函数一定能在其可行域的顶点上达到最大.
+</p>
+
+<p class="prove"></p>
+
+<p class="corollary">
+	若目标函数 `z` 在多个顶点处达到最大值, 则 `z`
+	在这些顶点的凸组合上也达到最大值.
+</p>
+
+<p class="prove"></p>
+
+<h2>算法</h2>
+
+<h2>示例</h2>
+
+<p>	解线性规划
+	<span class="formula">
+		`max z = (2, 3, 0, 0, 0) bb"x"`
+	</span>
+	<span class="formula">
+		`"subject to" {
+			( [(1, 2, 1, 0, 0), (4, 0, 0, 1, 0), (0, 4, 0, 0, 1)]
+				bb"x" = [(8),(16),(12)]),
+			( bb"x" ge bb"0" )
+		:},`
+		<span class="num">(AL4-2)</span>
+	</span>
+</p>
+
+<p>	将增广矩阵、检验数行向量、&theta; 列向量作成表:
+	<span class="formula">
+		`[
+			(1, 2, 1, 0, 0, 8),
+			(4, 0, 0, 1, 0, 16),
+			(0, [4], 0, 0, 1, 12),
+			(2, 3, 0, 0, 0, 0)
+		]`, `theta = [(4), (\), (3), (\)]`.
+	</span>
+	<span class="formula">
+		`bb"base" = [3, 4, 5], bb"x" = [0, 0, 8, 16, 12], z = 0`.
+	</span>
+</p>
+
+<p>	检验数 (最后一行的前五个) 中有 2, 3 &gt; 0, 任选其一, 比如确定 `x_2`
+	为换入变量. 据此计算 &theta; 列向量: 8/2 = 4, 12/4 = 3. 后者更小, 因此
+	确定 `x_5` 为换出变量. 作矩阵的初等变换, 将第三行第二列的元素化为 1:
+
+	<span class="formula">
+		`[
+			([1], 0, 1, 0, -1//2, 2),
+			(4, 0, 0, 1, 0, 16),
+			(0, 1, 0, 0, 1//4, 3),
+			(2, 0, 0, 0, -3//4, -9)
+		]`, `theta = [(2), (4), (\), (\)]`.
+	</span>
+	<span class="formula">
+		`bb"base" = [3, 4, 2], bb"x" = [0, 3, 2, 16, 0], z = 9`.
+	</span>
+</p>
+
+<p>	现在检验数中仍有 2 &gt; 0, 确定换入 `x_1`. 计算 &theta;, 确定换出
+	`x_3`. 作初等变换:
+
+	<span class="formula">
+		`[
+			(1, 0, 1, 0, -1//2, 2),
+			(0, 0, -4, 1, [2], 8),
+			(0, 1, 0, 0, 1//4, 3),
+			(0, 0, -2, 0, 1//4, -13)
+		]`, `theta = [ (-4), (4), (12), (\)]`.
+	</span>
+	<span class="formula">
+		`bb"base" = [1, 4, 2], bb"x" = [2, 3, 0, 8, 0], z = -13`.
+	</span>
+</p>
+
+<p>	检验数中 1/4 &gt; 0. 确定换入 `x_5`, 计算 &theta;, 确定换出 `x_4`.
+	作初等变换:
+	<span class="formula">
+		`[
+			(1, 0, 0, 1//4, 0, 4),
+			(0, 0, -2, 1//2, 1, 4),
+			(0, 1, 1//2, -1//8, 0, 2),
+			(0, 0, -3//2, -1//8, 0, -14)
+		]`
+	</span>
+	<span class="formula">
+		`bb"base" = [1, 5, 2], bb"x" = [4, 2, 0, 0, 4], z = 14`.
+	</span>
+</p>
+
+<p>	检验数已全部非正, 此时有唯一最优解 `bb"x"`.</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/main.js"></script>
+
+</html>
+

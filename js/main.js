@@ -35,6 +35,8 @@ if (abbr != '') {
 		zhname = '代数篇';
 	else if (abbr == 'S')
 		zhname = '概率统计篇';
+	else
+		zhname = abbr;
 }
 zhname += n;
 
@@ -78,16 +80,19 @@ function decorate(name, word, style=style_name_num, get_by='class') {
 			elem[i].innerHTML = style(word, i);
 	} else {
 		for (i = 0; i < elem.length; i++) {
-			var space = document.createTextNode(' ');
-			elem[i].insertBefore(space, elem[i].firstChild);
-			elem[i].insertBefore(style(word, i), elem[i].firstChild);
+			if (!elem[i].classList.contains("nonu")) {
+				var space = document.createTextNode(' ');
+				elem[i].insertBefore(space, elem[i].firstChild);
+				elem[i].insertBefore(style(word, i), elem[i].firstChild);
+			}
 		}
 	}
 }
 
 function make_h1() {
 	var h1 = document.createElement('h1');
-	h1.innerHTML = zhname + ': ' + document.title;
+	h1.innerHTML = (zhname == 'NaN' ? document.title
+			: zhname + ': ' + document.title);
 	document.body.insertBefore(h1, document.body.firstChild);
 }
 
@@ -101,13 +106,17 @@ function make_nav() {
 	var nav = document.createElement('div');
 	nav.id = 'nav';
 	document.body.insertBefore(nav, document.body.firstChild);
+
+	var prev = document.createElement('a');
+	prev.id = 'prev';
+	prev.innerHTML = '&lt;&lt;&lt;';
 	if (n > 1) {
-		var prev = document.createElement('a');
 		prev.href = (abbr === '#' ? '%23' : abbr) + (n-1) + '.html';
-		prev.id = 'prev';
-		prev.innerHTML = '&lt;&lt;&lt;';
-		nav.appendChild(prev);
+	} else {
+		prev.style="color: rgba(0,0,0,0)";
 	}
+	nav.appendChild(prev);
+
 	var content = document.createElement('a');
 	content.href = 'content.html';
 	content.target = '_blank';
