@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>连续性</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h2>一致连续的一些充分条件</h2>
+
+<ol>
+	<li>f(x) 在 [a, `+oo`) 连续, 且 `lim_(x to +oo) f(x)` 存在, 则 f(x)
+		在 [a, `+oo`) 上一致连续.
+		<p class="prove">
+			(1) 因为 `lim_(x to +oo) f(x)` 存在, 由函数极限的柯西准则知,
+			对任意 &epsi; &gt; 0, 存在 A &gt; a, 对任意 `x_1`, `x_2` &gt;
+			A, 有
+			<span class="formula">
+				`|f(x_1) - f(x_2)| lt epsi`.
+				<span class="num">(A9-1)</span>
+			</span>
+		</p>
+		<p>
+			(2) 另一方面, 由 f(x) 在 [a, A+1] 上连续, 从而一致连续知, 存在
+			0 &lt; &delta; &lt; 1, 对任意 `x_1`, `x_2 in [a, A+1]`, 且
+			`|x_1 - x_2| lt delta`, 同样有 (A9-1) 成立.
+		</p>
+		<p>
+			现在取 `x_1`, `x_2 in [a, +oo)`, 且满足 `0 lt x_1 - x_2 lt
+			delta`. 当 `x_1 le A+1` 时, 由 (2) 知 (A9-1) 成立; 当 `x_1 gt
+			A+1` 时, `x_2 gt x_1 - delta gt x_1 - 1 gt A`, 由 (1) 知
+			(A9-1) 成立. 所以 f(x) 在 [a, `+oo`) 上一致连续.
+		</p>
+	</li>
+
+	<li>若 f(x) 在区间 I (可以无界) 上满足利普希茨条件, 即存在常数 L, 使
+		<span class="formula">
+			`|f(x_1) - f(x_2)| le L|x_1 - x_2|`, `AA x_1, x_2 in I`.
+		</span>
+		则 f(x) 在 I 上一致连续.
+		<p class="prove">
+			对任意 &epsi; &gt; 0, 取 &delta; = &epsi; / L, 则对任意满足
+			`|x_1 - x_2| lt delta` 的 `x_1`, `x_2 in I`, 有
+			<span class="formula">
+				`|f(x_1) - f(x_2)| lt L delta = epsi`.
+			</span>
+			即 f(x) 在 I 上一致连续.
+		</p>
+	</li>
+
+	<li>若 f(x) 在区间 I 上可微, 且导函数有界, 则 f(x) 在 I 上一致连续.
+		<p class="prove">
+			任取 `x_1`, `x_2 in I`, 由微分中值定理, 存在 `xi in (x_1,
+			x_2)`, 使
+			<span class="formula">
+				`f(x_1) - f(x_2) = f'(xi)(x_1 - x_2)`.
+			</span>
+			由 `f'(x)` 有界知 f(x) 在 I 上满足利普希茨条件. 再由 2 知 f(x)
+			在 I 上一致连续.
+		</p>
+	</li>
+</ol>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/main.js"></script>
+
+</html>
+
+

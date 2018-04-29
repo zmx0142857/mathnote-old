@@ -15,9 +15,106 @@
 
 <body>
 
+<h2>逻辑联结词及其真值表</h2>
+<table class="center">
+	<tr>
+		<td>`P`</td>
+		<td>`Q`</td>
+		<td>`not P`</td>
+		<td>`P ^^ Q`</td>
+		<td>`P vv Q`</td>
+		<td>`P rarr Q`</td>
+		<td>`P harr Q`</td>
+		<td>`P uarr Q`</td>
+		<td>`P darr Q`</td>
+		<td>`P" xor "Q`</td>
+	</tr>
+	<tr>
+		<td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td>
+		<td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td>
+	</tr>
+	<tr>
+		<td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td>
+		<td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td>
+	</tr>
+	<tr>
+		<td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
+		<td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td>
+	</tr>
+	<tr>
+		<td>1</td> <td>1</td> <td>0</td> <td>1</td> <td>1</td>
+		<td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td>
+	</tr>
+</table>
+
+<h2>`P rarr Q` 的若干陈述方式</h2>
+<ul>
+	<li>若 P, 则 Q;</li>
+	<li>P 是 Q 的充分条件;</li>
+	<li>Q 是 P 的必要条件;</li>
+	<li>Q (每)当 P;</li>
+	<li>P 仅当 Q.</li>
+</ul>
+
+<h2>命题公式</h2>
+<ol>
+	<li>单个命题变元或命题常元是命题公式;</li>
+	<li>若 P 和 Q 是命题公式, 则 `(not P)`, `(P ^^ Q)`, `(P vv Q)`, `(P
+		rarr Q)`, `(P harr Q)` 是命题公式;
+	</li>
+	<li>只有有限步地应用 1. 和 2. 生成的公式, 才是命题公式.</li>
+</ol>
+
+<p>	上面的定义也可以用符号写成:
+<span class="formula">
+	A ::= P | T | F | (`not` A) | (A `^^` A) |
+	(A `vv` A) | (A `rarr` A) | (A `harr` A)
+</span>
+</p>
+
+<p>	常把具有 n 个命题变元的命题公式写作 `A(P_1, P_2, cdots, P_n)`.
+	各命题变元的真值有 `2^n` 种组合, 或者说, 真值表有 `2^n` 行.
+</p>
+
 <h2>逻辑恒等式</h2>
 
 <table>
+<tr> <td>`P vv T iff T`</td> </tr>
+<tr> <td>`P ^^ F iff F`</td> </tr>
+<tr> <td>`P vv F iff P`</td> </tr>
+<tr> <td>`P ^^ T iff P`</td> </tr>
+<tr> <td>`P vv not P iff T`</td> <td>排中律</td> </tr>
+<tr> <td>`P ^^ not P iff F`</td> <td>矛盾律</td> </tr>
+<tr> <td>`P vv (P ^^ Q) iff P`</td> <td rowspan="2">吸收律</td> </tr>
+<tr> <td>`P ^^ (P vv Q) iff P`</td> </tr>
+</table>
+
+<table>
+<tr>
+	<td>`not not P iff P`</td>
+	<td>双否定</td>
+</tr>
+<tr>
+	<td>`P ^^ P iff P`</td>
+	<td rowspan="2">等幂律</td>
+</tr>
+<tr>
+	<td>`P vv P iff P`</td>
+</tr>
+<tr>
+	<td>`P ^^ Q iff Q ^^ P`</td>
+	<td rowspan="2">交换律</td>
+</tr>
+<tr>
+	<td>`P vv Q iff Q vv P`</td>
+</tr>
+<tr>
+	<td>`(P ^^ Q) ^^ R iff P ^^ (Q ^^ R)`</td>
+	<td rowspan="2">结合律</td>
+</tr>
+<tr>
+	<td>`(P vv Q) vv R iff P vv (Q vv R)`</td>
+</tr>
 <tr>
 	<td>`P ^^ (Q vv R) iff P ^^ Q vv P ^^ R`</td>
 	<td>`^^` 在 `vv` 上的分配律</td>
@@ -26,24 +123,25 @@
 	<td>`P vv Q ^^ R iff (P vv Q) ^^ (P vv R)`</td>
 	<td>`vv` 在 `^^` 上的分配律</td>
 </tr>
+</table>
+
+<table>
 <tr>
 	<td>`not (P vv Q) iff not P ^^ not Q`</td>
-	<td>德·摩根定律</td>
+	<td rowspan="2">德·摩根定律</td>
 </tr>
 <tr>
 	<td>`not (P ^^ Q) iff not P vv not Q`</td>
-	<td></td>
-</tr>
-<tr>
-	<td>`(P rarr Q ) iff not P vv Q`</td>
-	<td>蕴含表达式</td>
 </tr>
 <tr>
 	<td>`(P rarr Q) iff (not Q rarr not P)`</td>
 	<td>逆反律</td>
 </tr>
 <tr>
-	<td>`(P ^^ Q rarr R) iff (P rarr (Q rarr R))`</td>
+	<td>`{:
+	(	(P ^^ Q rarr R) ,iff (P rarr (Q rarr R))
+	),(	,iff (P rarr Q) rarr (P rarr R)
+	):}`</td>
 	<td>输出律(CP规则)</td>
 </tr>
 <tr>
@@ -51,8 +149,12 @@
 	<td>归谬律</td>
 </tr>
 <tr>
-	<td>`
-{:(				(P harr Q)
+	<td>`(P rarr Q ) iff not P vv Q`</td>
+	<td>蕴含表达式</td>
+</tr>
+<tr>
+	<td>`{:
+(				(P harr Q)
 		,iff	(P rarr Q) ^^ (Q rarr P)
 ),(		,iff	(not P vv Q) ^^ (not Q vv P)
 ),(		,iff	P ^^ Q vv not P ^^ not Q
@@ -60,9 +162,12 @@
 ):}`</td>
 	<td>等值表达式</td>
 </tr>
+</table>
+
+<table>
 <tr>
 	<td>`P uarr Q iff not (P ^^ Q)`</td>
-	<td>与非(Sheffer)</td>
+	<td rowspan="4">与非 (Sheffer)</td>
 </tr>
 <tr>
 	<td>`not P iff P uarr P`</td>
@@ -75,7 +180,7 @@
 </tr>
 <tr>
 	<td>`P darr Q iff not (P vv Q)`</td>
-	<td>或非(Peirce)</td>
+	<td rowspan="4">或非 (Peirce)</td>
 </tr>
 <tr>
 	<td>`not P iff P darr P`</td>
@@ -85,6 +190,14 @@
 </tr>
 <tr>
 	<td>`P ^^ Q iff (P darr P) darr (Q darr Q)`</td>
+</tr>
+<tr>
+	<td>`{:
+	(	P" xor "Q
+		,iff (P vv Q) ^^ not (P ^^ Q)
+	),(	,iff not (P harr Q)
+	):}`</td>
+	<td>异或</td>
 </tr>
 </table>
 
@@ -116,7 +229,7 @@
 	<td>前提三段论</td>
 </tr>
 <tr>
-	<td>`(P rarr Q) ^^ (R rarr S) ^^　(P vv R) rArr Q vv S`</td>
+	<td>`(P rarr Q) ^^ (R rarr S) ^^ (P vv R) rArr Q vv S`</td>
 	<td>构造性二难推理</td>
 </tr>
 <tr>
