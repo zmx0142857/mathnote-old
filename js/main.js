@@ -98,7 +98,7 @@ function make_h1() {
 
 /*	<div id="nav">
 		<a href="prev.html" id="prev">&lt;&lt;&lt;</a>
-		<a href="content.html" target="_blank">· · ·</a>
+		<a href="index.html" target="_blank">· · ·</a>
 		<a href="next.html" id="next">&gt;&gt;&gt;</a>
 	</div>
 */
@@ -117,11 +117,11 @@ function make_nav() {
 	}
 	nav.appendChild(prev);
 
-	var content = document.createElement('a');
-	content.href = 'content.html';
-	content.target = '_blank';
-	content.innerHTML = '· · ·';
-	nav.appendChild(content);
+	var index = document.createElement('a');
+	index.href = 'index.html';
+	index.target = '_blank';
+	index.innerHTML = '· · ·';
+	nav.appendChild(index);
 
 	var next = document.createElement('a');
 	next.href = (abbr === '#' ? '%23' : abbr) + (n+1) + '.html';
@@ -140,8 +140,9 @@ decorate('lemma', '引理');
 decorate('corollary', '推论');
 decorate('example', '例');
 decorate('note', '注');
-decorate('method', '法', style_num);// place this before '证' and '解'
+decorate('method', '法', style_num);// place this before '证' and '解'. got problem with the numbering.
 decorate('prove', '证', style_void);
 decorate('solve', '解', style_void);
+decorate('answer', '答', style_void);
 decorate('num', '', style_formula);
 
