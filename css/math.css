@@ -170,7 +170,7 @@ td, th {
 @media print {
 	body {
 		margin: 0;
-		font-size: 14pt;
+		font-size: 10pt;
 		font-family: STIXGeneral, Simsun, Songti, times, serif;
 		background: rgb(255,255,255);
 	}
