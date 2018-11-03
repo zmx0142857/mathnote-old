@@ -9,11 +9,20 @@
 <link rel="stylesheet" type="text/css" href="css/math.css" />
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
-<script src="js/asciimathml.js"></script>
+<!--<script src="js/asciimathml.js"></script>-->
 
 </head>
 
 <body>
+
+<h2>常见线性递推式</h2>
+
+<h3>`x_(n+1) = a x_n + b` &rArr; `x_n = a^n x_0 + b sum_(i=0)^(n-1) a^i`.</h3>
+
+<p>`a = 1` 时, 为等差数列 `x_n = x_0 + bn`;</p>
+
+<p>`a != 1` 时, 设 `x_(n+1) + c = a(x_n + c)`, 得 `c = b/(a-1)`. 于是
+`x_n = a^n x_0 + b (a^n - 1)/(a - 1)`.</p>
 
 <h2>杂例</h2>
 
