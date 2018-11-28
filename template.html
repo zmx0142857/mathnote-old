@@ -3,13 +3,31 @@
 
 <head>
 
-<title>一级标题</title>
+<title>AsciiMath 示例</title>
 <meta charset="utf-8" />
 
 <link rel="stylesheet" type="text/css" href="css/math.css" />
+
 <!-- The following two links are retired -->
 <!--<script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>-->
 <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script> -->
+
+<script type="text/x-mathjax-config">
+// bm"something" get bold-italics
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Config", function () {
+  var AM = MathJax.InputJax.AsciiMath.AM;
+  AM.symbols.push({
+	input:"bm",
+	tag:"mstyle",
+	atname:"mathvariant",
+	atval:"bold-italic",
+    output:"bm",
+	tex:null,
+	ttype:AM.TOKEN.UNARY
+  });
+});
+</script>
+
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script src="js/asciimathml.js"></script>
@@ -18,7 +36,7 @@
 
 <body>
 
-<h2>二级标题</h2>
+<h2>段落与实例</h2>
 
 <p>普通段落: 我们熟知, `pi/4 = 1 - 1/3 + 1/5 - 1/7 + cdots`.</p>
 
@@ -27,27 +45,65 @@
 		<span class="box">
 			`e^(pi i) + 1 = 0`.
 		</span>
+		<span class="label">(template-1)</span>
 	</span>
 
-	分支公式:
-	<span class="formula">`|x| = {
-		( x,  if x ge 0; ), 
-		( -x, if x lt 0. )
-	:}`</span>
-
-	多行公式:
-	<span class="formula">
-		`"line one"`<br />
-		`"line two"`
-	</span>
-
-	自定义下标:
-	<span>
-		<div class="formula">
-			`underset(y in S)(text(inf)) \ d(x,y)`.
-		</div>
-	</span>
 </p>
+
+<h3>列表</h3>
+
+<ol class="enum">
+	<li>分支公式:
+		<span class="formula">`|x| = {
+			( x",",  if x ge 0; ), 
+			( -x",", if x lt 0. )
+		:}`</span>
+	</li>
+	<li>多行公式:
+		<span class="formula">
+			`"line one"`<br/>
+			`"line two"`
+		</span>
+	</li>
+	<li>自定义下标:
+		<span>
+			<div class="formula">
+				`d(x, S) = underset(y in S)(text(inf)) \ d(x,y)`.
+			</div>
+		</span>
+	</li>
+	<li>下标有时要加括号:
+		<span class="formula">
+			左导数 `f'_(-)(x_0)`
+			右导数 `f'_+(x_0)`
+		</span>
+	</li>
+	<li>微分符号:
+		<span class="formula">
+			`("d"f)/("d"x)`
+		</span>
+	</li>
+	<li>向量/矩阵记号:
+		<span class="formula">
+			`bm "Ax" = bb 0`.
+		</span>
+	</li>
+	<li>子列表
+		<ol class="subenum">
+			<li>项目1</li>
+			<li>项目2</li>
+			<li>项目3</li>
+			<li>子子列表
+				<ol class="col2">
+					<li>项目1</li>
+					<li>项目2</li>
+					<li>项目3</li>
+					<li>项目4</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+</ol>
 
 <p class="prove">
 	因为人都是要死的, 苏格拉底是人; 所以苏格拉底也是要死的.
@@ -58,48 +114,53 @@
 	很显然.
 </p>
 
-<p>
-Greek letters:
-alpha `alpha`
-beta `beta`
-chi `chi`
-delta `delta`
-Delta `Delta`
-epsilon `epsilon`
-varepsilon `varepsilon`
-eta `eta`
-gamma `gamma`
-Gamma `Gamma`
-iota `iota`
-kappa `kappa`
-lambda `lambda`
-Lambda `Lambda`
-mu `mu`
-nu `nu`
-omega `omega`
-Omega `Omega`
-phi `phi`
-varphi `varphi`
-Phi `Phi`
-pi `pi`
-Pi `Pi`
-psi `psi`
-Psi `Psi`
-rho `rho`
-sigma `sigma`
-Sigma `Sigma`
-tau `tau`
-theta `theta`
-vartheta `vartheta`
-Theta `Theta`
-upsilon `upsilon`
-xi `xi`
-Xi `Xi`
-zeta `zeta`
-</p>
+<h2>符号库</h2>
 
 <table border="5" cellpadding="10">
-<tr valign="top"><td>
+<tr valign="top">
+<td>
+Greek Letters
+<table border="5" cellpadding="10">
+<tr><th>Type</th><th>See</th></tr>
+<tr><td>alpha</td><td>`alpha`</td></tr>
+<tr><td>beta</td><td>`beta`</td></tr>
+<tr><td>chi</td><td>`chi`</td></tr>
+<tr><td>delta</td><td>`delta`</td></tr>
+<tr><td>Delta</td><td>`Delta`</td></tr>
+<tr><td>epsilon</td><td>`epsilon`</td></tr>
+<tr><td>varepsilon </td><td>`varepsilon`</td></tr>
+<tr><td>eta</td><td>`eta`</td></tr>
+<tr><td>gamma</td><td>`gamma`</td></tr>
+<tr><td>Gamma</td><td>`Gamma`</td></tr>
+<tr><td>iota</td><td>`iota`</td></tr>
+<tr><td>kappa</td><td>`kappa`</td></tr>
+<tr><td>lambda</td><td>`lambda`</td></tr>
+<tr><td>Lambda</td><td>`Lambda`</td></tr>
+<tr><td>mu</td><td>`mu`</td></tr>
+<tr><td>nu</td><td>`nu`</td></tr>
+<tr><td>omega</td><td>`omega`</td></tr>
+<tr><td>Omega</td><td>`Omega`</td></tr>
+<tr><td>phi</td><td>`phi`</td></tr>
+<tr><td>varphi</td><td>`varphi`</td></tr>
+<tr><td>Phi</td><td>`Phi`</td></tr>
+<tr><td>pi</td><td>`pi`</td></tr>
+<tr><td>Pi</td><td>`Pi`</td></tr>
+<tr><td>psi</td><td>`psi`</td></tr>
+<tr><td>Psi</td><td>`Psi`</td></tr>
+<tr><td>rho</td><td>`rho`</td></tr>
+<tr><td>sigma</td><td>`sigma`</td></tr>
+<tr><td>Sigma</td><td>`Sigma`</td></tr>
+<tr><td>tau</td><td>`tau`</td></tr>
+<tr><td>theta</td><td>`theta`</td></tr>
+<tr><td>vartheta</td><td>`vartheta`</td></tr>
+<tr><td>Theta</td><td>`Theta`</td></tr>
+<tr><td>upsilon</td><td>`upsilon`</td></tr>
+<tr><td>xi</td><td>`xi`</td></tr>
+<tr><td>Xi</td><td>`Xi`</td></tr>
+<tr><td>zeta</td><td>`zeta`</td></tr>
+</table>
+</td>
+<td>
 Operation symbols
 <table border="5" cellpadding="10">
 <tr><th>Type</th><th>See</th></tr>
@@ -130,7 +191,8 @@ Operation symbols
 <tr><td>uu</td><td>`uu`</td></tr>
 <tr><td>uuu</td><td>`uuu`</td></tr>
 </table>
-</td><td>
+</td>
+<td>
 Relation symbols
 <table border="5" cellpadding="10">
 <tr><th>Type</th><th>See</th></tr>
@@ -150,8 +212,9 @@ Relation symbols
 <tr><td>sup</td><td>`sup`</td></tr>
 <tr><td>sube</td><td>`sube`</td></tr>
 <tr><td>supe</td><td>`supe`</td></tr>
-<tr><td>&amp;#8884;</td><td>&#8884;</td></tr>
-<tr><td>&amp;#8940;</td><td>&#8940;</td></tr>
+<tr><td>&amp;#8884;</td><td>`&#8884;`</td></tr>
+<tr><td>&amp;#8940;</td><td>`&#8940;`</td></tr>
+<tr><td>&amp;#8810;</td><td>`&#8810;`</td></tr>
 <tr><td>-=</td><td>`-=`</td></tr>
 <tr><td>~=</td><td>`~=`</td></tr>
 <tr><td>~~</td><td>`~~`</td></tr>
@@ -200,8 +263,8 @@ Miscellaneous symbols
 <table border="5" cellpadding="10">
 <tr><th>Type</th><th>See</th></tr>
 <tr><td>int</td><td>`int`</td></tr>
-<tr><td>&amp;#8748;</td><td>&#8748;</td></tr>
-<tr><td>&amp;#8749;</td><td>&#8749;</td></tr>
+<tr><td>&amp;#8748;</td><td>`&#8748;`</td></tr>
+<tr><td>&amp;#8749;</td><td>`&#8749;`</td></tr>
 <tr><td>oint</td><td>`oint`</td></tr>
 <tr><td>del</td><td>`del`</td></tr>
 <tr><td>grad</td><td>`grad`</td></tr>

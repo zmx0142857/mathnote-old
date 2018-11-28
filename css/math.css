@@ -7,7 +7,8 @@ body {
 	font-family: "Microsoft Yahei", Kaiti, Songti, serif, sans-serif;
 	font-size: 14px;
 	margin: 5%;
-	background: #eeee99;
+	background: #eeee99; /* 浅黄色 */
+	/* rgb(244, 221, 171); 肉色 */
 }
 
 a:link {
@@ -96,7 +97,7 @@ span.box {
 }
 
 /* use this to number your formula */
-span.num {
+span.label {
 	display: table-cell;
 	text-align: right;
 	width: 20px;
@@ -108,26 +109,49 @@ span.right {
 }
 
 /* ol style (1) (2) (3)... */
-ol.tree ol {
+ol.enum ol {
 	padding: 0;
 	list-style-type: none;
 }
 
-ol.tree ol > li {
-	counter-increment: list_cnt;
+ol.enum ol > li {
+	counter-increment: enum_cnt;
 }
 
-ol.tree ol > li:before {
-	content: "(" counter(list_cnt) ") ";
+ol.enum ol > li:before {
+	content: "(" counter(enum_cnt) ") ";
 }
 
-ol.tree ol {
-	counter-reset: list_cnt;
+ol.enum ol {
+	counter-reset: enum_cnt;
 }
 
-/* list in two or more columns */
-.block li {
-	width: 45%;
+/* ol style 1) 2) 3) */
+ol.subenum ol > li {
+	counter-increment: subenum_cnt;
+}
+
+ol.subenum ol > li:before {
+	content: counter(subenum_cnt) ") ";
+}
+
+ol.subenum ol {
+	counter-reset: subenum_cnt;
+}
+
+/* multi-columns */
+.col2 li {
+	width: 47%;
+	display: inline-block;
+}
+
+.col3 li {
+	width: 30%;
+	display: inline-block;
+}
+
+.col4 li {
+	width: 21%;
 	display: inline-block;
 }
 

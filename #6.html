@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+<title>场论常用公式</title>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/math.css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="mathjax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script src="js/asciimathml.js"></script>
+
+</head>
+
+<body>
+
+<h2>Nabla 算子</h2>
+<p>
+	<span class="formula">
+		`grad = (del/(del x_1), cdots, del/(del x_m))`
+	</span>
+</p>
+
+<table>
+	<tr>
+		<td>`grad c = 0`</td>
+		<td>`grad * bb"c" = 0`</td>
+	</tr>
+	<tr>
+		<td>`grad (cf) = c grad f`</td>
+		<td>`grad * (c bb"F") = c (grad * bb"F")`</td>
+	</tr>
+	<tr>
+		<td>`grad (f +- g) = grad f +- grad g`</td>
+		<td>`grad * (bb"F" +- bb"G") = grad * bb"F" +- grad * bb"G"`</td>
+	</tr>
+	<tr>
+		<td>`grad (fg) = g grad f + f grad g`</td>
+		<td>`grad * (f bb"F") = grad f * bb"F" + f (grad * bb"F")`</td>
+	</tr>
+	<tr>
+		<td>`grad (f/g) = (g grad f - f grad g) / g^2`</td>
+		<td>`grad times bb"c" = bb"0"`</td>
+	</tr>
+	<tr>
+		<td>`grad f(g) = (df)/(dg) grad g`</td>
+		<td>`grad times (c bb"F") = c grad times bb"F"`</td>
+	</tr>
+	<tr>
+		<td>`grad f(g_1, cdots, g_n) = sum (del f)/(del g_i) grad g_i`</td>
+		<td>`grad times (bb"F" +- bb"G") = grad times bb"F" +- grad times bb"G"`</td>
+	</tr>
+	<tr>
+		<td>`grad * (grad f) = Delta f`</td>
+		<td>`grad times (f bb"F") = grad f times bb"F" + f(grad times bb"F")`</td>
+	</tr>
+	<tr>
+		<td>`grad * (grad times bb"F") = 0`</td>
+		<td>`grad times (grad f) = bb"0"`</td>
+	</tr>
+</table>
+
+<h2>Laplace 算子</h2>
+
+<p>
+	<span class="formula">
+		`Delta = sum del^2/(del x_i^2)`
+	</span>
+</p>
+
+<table>
+	<tr>
+		<td>`Delta c = 0`</td>
+	</tr>
+	<tr>
+		<td>`Delta (cf) = c Delta f`</td>
+	</tr>
+	<tr>
+		<td>`Delta (f +- g) = Delta f +- Delta g`</td>
+	</tr>
+	<tr>
+		<td>`Delta (fg) = f Delta g + g Delta f + 2 grad f * grad g`</td>
+	</tr>
+	<tr>
+		<td>`Delta f(g) = grad (df)/(dg) * grad g + (df)/(dg) Delta g`</td>
+	</tr>
+	<tr>
+		<td>`Delta f(g_1, cdots, g_n) = sum grad (del f)/(del g_i) * grad
+		g_i + sum (del f)/(del g_i) Delta g_i`</td>
+	</tr>
+</table>
+
+<h2>径向函数</h2>
+
+<p>	设 `r = sqrt(sum_(i=1)^m x_i^2)`, 则
+	<span class="formula">
+		`grad r = 1/r (x_1, cdots, x_m)`<br/>
+		`grad r * grad r = 1`<br/>
+		`grad f(r) = (df)/(dr) grad r`<br/>
+		`Delta r = (m-1)/r`<br/>
+		`Delta f(r) = (d^2 f)/(dr^2) + (m-1)/r (df)/(dr)`<br/>
+		`r Delta f = d^2/(dr^2) (rf) quad (m = 3)`
+	</span>
+</p>
+
+<h2>曲线/曲面积分常用记号</h2>
+
+<table>
+	<tr>
+		<td>曲线参数微元 (时间)</td>
+		<td>`dt`</td>
+		<td>曲面参数微元</td>
+		<td>`du, dv`</td>
+	</tr>
+	<tr>
+		<td>坐标微元</td>
+		<td>`dx, dy, dz`</td>
+		<td>坐标平面上的面积微元</td>
+		<td>`dydz, dzdx, dxdy`</td>
+	</tr>
+	<tr>
+		<td>位移矢量微元</td>
+		<td>`d bb"r" = (dx, dy, dz)`</td>
+		<td>???</td>
+		<td>`d bb"S" = (dydz, dzdx, dxdy)`</td>
+	</tr>
+	<tr>
+		<td>切向量</td>
+		<td>`(d bb"r")/(dt) = ((dx)/(dt), (dy)/(dt), (dz)/(dt))`</td>
+		<td>沿参数方向的切向量</td>
+		<td>`bb"r"_u = ((del x)/(del u), (del y)/(del u), (del z)/(del u))` `bb"r"_v = ((del x)/(del v), (del y)/(del v), (del z)/(del v))`</td>
+	</tr>
+	<tr>
+		<td>法向量</td>
+		<td>`bb"n" = (dy/dt, -dx/dt)`</td>
+		<td>法向量</td>
+		<td>`bb"r"_u times bb"r"_v`</td>
+	</tr>
+	<tr>
+		<td>弧长微元</td>
+		<td>`ds = |(d bb"r")/dt| dt`</td>
+		<td>曲面面积微元</td>
+		<td>`d sigma = |bb"r"_u times bb"r"_v| dudv`</td>
+	</tr>
+	<tr>
+		<td>单位切向量</td>
+		<td>`bb"t" = (d bb"r")/dt |(d bb"r")/(dt)|^-1`</td>
+		<td>单位外法向量</td>
+		<td>`bb"n" = +- (bb"r"_u times bb"r"_v)/|bb"r"_u times bb"r"_v|`</td>
+	</tr>
+	<tr>
+		<td>联系</td>
+		<td>`d bb"r" = bb"t" ds`</td>
+		<td>联系</td>
+		<td>`d bb"S" = bb"n" d sigma`</td>
+	</tr>
+	<tr>
+		<td>验证</td>
+		<td>`d bb"r" = (d bb"r")/dt dt = bb"t" ds.`</td>
+		<td>验证</td>
+		<td>`d bb"S" = ( (del(y,z))/(del(u,v)), (del(z,x))/(del(u,v)),
+			(del(x,y))/(del(u,v)) ) dudv`
+			`= bb"r"_u times bb"r"_v dudv = bb"n" d sigma.`
+		</td>
+	</tr>
+</table>
+
+<h2>多元积分公式</h2>
+
+<p>	Leibniz:
+	<span class="formula">
+		`d/dt int_(alpha(t))^(beta(t)) f(x, t) dx`
+		`= int_(alpha(t))^(beta(t)) del/(del t) f(x, t) dx`
+		`+ f(beta(t), t) beta'(t)`
+		`- f(alpha(t), t) alpha'(t).`
+	</span>
+	Green:
+	<span class="formula">
+		`&#8748;_D |(del/(del x), del/(del y)), (P, Q)| dxdy`
+		`= oint_(del D) P dx + Q dy` (`del y` 者符号相反) <br/>
+		`&#8748;_D Delta u dxdy`
+		`= oint_(del D) (del u)/(del bb"n") ds`<br/>
+		单位外法向 `bb"n" = (dy/(ds), -dx/(ds))`
+	</span>
+	Gauss:
+	<span class="formula">
+		`&#8749;_Omega ((del P)/(del x) + (del Q)/(del y) + (del R)/(del
+		z)) dxdydz`
+		`= &#8751;_(del Omega) P dydz + Q dzdx + R dxdy`<br/>
+		`&#8749;_Omega grad * bb"F" dV`
+		`= &#8751;_(del Omega) bb"F" * d bb"S"`<br/>
+		`&#8749;_Omega Delta u dxdydz`
+		`= &#8751;_(del Omega) (del u)/(del bb"n") d sigma`<br/>
+		单位外法向 `bb"n"`
+	</span>
+	Stokes:
+	<span class="formula">
+		`&#8748;_S |
+			(dydz, dzdx, dxdy),
+			(del/(del x), del/(del y), del/(del z)),
+			(P, Q, R)
+		|`
+		`= oint_(del S) P dx + Q dy + R dz`<br/>
+		`&#8748;_S grad times bb"F" * d bb"S"`
+		`= oint_(del S) bb"F" * d bb"r"`
+	</span>
+</p>
+
+</body>
+
+<script src="js/random-color.js"></script>
+<script src="js/main.js"></script>
+
+</html>
+
