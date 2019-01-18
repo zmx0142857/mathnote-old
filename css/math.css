@@ -7,8 +7,7 @@ body {
 	font-family: "Microsoft Yahei", Kaiti, Songti, serif, sans-serif;
 	font-size: 14px;
 	margin: 5%;
-	background: #eeee99; /* 浅黄色 */
-	/* rgb(244, 221, 171); 肉色 */
+	background: #eeee99; /* yellow */
 }
 
 a:link {
@@ -29,19 +28,25 @@ h1 {
 	text-align: center;
 	font-weight: bold;
 	font-size: 2em;
-	margin: 100px 0 50px 0;
+	margin: 3.6em 0 1.8em 0;
 }
 
 h2 {
 	font-weight: bold;
 	font-size: 1.5em;
-	margin: 40px 0 20px 0;
+	margin: 2.4em 0 1.2em 0;
 }
 
 h3 {
 	font-weight: bold;
 	font-size: 1.2em;
-	margin: 30px 0 15px 0;
+	margin: 1.8em 0 0.9em 0;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 1em;
+	margin: 1.8em 0 0.9em 0;
 }
 
 p {
@@ -56,19 +61,8 @@ pre {
 }
 
 math {
+	font-family: "Latin Modern Math";
 	font-size: 1.2em;
-}
-
-ol {
-	margin: 10px;
-}
-
-ol li {
-	margin: 7px;
-}
-
-ul li {
-	margin: 7px 20px;
 }
 
 .formula {
@@ -108,10 +102,28 @@ span.right {
 	float: right;
 }
 
+ol {
+	margin: 10px;
+}
+
+ol li {
+	margin: 5px;
+}
+
+/*
+ol.enum ol li {
+	display: inline-block;
+}
+*/
+
+ul li {
+	margin: 7px 20px;
+}
+
 /* ol style (1) (2) (3)... */
 ol.enum ol {
-	padding: 0;
 	list-style-type: none;
+	counter-reset: enum_cnt;
 }
 
 ol.enum ol > li {
@@ -122,26 +134,22 @@ ol.enum ol > li:before {
 	content: "(" counter(enum_cnt) ") ";
 }
 
-ol.enum ol {
-	counter-reset: enum_cnt;
+/* ol style a. b. c. */
+ol.subenum ol {
+	counter-reset: subenum_cnt;
 }
 
-/* ol style 1) 2) 3) */
 ol.subenum ol > li {
 	counter-increment: subenum_cnt;
 }
 
 ol.subenum ol > li:before {
-	content: counter(subenum_cnt) ") ";
-}
-
-ol.subenum ol {
-	counter-reset: subenum_cnt;
+	content: "(" counter(subenum_cnt, lower-roman) ") ";
 }
 
 /* multi-columns */
 .col2 li {
-	width: 47%;
+	width: 45%;
 	display: inline-block;
 }
 
@@ -152,6 +160,11 @@ ol.subenum ol {
 
 .col4 li {
 	width: 21%;
+	display: inline-block;
+}
+
+.col5 li {
+	width: 16%;
 	display: inline-block;
 }
 
@@ -229,6 +242,7 @@ td, th {
 
 	body {
 		font-size: 28px;
+		background: #eeeedd; /* lighter yellow */
 	}
 }
 

@@ -36,27 +36,234 @@
 	<span class="right">&square;</span>
 </p>
 
-<h2>应用确界原理证明戴德金原理</h2>
+<h2>完备性定理的相互证明</h2>
 
-<p class="prove">
+<ol>这些刻画了实数域完备性的定理是:
+	<li><b>Dedekind 原理</b></li>
+	<li><b>确界原理</b></li>
+	<li><b>单调有界原理</b></li>
+	<li><b>区间套定理</b></li>
+	<li><b>列紧性原理 (致密性原理)</b></li>
+	<li><b>Cauchy 收敛准则</b></li>
+	<li><b>有限覆盖定理</b></li>
+</ol>
+
+<p>在下表中, 我们用左边各定理证明上边的各定理.</p>
+
+<table>
+	<tr>
+		<td></td>
+		<td>Dedekind 原理</td>
+		<td>确界原理</td>
+		<td>单调有界原理</td>
+		<td>区间套定理</td>
+		<td>列紧性原理 (致密性原理)</td>
+		<td>Cauchy 收敛准则</td>
+		<td>有限覆盖定理</td>
+	</tr>
+	<tr>
+		<td>Dedekind 原理</td>
+		<td>-</td>
+		<td>(1.2)</td>
+		<td>(1.3)</td>
+		<td>(1.4)</td>
+		<td>(1.5)</td>
+		<td>(1.6)</td>
+		<td>(1.7)</td>
+	</tr>
+	<tr>
+		<td>确界原理</td>
+		<td>(2.1)</td>
+		<td>-</td>
+		<td>(2.3)</td>
+		<td>(2.4)</td>
+		<td>(2.5)</td>
+		<td>(2.6)</td>
+		<td>(2.7)</td>
+	</tr>
+	<tr>
+		<td>单调有界原理</td>
+		<td>(3.1)</td>
+		<td>(3.2)</td>
+		<td>-</td>
+		<td>(3.4)</td>
+		<td>(3.5)</td>
+		<td>(3.6)</td>
+		<td>(3.7)</td>
+	</tr>
+	<tr>
+		<td>区间套定理</td>
+		<td>(4.1)</td>
+		<td>(4.2)</td>
+		<td>(4.3)</td>
+		<td>-</td>
+		<td>(4.5)</td>
+		<td>(4.6)</td>
+		<td>(4.7)</td>
+	</tr>
+	<tr>
+		<td>列紧性原理 (致密性原理)</td>
+		<td>(5.1)</td>
+		<td>(5.2)</td>
+		<td>(5.3)</td>
+		<td>(5.4)</td>
+		<td>-</td>
+		<td>(5.6)</td>
+		<td>(5.7)</td>
+	</tr>
+	<tr>
+		<td>Cauchy 收敛准则</td>
+		<td>(6.1)</td>
+		<td>(6.2)</td>
+		<td>(6.3)</td>
+		<td>(6.4)</td>
+		<td>(6.5)</td>
+		<td>-</td>
+		<td>(6.7)</td>
+	</tr>
+	<tr>
+		<td>有限覆盖定理</td>
+		<td>(7.1)</td>
+		<td>(7.2)</td>
+		<td>(7.3)</td>
+		<td>(7.4)</td>
+		<td>(7.5)</td>
+		<td>(7.6)</td>
+		<td>-</td>
+	</tr>
+</table>
+
+<p class="prove"> (1.2) Dedekind 原理 &rArr; 确界原理
+</p>
+
+<p class="prove"> (2.1) 确界原理 &rArr; Dedekind 原理<br/>
 	设 (A, B) 为实数域的一个戴德金分划, 则由
+	<span class="formula">
 		`A != O/, B != O/`
+	</span>
 	和
-		"对 `AA x in A`, `AA y in B` 都成立 `x lt y`"
+	<span class="formula">
+		对 `AA x in A`, `AA y in B` 都成立 `x lt y`
+	</span>
 	知 A 非空有上界 (B 中的任一数都是 A 的上界). 应用确界原理知,
 	`EE c in RR`, 使得
 
-		(1) `x le c, AA x in A`;
-		(2) `AA epsilon gt 0`, `EE x_epsilon in A`,
-			`c - epsilon lt x_epsilon`.
+	<ol>
+		<li>`x le c, AA x in A`;</li>
+		<li>`AA epsilon gt 0`, `EE x_epsilon in A`,
+			`c - epsilon lt x_epsilon`.</li>
+	</ol>
 
-	由 (2) 又得到 `AA epsilon gt 0`, `AA y in B`, `c-epsilon lt y`.
+	由 2. 得 `AA epsilon gt 0`, `AA y in B`, `c - epsilon lt y`.
 	假设 `EE y_0 in B, c gt y_0`, 则对 `epsilon_0 = c - y_0 gt 0` 有
-	`c - epsilon_0 = y_0`, 矛盾. 故 `c le y, AA y in B`. 联系 (1) 有
+	`c - epsilon_0 = y_0`, 矛盾. 故 `c le y, AA y in B`. 联系 1. 有
 	` x le c le y, AA x in A, AA y in B`.
 	这就证明了戴德金原理的表述二.
+</p>
+
+<div class="prove"> (4.1) 区间套定理 &rArr; Dedekind 原理
+<p> 设 (A, B) 是实数域的一个戴德金分划, 则
+	`A, B != O/`, `A uu B = RR`, `x lt y`, `AA x in A, AA y in B`.
+	因为 A, B 非空, 可以取 `a_0 in A`, `b_0 in B`, 则 `a_0 lt b_0`.
+	记 `d = b_0 - a_0`, `c_0 = (a_0 + b_0)/2`.
+	令
+	<span class="formula">
+		`[a_1, b_1] = {
+			([c_0, b_0], if c_0 in A),
+			([a_0, c_0], if c_0 in B)
+	:}`</span>
+	则 `[a_1, b_1] sube [a_0, b_0]`, `b_1 - a_1 = d/2`.
+	且 `a_1 in A`, `b_1 in B`.
+	反复二分, 得到区间套 `"{"[a_n, b_n]"}"`,
+	满足 `a_n in A`, `b_n in B`, `AA n in NN`,
+	其长度 `b_n - a_n = d*2^-n to 0`.
+	由区间套定理, 存在唯一的 `c in [a_n, b_n]`, `AA n in NN`.
+</p>
+<p> 设 `c in A`, 则 `c lt y`, `AA y in B`.
+	若 `EE x in A`, `x gt c`, 则由 `c` 的唯一性知存在 `n_0 in NN`,
+	`x gt b_(n_0) in B`, 与 (A, B) 是一个戴德金分划相矛盾; 于是
+	`x le c le y`, `AA x in A, AA y in B`. `c in B` 时的证明类似.
+</p>
+</div>
+
+<div class="prove"> (4.2) 区间套定理 &rArr; 确界原理
+<p> 只对上确界的情形进行证明. 设 S 是非空有上界 M 的集合,
+	取 `a_0 in S`, `b_0 = M+1`, 则 `a_0 lt b_0`,
+	`[a_0, b_0] nn S != O/`.
+	记 `d = b_0 - a_0`, `c_0 = (a_0 + b_0)/2`.
+	令
+	<span class="formula">
+		`[a_1, b_1] = {
+			([c_0, b_0], if [c_0, b_0] nn S != O/),
+			([a_0, c_0], if [c_0, b_0] nn S = O/)
+	:}`</span>
+	则 `[a_1, b_1] sube [a_0, b_0]`, `b_1 - a_1 = d/2`,
+	且 `[a_1, b_1] nn S != O/`, `b_1` 是 S 的上界.
+	反复二分, 得到区间套 `"{"[a_n, b_n]"}"`,
+	满足 `[a_n, b_n] nn S != O/`, `b_n` 是 S 的上界, `AA n in NN`.
+	其长度 `b_n - a_n = d*2^-n to 0`.
+	由区间套定理, 存在唯一的 `c in [a_n, b_n]`, `AA n in NN`.
+</p>
+<p>
+	设存在 `x in S`, `x gt c`, 则由 `c` 的唯一性知存在 `n_0 in NN`,
+	`x gt b_(n_0)`. 这与 `b_(n_0)` 是 S 的上界矛盾. 故 `c` 是 S
+	的上界. 对任意 `epsi gt 0`, 取 `n` 适当大使 `d*2^-n lt epsi`,
+	则存在 `x_epsi in [a_n, b_n] nn S` 使
+	<span class="formula">
+		`|x_epsi - c| le d*2^-n lt epsi`,
+	</span>
+	这蕴含 `x_epsi gt c - epsi`. 故 `c` 是 S 的上确界.
+</p>
+</div>
+
+<div class="prove"> (5.3) 列紧性原理 &rArr; 单调有界原理
+<p>
+	不妨设 `{x_n}` 单调递增有上界; 显然 `x_1` 是它的下界, 所以 `{x_n}`
+	有界. 由列紧性原理, 存在 `{x_n}` 的收敛的子数列 `{x_(n_k)}`. 设
+	`lim_(k to oo) x_(n_k) = a`, 下证 `lim_(n to oo) x_n = a`.
+</p>
+<p>	对任意 `epsi gt 0`, 存在正整数 `K`, 使对任意 `k gt K`, 有
+	<span class="formula">
+		`|x_(n_k) - a| lt epsi`.
+	</span>
+	取 `N = n_(K+1)`, 则对任意 `n gt N`, 有
+	<span class="formula">
+		`x_n ge x_N = x_(n_(K+1))`,
+	</span>
+	从而
+	<span class="formula">
+		`|x_n - a| = a - x_n le a - x_(n_(K+1)) lt epsi`.
+	</span>
+	即得结论.
 	<span class="right">&square;</span>
 </p>
+</div>
+
+<div class="prove"> (6.3) Cauchy 收敛准则 &rArr; 单调有界原理
+<p>
+	不妨设 `{x_n}` 单调递增且有上界 M.
+	反设 `{x_n}` 不收敛, 由柯西准则, 存在 `epsi_0 gt 0`,
+	对任意正整数 `N`, 存在 `m, n gt N`, 使
+	<span class="formula">
+		`|x_m - x_n| ge epsi_0`.
+	</span>
+	取 `N_1 = 1`, 则 `EE m_1, n_1 gt N_1`, 使
+	<span class="formula">
+		`|x_(m_1) - x_(n_1)| ge epsi_0`.
+	</span>
+	一般地, 取 `N_k = max{m_(k-1), n_(k-1)}`,
+	则 `EE m_k, n_k gt N_k`, 使
+	<span class="formula">
+		`|x_(m_k) - x_(n_k)| ge epsi_0`.
+	</span>
+	记 `d = M-x_1`, 于是当 `k gt d/epsi_0` 时,
+	<span class="formula">
+		`d lt k epsi_0 le sum_(i=1)^k |x_(m_i) - x_(n_i)| le d`,
+	</span>
+	矛盾.
+	<span class="right">&square;</span>
+</p>
+</div>
 
 <h2>应用致密性原理</h2>
 
@@ -76,7 +283,6 @@
 
 </body>
 
-<script src="js/random-color.js"></script>
 <script src="js/main.js"></script>
 
 </html>

@@ -46,7 +46,7 @@ function style_name() {
 
 function style_name_num(word, i) {
 	var newItem = document.createElement('b');
-	newItem.innerHTML = word + filename + '.' + (i+1);
+	newItem.innerHTML = word + filename + '-' + (i+1);
 	return newItem;
 }
 
@@ -130,6 +130,38 @@ function make_nav() {
 	nav.appendChild(next);
 }
 
+function hideAnswers(classNames) {
+	for (var className of classNames) {
+		console.log(className);
+		var answers = document.getElementsByClassName(className);
+		for (var i = 0; i < answers.length; ++i) {
+			var button = document.createElement('button');
+			var id = className + '-' + filename + '-' + (i+1);
+			button.innerHTML = '+';
+			button.onclick = toggleShowAnswer(button, id);
+			button.style = "width: 18px; height: 18px; border: none; border-radius: 9px; text-align: center; line-height: 18px; color: white; font-size: 16px; background: rgba(0, 0, 0, 0.5)";
+			document.body.insertBefore(nav, document.body.firstChild);
+			answers[i].parentElement.insertBefore(button, answers[i]);
+			answers[i].hidden = 'true';
+			answers[i].id = id;
+		}
+	}
+}
+
+function toggleShowAnswer(button, id) {
+	return function() {
+		console.log(id);
+		var answer = document.getElementById(id);
+		if (button.innerHTML == '+') {
+			button.innerHTML = '-';
+			answer.removeAttribute('hidden');
+		} else {
+			button.innerHTML = '+';
+			answer.hidden = 'true';
+		}
+	};
+}
+
 make_h1();
 make_nav();
 decorate('title', '', style_name, 'tag');
@@ -140,9 +172,9 @@ decorate('lemma', '引理');
 decorate('corollary', '推论');
 decorate('example', '例');
 decorate('note', '注');
-decorate('method', '法', style_num);// place this before '证' and '解'. got problem with the numbering.
+decorate('method', '法', style_num); // place this before '证' and '解'. got problem with the numbering.
+decorate('label', '', style_formula);
 decorate('prove', '证', style_void);
 decorate('solve', '解', style_void);
 decorate('answer', '答', style_void);
-decorate('num', '', style_formula);
-
+hideAnswers(['prove', 'solve', 'answer', 'collapse']);

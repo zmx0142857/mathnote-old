@@ -284,6 +284,7 @@ var AMsymbols = [
 {input:"uuu", tag:"mo", output:"\u22C3", tex:"bigcup", ttype:UNDEROVER},
 
 //binary relation symbols
+{input:"==",  tag:"mo", output:"\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550", tex:null, ttype:CONST},
 {input:"!=",  tag:"mo", output:"\u2260", tex:"ne", ttype:CONST},
 {input:":=",  tag:"mo", output:":=",     tex:null, ttype:CONST},
 {input:"lt",  tag:"mo", output:"<",      tex:null, ttype:CONST},
@@ -304,6 +305,7 @@ var AMsymbols = [
 {input:"sube", tag:"mo", output:"\u2286", tex:"subseteq", ttype:CONST},
 {input:"supe", tag:"mo", output:"\u2287", tex:"supseteq", ttype:CONST},
 {input:"-=",  tag:"mo", output:"\u2261", tex:"equiv", ttype:CONST},
+{input:"!-=",  tag:"mo", output:"\u2262", tex:null, ttype:CONST},
 {input:"~=",  tag:"mo", output:"\u2245", tex:"cong", ttype:CONST},
 {input:"~~",  tag:"mo", output:"\u2248", tex:"approx", ttype:CONST},
 {input:"prop", tag:"mo", output:"\u221D", tex:"propto", ttype:CONST},
@@ -340,13 +342,18 @@ var AMsymbols = [
 
 //miscellaneous symbols
 {input:"int",  tag:"mo", output:"\u222B", tex:null, ttype:CONST},
-{input:"dx",   tag:"mi", output:"{:d x:}", tex:null, ttype:DEFINITION},
-{input:"dy",   tag:"mi", output:"{:d y:}", tex:null, ttype:DEFINITION},
-{input:"dz",   tag:"mi", output:"{:d z:}", tex:null, ttype:DEFINITION},
-{input:"dt",   tag:"mi", output:"{:d t:}", tex:null, ttype:DEFINITION},
+{input:"iint",  tag:"mo", output:"\u222C", tex:null, ttype:CONST},
+{input:"iiint",  tag:"mo", output:"\u222D", tex:null, ttype:CONST},
+{input:"dx",  tag:"mi", output:"{:\"d\" x:}", tex:null, ttype:DEFINITION},
+{input:"dy",  tag:"mi", output:"{:\"d\" y:}", tex:null, ttype:DEFINITION},
+{input:"dz",  tag:"mi", output:"{:\"d\" z:}", tex:null, ttype:DEFINITION},
+{input:"dt",  tag:"mi", output:"{:\"d\" t:}", tex:null, ttype:DEFINITION},
 {input:"oint", tag:"mo", output:"\u222E", tex:null, ttype:CONST},
+{input:"oiint", tag:"mo", output:"\u222F", tex:null, ttype:CONST},
+{input:"oiiint", tag:"mo", output:"\u2230", tex:null, ttype:CONST},
 {input:"del",  tag:"mo", output:"\u2202", tex:"partial", ttype:CONST},
 {input:"grad", tag:"mo", output:"\u2207", tex:"nabla", ttype:CONST},
+{input:"laplace",  tag:"mo", output:"\u0394", tex:null, ttype:CONST},
 {input:"+-",   tag:"mo", output:"\u00B1", tex:"pm", ttype:CONST},
 {input:"O/",   tag:"mo", output:"\u2205", tex:"emptyset", ttype:CONST},
 {input:"oo",   tag:"mo", output:"\u221E", tex:"infty", ttype:CONST},
@@ -382,6 +389,8 @@ var AMsymbols = [
 //standard functions
 {input:"lim",  tag:"mo", output:"lim", tex:null, ttype:UNDEROVER},
 {input:"Lim",  tag:"mo", output:"Lim", tex:null, ttype:UNDEROVER},
+{input:"Sup",  tag:"mo", output:"sup", tex:null, ttype:UNDEROVER},
+{input:"inf",  tag:"mo", output:"inf", tex:null, ttype:UNDEROVER},
 {input:"sin",  tag:"mo", output:"sin", tex:null, ttype:UNARY, func:true},
 {input:"cos",  tag:"mo", output:"cos", tex:null, ttype:UNARY, func:true},
 {input:"tan",  tag:"mo", output:"tan", tex:null, ttype:UNARY, func:true},
@@ -462,7 +471,9 @@ AMquote,
 {input:"tt",  tag:"mstyle", atname:"mathvariant", atval:"monospace", output:"tt", tex:null, ttype:UNARY},
 {input:"mathtt", tag:"mstyle", atname:"mathvariant", atval:"monospace", output:"mathtt", tex:null, ttype:UNARY},
 {input:"fr",  tag:"mstyle", atname:"mathvariant", atval:"fraktur", output:"fr", tex:null, ttype:UNARY, codes:AMfrk},
-{input:"mathfrak",  tag:"mstyle", atname:"mathvariant", atval:"fraktur", output:"mathfrak", tex:null, ttype:UNARY, codes:AMfrk}
+{input:"mathfrak",  tag:"mstyle", atname:"mathvariant", atval:"fraktur", output:"mathfrak", tex:null, ttype:UNARY, codes:AMfrk},
+{input:"bm", tag:"mstyle", atname:"mathvariant", atval:"bold-italic", output:"bm", tex:null, ttype:UNARY},
+{input:"rm", tag:"mstyle", atname:"mathvariant", atval:"serif", output:"rm", tex:null, ttype:UNARY}
 ];
 
 function compareNames(s1,s2) {
